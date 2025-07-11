@@ -1,27 +1,29 @@
 
-import HeroSection from "@/components/sections/HeroSection";
-import ServicesTabsSection from "@/components/sections/ServicesTabsSection";
-import StatsSection from "@/components/sections/StatsSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import ShippingCTASection from "@/components/sections/ShippingCTASection";
+import EnhancedHeroSection from "@/components/sections/EnhancedHeroSection";
+import AccessibilityOptimizedServices from "@/components/sections/AccessibilityOptimizedServices";
 import ShippingSection from "@/components/sections/ShippingSection";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
+import StatsSection from "@/components/sections/StatsSection";
 import FactorySearchSection from "@/components/sections/FactorySearchSection";
-import VisionSection from "@/components/sections/VisionSection";
 import ContactSection from "@/components/sections/ContactSection";
+import SkipLink from "@/components/common/SkipLink";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <HeroSection />
-      <ServicesTabsSection />
-      <ShippingSection />
-      <FeaturesSectionWithHoverEffects />
-      <StatsSection />
-      <FactorySearchSection />
-      
-      <ContactSection />
-    </div>
+    <>
+      <SkipLink />
+      <div className="min-h-screen">
+        <main id="main-content" role="main">
+          <EnhancedHeroSection />
+          <AccessibilityOptimizedServices />
+          <ShippingSection />
+          <FeaturesSectionWithHoverEffects />
+          <StatsSection />
+          <FactorySearchSection />
+          <ContactSection />
+        </main>
+      </div>
+    </>
   );
 };
 
