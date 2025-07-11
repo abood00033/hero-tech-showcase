@@ -142,7 +142,7 @@ const SebaqMachine = () => {
             
             <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8">
               سـي بـاك ماشـين
-              <span className="gradient-text block mt-4 text-3xl md:text-5xl lg:text-6xl">توريد • تركيب • صيانة</span>
+              <span className="gradient-text block mt-4 text-3xl md:text-5xl lg:text-6xl">توريد , تركيب , صيانة</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
