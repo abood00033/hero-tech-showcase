@@ -197,34 +197,42 @@ function LogisticsHero({
       className={cn(
         "bg-background text-foreground font-cairo",
         "py-8 sm:py-16 md:py-20 px-4",
-        "overflow-hidden pb-0 relative"
+        "overflow-hidden pb-0 relative min-h-[80vh]"
       )}
-      style={{
-        background: "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%)",
-      }}
       dir="rtl"
     >
-      {/* Background Effects */}
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/0acca5e2-695b-4689-8fa8-8590b6067f22.png')`
+        }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70"></div>
+
+      {/* Background Effects - now more subtle */}
       <div
-        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-30"
+        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-20"
         style={{
           background:
-            "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.15) 0%, transparent 60%)",
+            "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
         }}
       />
       <div
-        className="absolute left-0 top-0 h-1/2 w-1/2 -scale-x-100 opacity-30"
+        className="absolute left-0 top-0 h-1/2 w-1/2 -scale-x-100 opacity-20"
         style={{
           background:
-            "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.15) 0%, transparent 60%)",
+            "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
         }}
       />
 
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 pt-12 sm:gap-16">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-8 pt-12 sm:gap-16">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           <AnimatedGroup variants={transitionVariants}>
-            <Badge variant="outline" className="gap-3 text-sm px-6 py-2.5 border-primary/30 bg-primary/10 backdrop-blur-sm font-cairo shadow-sm hover:bg-primary/15 transition-colors duration-300">
+            <Badge variant="outline" className="gap-3 text-sm px-6 py-2.5 border-primary/30 bg-primary/15 backdrop-blur-sm font-cairo shadow-sm hover:bg-primary/20 transition-colors duration-300">
               <span className="text-primary font-medium">✨ خدمات لوجستية متطورة</span>
               <ArrowRight className="h-3 w-3 text-primary" />
             </Badge>
@@ -247,10 +255,10 @@ function LogisticsHero({
             <h1 className="relative z-10 inline-block bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-4xl font-bold leading-tight text-transparent drop-shadow-2xl sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight lg:text-7xl lg:leading-tight font-cairo">
               {companyName}
             </h1>
-            <p className="text-xl relative z-10 max-w-[800px] font-semibold text-primary opacity-95 sm:text-2xl md:text-2xl lg:text-3xl font-cairo leading-relaxed">
+            <p className="text-xl relative z-10 max-w-[800px] font-semibold text-primary opacity-95 sm:text-2xl md:text-2xl lg:text-3xl font-cairo leading-relaxed drop-shadow-lg">
               {tagline}
             </p>
-            <p className="text-lg relative z-10 max-w-[900px] text-muted-foreground sm:text-xl md:text-xl lg:text-2xl font-cairo leading-relaxed mt-4">
+            <p className="text-lg relative z-10 max-w-[900px] text-muted-foreground sm:text-xl md:text-xl lg:text-2xl font-cairo leading-relaxed mt-4 drop-shadow-md">
               {subtitle}
             </p>
           </AnimatedGroup>
@@ -275,13 +283,13 @@ function LogisticsHero({
               <Phone className="h-5 w-5 ml-2" />
               {ctaButtons.contact}
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo bg-background/80 backdrop-blur-sm">
               <FileText className="h-5 w-5 ml-2" />
               {ctaButtons.quote}
             </Button>
           </AnimatedGroup>
 
-          {/* Hero Image */}
+          {/* Hero Image - removed since we now have background image */}
           <AnimatedGroup
             variants={{
               container: {
@@ -296,11 +304,11 @@ function LogisticsHero({
           >
             <div className="relative pt-8 w-full">
               <MockupFrame
-                className="opacity-0 animate-appear delay-700"
+                className="opacity-0 animate-appear delay-700 bg-background/10 backdrop-blur-sm"
                 size="small"
               >
                 <Mockup type="responsive">
-                  <div className="w-full h-[300px] bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-lg flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full h-[300px] bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-lg flex items-center justify-center relative overflow-hidden backdrop-blur-sm">
                   </div>
                 </Mockup>
               </MockupFrame>
