@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -126,18 +127,18 @@ const SebaqMachine = () => {
   }];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section with Better Contrast */}
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Enhanced Hero Section with Better Text Visibility */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-sebaaq-midnight via-sebaaq-charcoal to-sebaaq-midnight overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" 
           style={{
             backgroundImage: `url('/lovable-uploads/643ddcfe-a488-42a0-9ed2-b681b28a670c.png')`
           }} 
         />
         
-        {/* Lighter overlay for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sebaaq-midnight/80 to-sebaaq-charcoal/80"></div>
+        {/* Strong overlay for text visibility */}
+        <div className="absolute inset-0 bg-sebaaq-midnight/85"></div>
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -152,16 +153,16 @@ const SebaqMachine = () => {
               الخيار الأول للآلات المتطورة
             </Badge>
             
-            <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 drop-shadow-lg">
+            <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8">
               سـي بـاك ماشـين
-              <span className="gradient-text block mt-4 text-3xl md:text-5xl lg:text-6xl drop-shadow-lg">توريد , تركيب , صيانة</span>
+              <span className="block mt-4 text-3xl md:text-5xl lg:text-6xl text-sebaaq-blue">توريد , تركيب , صيانة</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto mb-8 leading-relaxed">
               آلات متطورة لمستقبل الصناعة السعودية
             </p>
             
-            <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light drop-shadow-md">
+            <p className="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto mb-12 leading-relaxed">
               شريككم الموثوق في توريد الآلات المميزة ذات المواصفات القوية من الصين، مع حلول تكنولوجية متقدمة تعزز كفاءة عملياتكم وتضمن أعلى مستويات الجودة
             </p>
             
@@ -188,11 +189,11 @@ const SebaqMachine = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {whyChooseUs.map((item, index) => (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white">
                   <div className="w-16 h-16 bg-sebaaq-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-sebaaq-blue" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-sebaaq-midnight">{item.title}</h3>
                   <p className="text-gray-600 text-sm">{item.description}</p>
                 </Card>
               ))}
@@ -201,13 +202,13 @@ const SebaqMachine = () => {
         </div>
       </section>
 
-      {/* Enhanced Machine Categories Section with Better Contrast */}
+      {/* Machine Categories Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight mb-6">
               مجموعتنا الواسعة
-              <span className="gradient-text block">من الآلات المتخصصة</span>
+              <span className="block text-sebaaq-blue">من الآلات المتخصصة</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               استثمارات استراتيجية تدعم أهدافكم التجارية وتتوافق مع رؤية المملكة 2030
@@ -218,7 +219,7 @@ const SebaqMachine = () => {
             {machineCategories.map((category, index) => (
               <Card 
                 key={index} 
-                className={`group overflow-hidden transition-all duration-500 transform ${
+                className={`group overflow-hidden transition-all duration-500 transform bg-white ${
                   hoveredProduct === index ? 'scale-105 shadow-2xl -translate-y-2' : 'scale-100 shadow-lg'
                 }`}
                 onMouseEnter={() => setHoveredProduct(index)}
@@ -230,30 +231,28 @@ const SebaqMachine = () => {
                     alt={category.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                   />
-                  {/* Lighter overlay for better text visibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-sebaaq-blue text-white">جديد</Badge>
                   </div>
-                  {/* Better positioned text with improved contrast */}
                   <div className="absolute bottom-4 right-4 left-4">
-                    <h3 className="text-white text-xl font-bold mb-2 drop-shadow-lg">
+                    <h3 className="text-white text-xl font-bold mb-2">
                       {category.title}
                     </h3>
-                    <p className="text-white/90 text-sm drop-shadow-md">
+                    <p className="text-white/90 text-sm">
                       {category.subtitle}
                     </p>
                   </div>
                 </div>
                 
-                <CardHeader className="pb-4">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <CardHeader className="pb-4 bg-white">
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
                     {category.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {category.features.map((feature, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs">
+                      <Badge key={idx} variant="outline" className="text-xs border-sebaaq-blue/30 text-sebaaq-blue">
                         {feature}
                       </Badge>
                     ))}
@@ -272,7 +271,7 @@ const SebaqMachine = () => {
         </div>
       </section>
 
-      {/* Enhanced Services Section */}
+      {/* Services Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -288,7 +287,7 @@ const SebaqMachine = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className={`group p-6 transition-all duration-300 transform hover:shadow-xl ${
+                className={`group p-6 transition-all duration-300 transform hover:shadow-xl bg-white ${
                   hoveredService === index ? 'scale-105 bg-gradient-to-br from-white to-blue-50' : 'scale-100'
                 }`}
                 onMouseEnter={() => setHoveredService(index)}
@@ -302,7 +301,7 @@ const SebaqMachine = () => {
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-gray-700 leading-relaxed mb-4">
                   {service.description}
                 </p>
                 <Button variant="ghost" className="text-sebaaq-blue hover:text-blue-600 p-0 h-auto font-semibold">
@@ -314,7 +313,7 @@ const SebaqMachine = () => {
         </div>
       </section>
 
-      {/* Enhanced Stats Section */}
+      {/* Stats Section */}
       <section className="py-20 bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/643ddcfe-a488-42a0-9ed2-b681b28a670c.png')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 container mx-auto px-6">
@@ -334,7 +333,7 @@ const SebaqMachine = () => {
                 <div className="text-3xl md:text-4xl font-bold text-sebaaq-blue mb-2 group-hover:scale-110 transition-transform">
                   {stat.number}
                 </div>
-                <div className="text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                <div className="text-gray-300 text-sm md:text-base font-medium leading-relaxed">
                   {stat.label}
                 </div>
               </div>
@@ -343,7 +342,7 @@ const SebaqMachine = () => {
         </div>
       </section>
 
-      {/* Enhanced Technical Expertise Section */}
+      {/* Technical Expertise Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -359,7 +358,7 @@ const SebaqMachine = () => {
             {expertiseAreas.map((area, index) => (
               <Card 
                 key={index} 
-                className={`group p-8 transition-all duration-300 transform ${
+                className={`group p-8 transition-all duration-300 transform bg-white ${
                   hoveredExpertise === index ? 'scale-105 shadow-2xl bg-gradient-to-br from-sebaaq-blue/5 to-blue-400/5' : 'scale-100 shadow-lg'
                 }`}
                 onMouseEnter={() => setHoveredExpertise(index)}
@@ -373,7 +372,7 @@ const SebaqMachine = () => {
                     {area.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {area.description}
                 </p>
               </Card>
@@ -382,14 +381,14 @@ const SebaqMachine = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
+      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-sebaaq-blue to-blue-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-sebaaq-blue/90 to-blue-600/90"></div>
         <div className="relative z-10 container mx-auto px-6 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">
             ابدأ مشروعك معنا اليوم
           </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             تواصل معنا الآن للحصول على استشارة مجانية وتحديد أفضل الحلول لاحتياجاتك
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

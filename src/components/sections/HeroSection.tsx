@@ -196,7 +196,7 @@ function LogisticsHero({
     <section
       className={cn(
         "bg-background text-foreground font-cairo",
-        "py-8 sm:py-16 md:py-20 px-4",
+        "py-16 md:py-20 px-4",
         "overflow-hidden relative min-h-[80vh]"
       )}
       dir="rtl"
@@ -210,19 +210,12 @@ function LogisticsHero({
       />
       
       {/* Strong overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/90"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
-      <div className="absolute inset-0 bg-background/60"></div>
 
-      {/* Background Effects - now more subtle */}
+      {/* Background Effects - subtle */}
       <div
-        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-10"
-        style={{
-          background:
-            "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
-        }}
-      />
-      <div
-        className="absolute left-0 top-0 h-1/2 w-1/2 -scale-x-100 opacity-10"
+        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-5"
         style={{
           background:
             "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
@@ -253,13 +246,13 @@ function LogisticsHero({
               ...transitionVariants,
             }}
           >
-            <h1 className="relative z-10 inline-block bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-4xl font-bold leading-tight text-transparent drop-shadow-2xl sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight lg:text-7xl lg:leading-tight font-cairo">
+            <h1 className="relative z-10 inline-block text-4xl font-bold leading-tight text-foreground sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight lg:text-7xl lg:leading-tight font-cairo">
               {companyName}
             </h1>
-            <p className="text-xl relative z-10 max-w-[800px] font-semibold text-primary opacity-95 sm:text-2xl md:text-2xl lg:text-3xl font-cairo leading-relaxed drop-shadow-lg">
+            <p className="text-xl relative z-10 max-w-[800px] font-semibold text-primary sm:text-2xl md:text-2xl lg:text-3xl font-cairo leading-relaxed">
               {tagline}
             </p>
-            <p className="text-lg relative z-10 max-w-[900px] text-muted-foreground sm:text-xl md:text-xl lg:text-2xl font-cairo leading-relaxed mt-4 drop-shadow-md">
+            <p className="text-lg relative z-10 max-w-[900px] text-muted-foreground sm:text-xl md:text-xl lg:text-2xl font-cairo leading-relaxed mt-4">
               {subtitle}
             </p>
           </AnimatedGroup>
@@ -279,7 +272,7 @@ function LogisticsHero({
             }}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md">
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md text-primary-foreground">
               <Phone className="h-5 w-5 ml-2" />
               {ctaButtons.contact}
             </Button>
