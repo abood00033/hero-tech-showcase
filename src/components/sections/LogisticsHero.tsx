@@ -255,7 +255,7 @@ const LogisticsHero: React.FC = () => {
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <Globe className="text-primary-foreground" size={20} />
             </div>
-            <span className="text-xl font-bold text-foreground font-cairo">سي باك</span>
+            <span className="text-xl font-bold text-foreground font-cairo">سمارتكو</span>
           </div>
           
           <nav className="hidden md:flex space-x-6 font-cairo">

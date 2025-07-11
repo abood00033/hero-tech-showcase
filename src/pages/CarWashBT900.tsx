@@ -584,12 +584,12 @@ const BT900FuturisticPage: React.FC = () => {
                 <div className="flex flex-col items-center gap-2">
                   <Mail className="w-8 h-8 text-primary" />
                   <span className="font-bold">بريد إلكتروني</span>
-                  <span className="text-muted-foreground">sales@SmartComachine.com</span>
+                  <span className="text-muted-foreground">sales@smartco.com</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <Globe className="w-8 h-8 text-primary" />
                   <span className="font-bold">موقع إلكتروني</span>
-                  <span className="text-muted-foreground">www.SmartComachine.com</span>
+                  <span className="text-muted-foreground">www.smartco.com</span>
                 </div>
               </div>
             </motion.div>

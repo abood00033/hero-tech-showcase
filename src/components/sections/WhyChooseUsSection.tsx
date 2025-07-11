@@ -52,10 +52,10 @@ const WhyChooseUsSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight mb-6">
-            لماذا تختار سي باك؟
+            لماذا تختار سمارتكو؟
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            سي باك لوجيستيك، شركة سعودية متخصصة في الخدمات اللوجستية، تتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، توفر خدمات احترافية ودعم عملاء قوي
+            سمارتكو لوجيستيك، شركة سعودية متخصصة في الخدمات اللوجستية، تتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، توفر خدمات احترافية ودعم عملاء قوي
           </p>
         </div>
 

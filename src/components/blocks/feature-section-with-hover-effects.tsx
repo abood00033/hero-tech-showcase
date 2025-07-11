@@ -60,12 +60,12 @@ const FeaturesSectionWithHoverEffects = () => {
         <div className="text-center mb-20">
           <div className="inline-block bg-white rounded-2xl px-8 py-6 shadow-lg border-2 border-primary/20 mb-8">
             <h2 className="font-cairo text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              لماذا تختار سي باك؟
+              لماذا تختار سمارتكو؟
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
           </div>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-cairo">
-            سي باك لوجيستيك، شركة سعودية متخصصة في الخدمات اللوجستية، تتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، توفر خدمات احترافية ودعم عملاء قوي
+            سمارتكو لوجيستيك، شركة سعودية متخصصة في الخدمات اللوجستية، تتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، توفر خدمات احترافية ودعم عملاء قوي
           </p>
         </div>
 

@@ -112,7 +112,7 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 id="services-title" className="font-playfair text-4xl md:text-5xl font-bold text-sebaaq-midnight mb-6">
-            شركة سي باك لوجستيك:
+            شركة سمارتكو لوجستيك:
             <span className="gradient-text block mt-2">حلول الشحن من الصين</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
@@ -125,7 +125,7 @@ const ServicesSection = () => {
         <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-8xl mx-auto"
           role="region"
-          aria-label="خدمات سي باك لوجستيك"
+          aria-label="خدمات سمارتكو لوجستيك"
         >
           {services.map((service, index) => (
             <ServiceCard
@@ -149,9 +149,11 @@ const ServicesSection = () => {
             <p className="text-white/90 text-lg mb-6 leading-relaxed">
               تواصل معنا اليوم واحصل على استشارة مجانية
             </p>
-            <button className="bg-white text-sebaaq-midnight px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-white/50">
-              تواصل معنا الآن
-            </button>
+            <a href="https://wa.me/+966594196930" target="_blank" rel="noopener noreferrer">
+              <button className="bg-white text-sebaaq-midnight px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-white/50">
+                تواصل معنا الآن
+              </button>
+            </a>
           </div>
         </div>
       </div>

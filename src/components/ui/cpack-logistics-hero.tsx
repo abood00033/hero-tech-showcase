@@ -26,14 +26,14 @@ const CPackLogisticsHero = React.forwardRef<HTMLElement, HeroProps>(
   (
     {
       className,
-      title = "سي باك لوجستيك",
+      title = "سمارتكو لوجستيك",
       subtitle = "حلول الشحن الذكية",
       description = "من الصين إلى المملكة",
       services = ["شحن بحري", "شحن جوي", "توريد وتركيب وصيانة آلات حديثة"],
       actions = [
         {
           label: "اتصل بنا الآن",
-          href: "#contact",
+          href: "https://wa.me/+966594196930",
           variant: "default",
           icon: <PhoneCall className="h-4 w-4" />
         },
