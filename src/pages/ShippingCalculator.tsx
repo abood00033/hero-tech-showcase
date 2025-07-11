@@ -1,5 +1,5 @@
+
 import ShippingCalculatorSection from "@/components/sections/ShippingCalculatorSection";
-import Navigation from "@/components/Navigation";
 
 const ShippingCalculator = () => {
   return (

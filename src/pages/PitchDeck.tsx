@@ -62,10 +62,10 @@ const PitchDeck = () => {
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sebaaq-midnight mb-6 leading-tight">
               رؤيتي لـ
-              <span className="gradient-text block mt-2">سـي بـاك للوجستيك</span>
+              <span className="gradient-text block mt-2">سـي بـاك لوجستيك</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-              أبحث عن شريك مؤسس لـ "سـي بـاك" للوجستيك، شركة ناشئة تختص بحلول الشحن والاستيراد المتكاملة بين الصين والمملكة العربية السعودية
+              أبحث عن شريك مؤسس لـ "سـي بـاك لوجستيك"، شركة ناشئة تختص بحلول الشحن والاستيراد المتكاملة بين الصين والمملكة العربية السعودية
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-sebaaq-blue hover:bg-blue-600 text-white">
@@ -213,7 +213,7 @@ const PitchDeck = () => {
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <Package className="w-8 h-8 text-sebaaq-blue" />
-                  <CardTitle className="text-xl">خدمات اللوجستيات الشاملة</CardTitle>
+                  <CardTitle className="text-xl">خدمات سي باك لوجستيك الشاملة</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
