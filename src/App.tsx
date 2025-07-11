@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -49,7 +50,7 @@ const App = () => (
               <Route path="/مكائن-البيع-الذاتي" element={<VendingMachines />} />
               <Route path="/خطوط-الإنتاج" element={<ProductionLines />} />
               <Route path="/مغاسل-السيارات" element={<CarWash />} />
-              <Route path="/منتجات-مغاسل-السيارات" element={<CarWashProducts />} />
+              <Route path="/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/" element={<CarWashProducts />} />
               <Route path="/مغسلة-bt900" element={<CarWashBT900 />} />
               <Route path="/مغسلة-bt500" element={<CarWashBT500 />} />
               <Route path="/مغسلة-tl500" element={<CarWashProducts />} />

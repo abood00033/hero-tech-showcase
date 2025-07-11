@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle } from 'lucide-react';
@@ -11,7 +10,7 @@ const CarWash = () => {
       description: "تجفيف سريع وفعال للسيارات"
     },
     {
-      title: "المستشعرات الذكية",
+      title: "المستشعرات الذكية", 
       description: "تحكم دقيق وآمن في عملية الغسيل"
     },
     {
@@ -80,7 +79,7 @@ const CarWash = () => {
       featured: true
     },
     {
-      id: "bt500",
+      id: "bt500", 
       title: "BT500",
       subtitle: "نظام الغسيل الاحترافي",
       description: "مغسلة أوتوماتيكية متطورة تجمع بين تقنية الغسيل بالفرش والغسيل بدون لمس في نظام واحد متكامل. مصممة للاستخدام التجاري المكثف.",
@@ -114,7 +113,7 @@ const CarWash = () => {
         "برامج غسيل متنوعة",
         "تجفيف هوائي قوي"
       ],
-      route: "/car-wash/products",
+      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
       featured: false
     },
     {
@@ -133,7 +132,7 @@ const CarWash = () => {
         "برامج غسيل أساسية",
         "تجفيف هوائي"
       ],
-      route: "/car-wash/products",
+      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
       featured: false
     },
     {
@@ -152,7 +151,7 @@ const CarWash = () => {
         "صيانة سهلة",
         "مناسب للمساحات الصغيرة"
       ],
-      route: "/car-wash/products",
+      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
       featured: false
     }
   ];
