@@ -39,7 +39,7 @@ const FactorySearchSection = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-sebaaq-blue/20 to-blue-400/20 rounded-3xl p-8 backdrop-blur-sm border border-sebaaq-blue/30">
               <div className="text-center mb-6">
-                <h3 className="text-white font-bold text-xl mb-2">سمارتكو طريقك المباشر للمصانع</h3>
+                <h3 className="text-white font-bold text-xl mb-2">سي باك طريقك المباشر للمصانع</h3>
                 <p className="text-gray-300">تجاهل الوسطاء والكيانات التجارية</p>
               </div>
               

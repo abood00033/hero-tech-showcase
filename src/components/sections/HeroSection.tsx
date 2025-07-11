@@ -171,7 +171,7 @@ interface LogisticsHeroProps {
 }
 
 function LogisticsHero({
-  companyName = "سمارتكو لوجستيك",
+  companyName = "سي باك لوجستيك",
   tagline = "شريكك المتكامل للخدمات اللوجستية والتشغيلية في السعودية",
   subtitle = "حلولًا متكاملة تشمل خدمات الشحن، الاستيراد، توريد الآلات، تركيب والصيانة",
   ctaButtons = {
@@ -197,7 +197,7 @@ function LogisticsHero({
       className={cn(
         "bg-background text-foreground font-cairo",
         "py-8 sm:py-16 md:py-20 px-4",
-        "overflow-hidden pb-16 relative"
+        "overflow-hidden pb-0 relative"
       )}
       style={{
         background: "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%)",
@@ -271,12 +271,10 @@ function LogisticsHero({
             }}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <a href="https://wa.me/+966594196930" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md">
-                <Phone className="h-5 w-5 ml-2" />
-                {ctaButtons.contact}
-              </Button>
-            </a>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md">
+              <Phone className="h-5 w-5 ml-2" />
+              {ctaButtons.contact}
+            </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo">
               <FileText className="h-5 w-5 ml-2" />
               {ctaButtons.quote}
