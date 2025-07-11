@@ -209,8 +209,11 @@ function LogisticsHero({
         }}
       />
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70"></div>
+      {/* Stronger overlay for better text readability - focusing more on the right side */}
+      <div className="absolute inset-0 bg-gradient-to-l from-background/98 via-background/90 to-background/60"></div>
+      
+      {/* Additional overlay specifically for the right side where text is located */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/70 to-background/95"></div>
 
       {/* Background Effects - now more subtle */}
       <div
