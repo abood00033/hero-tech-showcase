@@ -205,26 +205,24 @@ function LogisticsHero({
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/52990f8a-b438-4e57-b738-7cfe0361f2ab.png')`
+          backgroundImage: `url('/lovable-uploads/e16062b2-0564-4a04-b7f4-0140acddf422.png')`
         }}
       />
       
-      {/* Stronger overlay for better text readability - focusing more on the right side */}
-      <div className="absolute inset-0 bg-gradient-to-l from-background/98 via-background/90 to-background/60"></div>
-      
-      {/* Additional overlay specifically for the right side where text is located */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/70 to-background/95"></div>
+      {/* Strong overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
+      <div className="absolute inset-0 bg-background/60"></div>
 
       {/* Background Effects - now more subtle */}
       <div
-        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-20"
+        className="absolute right-0 top-0 h-1/2 w-1/2 opacity-10"
         style={{
           background:
             "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
         }}
       />
       <div
-        className="absolute left-0 top-0 h-1/2 w-1/2 -scale-x-100 opacity-20"
+        className="absolute left-0 top-0 h-1/2 w-1/2 -scale-x-100 opacity-10"
         style={{
           background:
             "radial-gradient(circle at 70% 30%, hsl(var(--primary) / 0.1) 0%, transparent 60%)",
