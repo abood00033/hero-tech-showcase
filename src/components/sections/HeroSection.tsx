@@ -197,7 +197,7 @@ function LogisticsHero({
       className={cn(
         "bg-background text-foreground font-cairo",
         "py-8 sm:py-16 md:py-20 px-4",
-        "overflow-hidden pb-0 relative min-h-[80vh]"
+        "overflow-hidden relative min-h-[80vh]"
       )}
       dir="rtl"
     >
@@ -231,7 +231,7 @@ function LogisticsHero({
         }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-8 pt-12 sm:gap-16">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-8 pt-12 sm:gap-12">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           <AnimatedGroup variants={transitionVariants}>
@@ -266,7 +266,6 @@ function LogisticsHero({
             </p>
           </AnimatedGroup>
 
-
           {/* CTA Buttons */}
           <AnimatedGroup
             variants={{
@@ -290,36 +289,6 @@ function LogisticsHero({
               <FileText className="h-5 w-5 ml-2" />
               {ctaButtons.quote}
             </Button>
-          </AnimatedGroup>
-
-          {/* Hero Image - removed since we now have background image */}
-          <AnimatedGroup
-            variants={{
-              container: {
-                visible: {
-                  transition: {
-                    delayChildren: 1.2,
-                  },
-                },
-              },
-              ...transitionVariants,
-            }}
-          >
-            <div className="relative pt-8 w-full">
-              <MockupFrame
-                className="opacity-0 animate-appear delay-700 bg-background/10 backdrop-blur-sm"
-                size="small"
-              >
-                <Mockup type="responsive">
-                  <div className="w-full h-[300px] bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-lg flex items-center justify-center relative overflow-hidden backdrop-blur-sm">
-                  </div>
-                </Mockup>
-              </MockupFrame>
-              <Glow
-                variant="top"
-                className="opacity-0 animate-appear-zoom delay-1000"
-              />
-            </div>
           </AnimatedGroup>
         </div>
       </div>
