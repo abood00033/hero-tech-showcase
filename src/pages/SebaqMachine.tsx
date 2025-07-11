@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,14 +41,14 @@ const SebaqMachine = () => {
     title: "مكائن البيع الذاتي",
     subtitle: "تجربة مبتكرة، أرباح مستمرة",
     description: "انتقلوا بتجارة التجزئة إلى مستوى جديد مع مجموعتنا من مكائن البيع الذاتي المتطورة",
-    image: "/lovable-uploads/7f53ab4c-dbb6-459a-b98d-07e3971314f2.png",
+    image: "/lovable-uploads/0540355a-e2a1-4bd6-bbc7-34cd87eacb10.png",
     link: "/مكائن-البيع-الذاتي",
     features: ["تحكم ذكي", "مدفوعات متنوعة", "صيانة سهلة"]
   }, {
     title: "أنظمة خطوط الإنتاج والمصانع",
     subtitle: "بناء مستقبل الصناعة السعودية",
     description: "أنظمة خطوط إنتاج ومصانع متكاملة، مصممة بأحدث التقنيات لضمان الكفاءة التشغيلية",
-    image: "/lovable-uploads/f2b9e552-7049-43c5-8633-7b33ffe817b1.png",
+    image: "/lovable-uploads/655af47c-6513-4fb2-a34e-abf0b9ff4eb0.png",
     link: "/خطوط-الإنتاج",
     features: ["أتمتة كاملة", "كفاءة عالية", "توفير في التكلفة"]
   }, {
@@ -63,7 +62,7 @@ const SebaqMachine = () => {
     title: "المشاريع الترفيهية",
     subtitle: "استثمر في مستقبل الترفيه السعودي",
     description: "مجموعة واسعة من الأنظمة الترفيهية المبتكرة التي تضمن تجارب لا تُنسى",
-    image: "/lovable-uploads/640aeb90-1566-4874-8489-7c6bfc60e55e.png",
+    image: "/lovable-uploads/e46436ee-6f28-442d-9c01-31285261b60a.png",
     link: "/الأنظمة-الترفيهية",
     features: ["تقنيات حديثة", "تجربة ممتعة", "عائد استثماري"]
   }];
