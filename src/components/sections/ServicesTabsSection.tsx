@@ -73,7 +73,7 @@ const ServicesTabsSection = ({
   tabs = [
     {
       value: "shipping",
-      icon: <img src="/lovable-uploads/a965f2ca-5f88-46aa-b258-0ab30861e7ef.png" alt="خدمات الشحن" className="w-20 h-20" />,
+      icon: <Truck className="w-12 h-12 text-primary" />,
       label: "خدمات الشحن والاستيراد",
       content: {
         badge: "حلول لوجستية متكاملة",
@@ -86,7 +86,7 @@ const ServicesTabsSection = ({
     },
     {
       value: "consultation",
-      icon: <img src="/lovable-uploads/ad748a22-b280-4e40-8a29-eb0225627a3d.png" alt="خدمات استشارية" className="w-20 h-20" />,
+      icon: <MessageCircle className="w-12 h-12 text-primary" />,
       label: "خدمات استشارية",
       content: {
         badge: "خبرة متخصصة",
@@ -99,7 +99,7 @@ const ServicesTabsSection = ({
     },
     {
       value: "machinery",
-      icon: <img src="/lovable-uploads/2a1593de-0f57-407c-90c8-6e1d6a86f04d.png" alt="توريد الآلات" className="w-20 h-20" />,
+      icon: <Cog className="w-12 h-12 text-primary" />,
       label: "توريد وتركيب الآلات",
       content: {
         badge: "خبرة تقنية متقدمة",
@@ -182,15 +182,15 @@ const ServicesTabsSection = ({
 
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-16">
           <div className="relative">
-            <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg">
+            <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="flex flex-col items-center gap-3 rounded-xl px-6 py-8 text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
+                  className="flex flex-col sm:flex-col items-center gap-2 sm:gap-3 rounded-xl px-3 sm:px-6 py-4 sm:py-8 text-sm sm:text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
                 >
-                  <div className="text-xl">{tab.icon}</div>
-                  <span className="text-center text-2xl font-bold leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">{tab.label}</span>
+                  <div className="text-lg sm:text-xl">{tab.icon}</div>
+                  <span className="text-center text-sm sm:text-lg md:text-xl font-bold leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">{tab.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
