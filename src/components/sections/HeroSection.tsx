@@ -205,7 +205,7 @@ function LogisticsHero({
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/0acca5e2-695b-4689-8fa8-8590b6067f22.png')`
+          backgroundImage: `url('/lovable-uploads/52990f8a-b438-4e57-b738-7cfe0361f2ab.png')`
         }}
       />
       
