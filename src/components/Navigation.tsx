@@ -9,12 +9,12 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/home', label: 'الرئيسية' },
-    { path: '/shipping-import-china', label: 'الشحن والاستيراد من الصين' },
-    { path: '/sebaaq-machine', label: 'سي باك ماشين' },
-    { path: '/parts-maintenance', label: 'قطع الغيار والصيانة' },
-    { path: '/shipping-calculator', label: 'حاسبة تكلفة الشحن' },
-    { path: '/about-us', label: 'من نحن' }
+    { path: '/الرئيسية', label: 'الرئيسية' },
+    { path: '/الشحن-والاستيراد-من-الصين', label: 'الشحن والاستيراد من الصين' },
+    { path: '/سي-باك-ماشين', label: 'سي باك ماشين' },
+    { path: '/قطع-الغيار-والصيانة', label: 'قطع الغيار والصيانة' },
+    { path: '/حاسبة-تكلفة-الشحن', label: 'حاسبة تكلفة الشحن' },
+    { path: '/من-نحن', label: 'من نحن' }
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -25,7 +25,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
           <Link 
-            to="/home" 
+            to="/الرئيسية" 
             className="focus:outline-none focus:ring-4 focus:ring-sebaaq-blue/50 rounded-md p-2"
             aria-label="سـي بـاك - الصفحة الرئيسية"
           >
@@ -44,7 +44,7 @@ const Navigation = () => {
                 to={item.path}
                 role="menuitem"
                 className={`px-4 py-3 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
-                  location.pathname === item.path
+                  location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
                     ? 'bg-sebaaq-blue text-white shadow-md'
                     : 'text-sebaaq-midnight hover:bg-gray-100 hover:shadow-sm'
                 }`}
@@ -95,7 +95,7 @@ const Navigation = () => {
                 onClick={() => setIsOpen(false)}
                 role="menuitem"
                 className={`block px-4 py-4 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
-                  location.pathname === item.path
+                  location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
                     ? 'bg-sebaaq-blue text-white shadow-md'
                     : 'text-sebaaq-midnight hover:bg-gray-100 hover:shadow-sm'
                 }`}
