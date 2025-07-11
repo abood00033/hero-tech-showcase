@@ -10,11 +10,11 @@ const FactorySearchSection = () => {
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 text-center">
               البحث عن أفضل
               <span className="gradient-text block">المصانع والأسعار</span>
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 text-center">
               نساعدك في العثور على مصانع حقيقية، تقييم الجودة، ومقارنة الأسعار
             </p>
 
