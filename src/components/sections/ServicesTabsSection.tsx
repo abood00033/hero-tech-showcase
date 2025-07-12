@@ -272,7 +272,7 @@ const ServicesTabsSection = ({
                       </p>
                       
                       <Button 
-                        className="w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo"
+                        className="w-full sm:w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo touch-manipulation"
                         onClick={() => handleButtonClick(tab.value)}
                       >
                         {tab.content.buttonText}
