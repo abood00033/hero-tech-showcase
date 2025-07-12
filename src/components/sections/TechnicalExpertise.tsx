@@ -40,8 +40,8 @@ const TechnicalExpertise = () => {
           {expertiseAreas.map((area, index) => (
             <Card 
               key={index} 
-              className={`group p-8 transition-all duration-300 transform bg-white ${
-                hoveredExpertise === index ? 'scale-105 shadow-2xl bg-gradient-to-br from-sebaaq-blue/5 to-blue-400/5' : 'scale-100 shadow-lg'
+              className={`group p-8 transition-all duration-300 transform bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal ${
+                hoveredExpertise === index ? 'scale-105 shadow-2xl' : 'scale-100 shadow-lg'
               }`}
               onMouseEnter={() => setHoveredExpertise(index)}
               onMouseLeave={() => setHoveredExpertise(null)}
@@ -52,11 +52,11 @@ const TechnicalExpertise = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-sebaaq-blue to-blue-400 rounded-xl flex items-center justify-center ml-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                   <area.icon className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
-                <h3 id={`expertise-${index}`} className="font-playfair text-xl font-bold text-sebaaq-midnight leading-tight">
+                <h3 id={`expertise-${index}`} className="font-playfair text-xl font-bold text-white leading-tight">
                   {area.title}
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-white font-bold leading-relaxed">
                 {area.description}
               </p>
             </Card>
