@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -80,7 +81,7 @@ const ServicesTabsSection = ({
         title: "خدمات الشحن والاستيراد",
         description: "نوفر حلولاً لوجستية متكاملة للشركات والأفراد، وكيل شحن معتمد من الصين، مع ضمان أعلى معايير الأمان والاحترافية. نتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، نقدم خدمات احترافية ودعم عملاء قوي.\n\n• خدمة الشحن من الباب للباب: تتكفل الشركة بكل تفاصيل شحن بضائعك من مكان موردك مباشرة إلى عنوانك.\n• تفاوض مع المصانع: بفضل الخبرة في المصانع والسوق الصيني، تستطيع الشركة تقديم أسعار ذات قيمة إضافية من خلال التفاوض مع المصنع وتوفير في مدة التصنيع والأسعار.\n• نستلم شحنتك من مصانع الصين ونسلّمها مباشرة إلى عنوانك في السعودية.\n• حلول لوجستية ذكية: تقدم شحنًا جزئيًا سريعًا ومباشرًا من الصين إلى السعودية، مما يتيح لك استيراد بضائعك بمرونة وكفاءة عبر مشاركة مساحة الحاوية مع شحنات أخرى لتقليل التكاليف.",
         buttonText: "تفاصيل اكثر",
-        imageSrc: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+        imageSrc: "/lovable-uploads/356f179f-e8fa-4feb-b522-afde2648de6a.png",
         imageAlt: "شحن بحري وجوي",
       },
     },
@@ -93,7 +94,7 @@ const ServicesTabsSection = ({
         title: "خدمات استشارية",
         description: "تمتلك سي باك معرفة واسعة وخبرة متراكمة في التعامل مع الموردين الصينيين وفهم ديناميكيات السوق لتوفر لك أفضل حلول الاستيراد من الصين.\n\n• خبرة عميقة بالسوق الصيني: تعمل بخبرة عميقة وواسعة في عالم الأعمال الصينية ولديها خبرة متراكمة في التعامل مع الموردين وفهم الديناميكيات السوق.\n• حلول مخصصة لاحتياجاتك: تحليل احتياجاتك وتقديم حلول مصممة خصيصًا لتلبية أهدافك الاستيرادية.\n• توفير الوقت والجهد والمال: تساعدك في توفير الوقت والجهد والمال عن طريق تجنب الأخطاء المكلفة وتبسيط الإجراءات.\n• بناء علاقات قوية مع الموردين: تساعدك في بناء علاقات قوية مع الموردين الصينيين من خلال شبكتها الواسعة من الموردين الموثوقين.\n• تغطية شاملة لجميع جوانب الاستيراد: تقدم لك خطوات تغطي جميع جوانب الاستيراد بدءًا من البحث عن الموردين وحتى الشحن والتخليص الجمركي.",
         buttonText: "تفاصيل اكثر",
-        imageSrc: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+        imageSrc: "/lovable-uploads/677a59ea-9c2b-4e12-8293-6290d0781ded.png",
         imageAlt: "استشارات تجارية",
       },
     },
@@ -106,7 +107,7 @@ const ServicesTabsSection = ({
         title: "توريد وتركيب الآلات",
         description: "في سي باك ماشين، تمتد الخبرة التقنية إلى ما وراء مجرد التوريد. لدينا فهم عالٍ في كثير من المجالات والأنظمة التقنية المعقدة، مع إدراك دقيق لتعقيدات عملها الميكانيكي ومبادئ تصميمها الحركي، وذلك يشمل تحليل القوى والإجهادات، ودراسة المواد المكونة منها، وكفاءة نقل الحركة والطاقة.",
         buttonText: "تفاصيل اكثر",
-        imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+        imageSrc: "/lovable-uploads/677a59ea-9c2b-4e12-8293-6290d0781ded.png",
         imageAlt: "آلات صناعية",
       },
     },
@@ -114,15 +115,17 @@ const ServicesTabsSection = ({
 }: ServicesTabsSectionProps) => {
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [autoCycleComplete, setAutoCycleComplete] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasUserInteracted) {
-            // Start auto-cycling through tabs for 5 seconds only
+          if (entry.isIntersecting && !hasUserInteracted && !autoCycleComplete) {
+            // Start auto-cycling through tabs
             let currentIndex = 0;
             intervalRef.current = setInterval(() => {
               currentIndex = (currentIndex + 1) % tabs.length;
@@ -130,11 +133,12 @@ const ServicesTabsSection = ({
             }, 2000); // Change tab every 2 seconds
             
             // Stop auto-cycling after 5 seconds
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
               if (intervalRef.current) {
                 clearInterval(intervalRef.current);
                 intervalRef.current = null;
               }
+              setAutoCycleComplete(true);
             }, 5000);
           }
         });
@@ -152,16 +156,25 @@ const ServicesTabsSection = ({
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     };
-  }, [tabs, hasUserInteracted]);
+  }, [tabs, hasUserInteracted, autoCycleComplete]);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setHasUserInteracted(true);
-    // Clear the auto-cycling interval when user interacts
+    setAutoCycleComplete(true);
+    // Clear the auto-cycling interval and timeout when user interacts
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
+    }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
   };
 
@@ -221,7 +234,10 @@ const ServicesTabsSection = ({
                         {tab.content.description}
                       </p>
                       
-                      <Button className="w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo">
+                      <Button 
+                        className="w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo"
+                        onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+                      >
                         {tab.content.buttonText}
                       </Button>
                     </div>
@@ -231,7 +247,7 @@ const ServicesTabsSection = ({
                       <div className="aspect-video rounded-xl overflow-hidden bg-muted/50">
                         <img 
                           src={tab.content.imageSrc} 
-          alt={tab.content.imageAlt}
+                          alt={tab.content.imageAlt}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                       </div>
