@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -535,6 +536,7 @@ const CarWashProducts = () => {
                 size="lg" 
                 variant="secondary"
                 className="bg-background text-primary hover:bg-background/90"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 <Phone className="h-5 w-5 ml-2" />
                 اطلب عرض سعر
@@ -543,10 +545,14 @@ const CarWashProducts = () => {
                 size="lg" 
                 variant="outline"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={() => window.open('mailto:info@seapaac.com', '_blank')}
               >
                 استشارة مجانية
                 <ArrowRight className="h-5 w-5 mr-2" />
               </Button>
+            </div>
+            <div className="mt-6 text-sm opacity-80">
+              <p>تواصل معنا: info@seapaac.com | www.seapaac.com</p>
             </div>
           </motion.div>
         </div>
