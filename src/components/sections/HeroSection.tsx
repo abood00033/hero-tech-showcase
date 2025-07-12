@@ -1,165 +1,11 @@
-"use client"
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Phone, FileText } from 'lucide-react';
-import { motion, Variants } from 'framer-motion';
+import { AnimatedGroup } from '@/components/ui/animated-group';
 import { cn } from '@/lib/utils';
-import { cva, type VariantProps } from 'class-variance-authority';
 
-// Glow Component
-const glowVariants = cva("absolute w-full", {
-  variants: {
-    variant: {
-      top: "top-0",
-      above: "-top-[128px]",
-      bottom: "bottom-0",
-      below: "-bottom-[128px]",
-      center: "top-[50%]",
-    },
-  },
-  defaultVariants: {
-    variant: "top",
-  },
-});
-
-const Glow = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof glowVariants>
->(({ className, variant, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(glowVariants({ variant }), className)}
-    {...props}
-  >
-    <div
-      className={cn(
-        "absolute left-1/2 h-[256px] w-[60%] -translate-x-1/2 scale-[2.5] rounded-[50%] bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/.5)_10%,_hsl(var(--primary)/0)_60%)] sm:h-[512px]",
-        variant === "center" && "-translate-y-1/2",
-      )}
-    />
-    <div
-      className={cn(
-        "absolute left-1/2 h-[128px] w-[40%] -translate-x-1/2 scale-[2] rounded-[50%] bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/.3)_10%,_hsl(var(--primary)/0)_60%)] sm:h-[256px]",
-        variant === "center" && "-translate-y-1/2",
-      )}
-    />
-  </div>
-));
-Glow.displayName = "Glow";
-
-// Mockup Components
-const mockupVariants = cva(
-  "flex relative z-10 overflow-hidden shadow-2xl border border-border/5 border-t-border/15",
-  {
-    variants: {
-      type: {
-        mobile: "rounded-[48px] max-w-[350px]",
-        responsive: "rounded-md",
-      },
-    },
-    defaultVariants: {
-      type: "responsive",
-    },
-  },
-);
-
-interface MockupProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof mockupVariants> {}
-
-const Mockup = React.forwardRef<HTMLDivElement, MockupProps>(
-  ({ className, type, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(mockupVariants({ type, className }))}
-      {...props}
-    />
-  ),
-);
-Mockup.displayName = "Mockup";
-
-const frameVariants = cva(
-  "bg-accent/5 flex relative z-10 overflow-hidden rounded-2xl",
-  {
-    variants: {
-      size: {
-        small: "p-2",
-        large: "p-4",
-      },
-    },
-    defaultVariants: {
-      size: "small",
-    },
-  },
-);
-
-interface MockupFrameProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof frameVariants> {}
-
-const MockupFrame = React.forwardRef<HTMLDivElement, MockupFrameProps>(
-  ({ className, size, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(frameVariants({ size, className }))}
-      {...props}
-    />
-  ),
-);
-MockupFrame.displayName = "MockupFrame";
-
-// AnimatedGroup Component
-const defaultContainerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const defaultItemVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-
-interface AnimatedGroupProps {
-  children: React.ReactNode;
-  className?: string;
-  variants?: {
-    container?: Variants;
-    item?: Variants;
-  };
-}
-
-function AnimatedGroup({
-  children,
-  className,
-  variants,
-}: AnimatedGroupProps) {
-  const containerVariants = variants?.container || defaultContainerVariants;
-  const itemVariants = variants?.item || defaultItemVariants;
-
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className={cn(className)}
-    >
-      {React.Children.map(children, (child, index) => (
-        <motion.div key={index} variants={itemVariants}>
-          {child}
-        </motion.div>
-      ))}
-    </motion.div>
-  );
-}
-
-// Main Hero Component
 interface LogisticsHeroProps {
   companyName?: string;
   tagline?: string;
@@ -226,7 +72,10 @@ function LogisticsHero({
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           <AnimatedGroup variants={transitionVariants}>
-            <Badge variant="outline" className="gap-3 text-sm px-6 py-2.5 border-primary/30 bg-primary/15 backdrop-blur-sm font-cairo shadow-sm hover:bg-primary/20 transition-colors duration-300">
+            <Badge 
+              variant="outline" 
+              className="gap-3 text-sm px-6 py-2.5 border-primary/30 bg-primary/15 backdrop-blur-sm font-cairo shadow-sm hover:bg-primary/20 transition-colors duration-300"
+            >
               <span className="text-primary font-medium">✨ خدمات لوجستية متطورة</span>
               <ArrowRight className="h-3 w-3 text-primary" />
             </Badge>
@@ -272,59 +121,26 @@ function LogisticsHero({
             }}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md text-primary-foreground">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo shadow-md text-primary-foreground min-w-11 min-h-11"
+              aria-label={`${ctaButtons.contact} - تواصل معنا للحصول على خدماتنا`}
+            >
               <Phone className="h-5 w-5 ml-2" />
               {ctaButtons.contact}
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo bg-background/80 backdrop-blur-sm">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-4 border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60 hover:shadow-lg hover:scale-105 transition-all duration-300 font-cairo bg-background/80 backdrop-blur-sm min-w-11 min-h-11"
+              aria-label={`${ctaButtons.quote} - احصل على عرض سعر مخصص`}
+            >
               <FileText className="h-5 w-5 ml-2" />
               {ctaButtons.quote}
             </Button>
           </AnimatedGroup>
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes appear {
-            from {
-              opacity: 0;
-              transform: translateY(10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
-          @keyframes appear-zoom {
-            from {
-              opacity: 0;
-              transform: scale(0.95);
-            }
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-          
-          .animate-appear {
-            animation: appear 0.5s ease-out forwards;
-          }
-          
-          .animate-appear-zoom {
-            animation: appear-zoom 0.5s ease-out forwards;
-          }
-          
-          .delay-700 {
-            animation-delay: 700ms;
-          }
-          
-          .delay-1000 {
-            animation-delay: 1000ms;
-          }
-        `
-      }} />
     </section>
   );
 }
