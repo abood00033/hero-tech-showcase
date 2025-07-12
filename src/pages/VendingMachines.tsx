@@ -99,12 +99,12 @@ const VendingMachines = () => {
           <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
             انتقلوا بتجارة التجزئة إلى مستوى جديد مع مجموعتنا من مكائن البيع الذاتي المتطورة. تتميز هذه المكائن بتقنيات عالية وتصاميم عصرية، مما يوفر تجربة شراء سلسة وممتعة لعملائكم، ويفتح آفاقًا جديدة للأعمال في المواقع ذات الكثافة المرورية العالية.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold">
-              احصل على عرض سعر
-            </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4 rounded-lg font-semibold">
-              استشارة مجانية
+          <div className="flex justify-center">
+            <Button 
+              className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
+              تواصل معنا
             </Button>
           </div>
         </div>
@@ -202,12 +202,12 @@ const VendingMachines = () => {
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
             تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لاحتياجاتك
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-sebaaq-blue hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold text-lg">
+          <div className="flex justify-center">
+            <Button 
+              className="bg-sebaaq-blue hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold text-lg"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               تواصل معنا
-            </Button>
-            <Button variant="outline" className="border-2 border-sebaaq-blue text-sebaaq-blue hover:bg-sebaaq-blue hover:text-white px-12 py-4 rounded-lg font-semibold text-lg">
-              تحميل الكتالوج
             </Button>
           </div>
         </div>

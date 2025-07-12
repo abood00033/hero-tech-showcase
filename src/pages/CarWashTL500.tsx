@@ -83,14 +83,14 @@ const CarWashTL500 = () => {
                 تصميم مدروس يجمع بين الكفاءة والاقتصادية.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <div className="flex justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90"
+                  onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+                >
                   <Phone className="h-5 w-5 ml-2" />
-                  اطلب عرض سعر
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Mail className="h-5 w-5 ml-2" />
-                  استشارة مجانية
+                  تواصل معنا
                 </Button>
               </div>
             </div>
@@ -213,14 +213,14 @@ const CarWashTL500 = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             احصل على استشارة مجانية وعرض سعر مخصص لاحتياجاتك
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               <Phone className="h-5 w-5 ml-2" />
-              اتصل بنا الآن
-            </Button>
-            <Button variant="outline" size="lg">
-              <ArrowRight className="h-5 w-5 mr-2" />
-              عرض المنتجات الأخرى
+              تواصل معنا
             </Button>
           </div>
         </div>

@@ -226,14 +226,10 @@ const CarWashBT500 = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-4 bg-primary hover:bg-primary/90"
-                onClick={() => window.open('https://wa.me/966594196930', '_blank')}
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 <Phone className="h-6 w-6 ml-3" />
                 تواصل معنا
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                <PlayCircle className="h-6 w-6 ml-3" />
-                تفاصيل أكثر
               </Button>
             </motion.div>
 
@@ -864,23 +860,15 @@ const CarWashBT500 = () => {
             <p className="text-xl lg:text-2xl opacity-90 max-w-3xl mx-auto">
               تواصل معنا اليوم واحصل على استشارة مجانية وعرض سعر مخصص لاحتياجاتك
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex justify-center">
               <Button 
                 size="lg" 
                 variant="secondary"
                 className="text-lg px-8 py-4"
-                onClick={() => window.open('https://wa.me/966594196930', '_blank')}
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 <Phone className="h-6 w-6 ml-3" />
-                تواصل معنا الآن
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
-              >
-                <Calendar className="h-6 w-6 ml-3" />
-                احجز موعد زيارة
+                تواصل معنا
               </Button>
             </div>
           </motion.div>

@@ -373,13 +373,13 @@ const BT900FuturisticPage: React.FC = () => {
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90 shadow-lg hover:shadow-primary/25 transition-all duration-300">
-                <Eye className="w-5 h-5 ml-2" />
-                شاهد العرض التفاعلي
-              </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-primary/40 hover:bg-primary/10 transition-all duration-300">
+              <Button 
+                size="lg" 
+                className="px-8 py-4 text-lg bg-primary hover:bg-primary/90 shadow-lg hover:shadow-primary/25 transition-all duration-300"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+              >
                 <Phone className="w-5 h-5 ml-2" />
-                تواصل مع خبير
+                تواصل معنا
               </Button>
             </motion.div>
           </motion.div>
@@ -1280,14 +1280,14 @@ const BT900FuturisticPage: React.FC = () => {
               انضم إلى مستقبل تقنية غسيل السيارات مع أحدث الأنظمة الذكية
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90">
+            <div className="flex justify-center">
+              <Button 
+                size="lg" 
+                className="px-8 py-4 text-lg bg-primary hover:bg-primary/90"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+              >
                 <Phone className="w-5 h-5 ml-2" />
-                احجز استشارة مجانية
-              </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
-                <Mail className="w-5 h-5 ml-2" />
-                اطلب عرض سعر
+                تواصل معنا
               </Button>
             </div>
           </motion.div>
