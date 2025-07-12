@@ -1,7 +1,7 @@
 
+import MachineCategories from '../components/sections/MachineCategories';
 import SebaqHeroSection from '../components/sections/SebaqHeroSection';
 import WhyChooseSebaq from '../components/sections/WhyChooseSebaq';
-import MachineCategories from '../components/sections/MachineCategories';
 import SebaqServices from '../components/sections/SebaqServices';
 import SebaqStats from '../components/sections/SebaqStats';
 import TechnicalExpertise from '../components/sections/TechnicalExpertise';
@@ -11,8 +11,8 @@ const SebaqMachine = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SebaqHeroSection />
-      <WhyChooseSebaq />
       <MachineCategories />
+      <WhyChooseSebaq />
       <SebaqServices />
       <SebaqStats />
       <TechnicalExpertise />

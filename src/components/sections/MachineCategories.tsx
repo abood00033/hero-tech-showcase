@@ -10,6 +10,13 @@ const MachineCategories = () => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
   const machineCategories = [{
+    title: "مغاسل السيارات الأوتوماتيكية",
+    subtitle: "نظافة فائقة، كفاءة لا تضاهى",
+    description: "ارتقوا بتجربة غسيل السيارات مع أحدث أنظمة المغاسل الأوتوماتيكية",
+    image: "/lovable-uploads/c89ef772-7b7a-46ad-8c9e-033a7db07978.png",
+    link: "/مغاسل-السيارات",
+    features: ["غسيل سريع", "توفير المياه", "نتائج مثالية"]
+  }, {
     title: "مكائن البيع الذاتي",
     subtitle: "تجربة مبتكرة، أرباح مستمرة",
     description: "انتقلوا بتجارة التجزئة إلى مستوى جديد مع مجموعتنا من مكائن البيع الذاتي المتطورة",
@@ -23,13 +30,6 @@ const MachineCategories = () => {
     image: "/lovable-uploads/655af47c-6513-4fb2-a34e-abf0b9ff4eb0.png",
     link: "/خطوط-الإنتاج",
     features: ["أتمتة كاملة", "كفاءة عالية", "توفير في التكلفة"]
-  }, {
-    title: "مغاسل السيارات الأوتوماتيكية",
-    subtitle: "نظافة فائقة، كفاءة لا تضاهى",
-    description: "ارتقوا بتجربة غسيل السيارات مع أحدث أنظمة المغاسل الأوتوماتيكية",
-    image: "/lovable-uploads/c89ef772-7b7a-46ad-8c9e-033a7db07978.png",
-    link: "/مغاسل-السيارات",
-    features: ["غسيل سريع", "توفير المياه", "نتائج مثالية"]
   }, {
     title: "المشاريع الترفيهية",
     subtitle: "استثمر في مستقبل الترفيه السعودي",
