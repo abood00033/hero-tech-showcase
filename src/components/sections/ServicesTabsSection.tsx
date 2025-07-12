@@ -184,7 +184,8 @@ const ServicesTabsSection = ({
 
         <div className="max-w-6xl mx-auto">
           <Tabs value={activeTab} onValueChange={handleTabChange}>
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg mb-6">
+            {/* Tab List */}
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.value}
@@ -197,40 +198,40 @@ const ServicesTabsSection = ({
               ))}
             </TabsList>
 
-            {/* Content appears directly below tabs */}
-            <div className="bg-gradient-to-br from-background to-muted/30 rounded-2xl border border-border/50 shadow-lg overflow-hidden">
+            {/* Tab Content - directly below tabs with minimal spacing */}
+            <div className="mt-4">
               {tabs.map((tab) => (
                 <TabsContent
                   key={tab.value}
                   value={tab.value}
-                  className="m-0 p-8 space-y-6"
+                  className="m-0 bg-gradient-to-br from-background to-muted/30 rounded-2xl border border-border/50 shadow-lg p-6"
                 >
-                  <div className="flex flex-col lg:flex-row gap-8 items-center">
+                  <div className="flex flex-col lg:flex-row gap-6 items-start">
                     {/* Content */}
                     <div className="flex-1 space-y-4">
                       <Badge variant="outline" className="w-fit bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
                         {tab.content.badge}
                       </Badge>
                       
-                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground leading-tight font-cairo">
+                      <h3 className="text-xl lg:text-2xl font-bold text-foreground leading-tight font-cairo">
                         {tab.content.title}
                       </h3>
                       
-                      <p className="text-muted-foreground leading-relaxed whitespace-pre-line font-cairo">
+                      <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line font-cairo">
                         {tab.content.description}
                       </p>
                       
-                      <Button className="w-fit gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo" size="lg">
+                      <Button className="w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo">
                         {tab.content.buttonText}
                       </Button>
                     </div>
 
                     {/* Image */}
-                    <div className="flex-shrink-0 w-full lg:w-80">
+                    <div className="flex-shrink-0 w-full lg:w-72">
                       <div className="aspect-video rounded-xl overflow-hidden bg-muted/50">
                         <img 
                           src={tab.content.imageSrc} 
-                          alt={tab.content.imageAlt}
+          alt={tab.content.imageAlt}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                       </div>
