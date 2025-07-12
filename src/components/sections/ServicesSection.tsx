@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Shield, Clock, Users, Star, Globe, Headphones, Truck, ShoppingCart, MessageCircle, Search, Eye, Package, MapPin, Zap, Factory, Handshake, CheckCircle, Warehouse, Ship, Archive } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -9,9 +9,18 @@ interface ServiceCardProps {
   isHovered: boolean;
   onHover: () => void;
   onLeave: () => void;
+  route?: string;
 }
 
-const ServiceCard = ({ icon: Icon, title, description, isHovered, onHover, onLeave }: ServiceCardProps) => {
+const ServiceCard = ({ icon: Icon, title, description, isHovered, onHover, onLeave, route }: ServiceCardProps) => {
+  const navigate = useNavigate();
+
+  const handleDetailsClick = () => {
+    if (route) {
+      navigate(route);
+    }
+  };
+
   return (
     <article 
       className={`group relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-2 focus-within:ring-4 focus-within:ring-sebaaq-blue/50 ${
@@ -41,6 +50,14 @@ const ServiceCard = ({ icon: Icon, title, description, isHovered, onHover, onLea
         <p className="text-gray-600 text-sm leading-relaxed">
           {description}
         </p>
+        {route && (
+          <button
+            onClick={handleDetailsClick}
+            className="mt-4 px-6 py-2 bg-sebaaq-blue text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium"
+          >
+            تفاصيل اكثر
+          </button>
+        )}
       </div>
       
       {/* Hover Effect Background */}
@@ -58,62 +75,74 @@ const ServicesSection = () => {
     {
       icon: Search,
       title: "بحث عن أفضل المصانع",
-      description: "نساعدك في العثور على المصانع الحقيقية التي تُنتج المنتجات التي تحتاجها بجودة عالية وسعر مناسب، مع التأكد من أن المصنع مرخص وموثوق."
+      description: "نساعدك في العثور على المصانع الحقيقية التي تُنتج المنتجات التي تحتاجها بجودة عالية وسعر مناسب، مع التأكد من أن المصنع مرخص وموثوق.",
+      route: "/factory-search"
     },
     {
       icon: Handshake,
       title: "تفاوض مع المصانع",
-      description: "فريقنا في الصين يتولى مهمة التحقق النهائي من جودة وشكل وعدد المنتجات قبل شحنها، مما يقلل من احتمالية المفاجآت عند الوصول."
+      description: "فريقنا في الصين يتولى مهمة التحقق النهائي من جودة وشكل وعدد المنتجات قبل شحنها، مما يقلل من احتمالية المفاجآت عند الوصول.",
+      route: "/consultation-services"
     },
     {
       icon: Truck,
       title: "خدمة الشحن من الباب للباب",
-      description: "نتولى عملية الشحن كاملة من عنوان المصنع في الصين وحتى باب العميل في السعودية، مما يوفر عليك الوقت والتعقيد والمتابعة مع أطراف متعددة."
+      description: "نتولى عملية الشحن كاملة من عنوان المصنع في الصين وحتى باب العميل في السعودية، مما يوفر عليك الوقت والتعقيد والمتابعة مع أطراف متعددة.",
+      route: "/shipping-calculator"
     },
     {
       icon: Zap,
       title: "شحن جزئي",
-      description: "نوفر لك أنظمة شحن مرنة (مثل الشحن الجزئي أو الموحد) باستخدام أدوات تقنية لتقليل التكاليف وتسريع العmليات."
+      description: "نوفر لك أنظمة شحن مرنة (مثل الشحن الجزئي أو الموحد) باستخدام أدوات تقنية لتقليل التكاليف وتسريع العمليات.",
+      route: "/shipping-calculator"
     },
     {
       icon: Eye,
       title: "فحص البضاعة قبل الشحن",
-      description: "نؤمن بأن الثقة لا تكفي. نقوم بفحص المنتجات قبل الشراء والتأكد من مطابقتها للمواصفات، مع التفاوض على أي تعديل أو تحسين مطلوب قبل التصنيع النهائي."
+      description: "نؤمن بأن الثقة لا تكفي. نقوم بفحص المنتجات قبل الشراء والتأكد من مطابقتها للمواصفات، مع التفاوض على أي تعديل أو تحسين مطلوب قبل التصنيع النهائي.",
+      route: "/consultation-services"
     },
     {
       icon: Package,
       title: "تجميع الشحنات من عدة موردين",
-      description: "إذا اشتريت من أكثر من مصنع أو مورد، نقوم بتجميع الشحنات جميعها في مستودعاتنا في الصين لضمان شحن موحد وتوفير في التكاليف."
+      description: "إذا اشتريت من أكثر من مصنع أو مورد، نقوم بتجميع الشحنات جميعها في مستودعاتنا في الصين لضمان شحن موحد وتوفير في التكاليف.",
+      route: "/shipping-calculator"
     },
     {
       icon: Warehouse,
       title: "تجميع وتخزين مؤقت في مستودعاتنا",
-      description: "نمتلك مستودعات استراتيجية في الصين والسعودية لتخزين شحنتك بشكل آمن ومنظم إلى حين موعد الشحن أو التوزيع النهائي."
+      description: "نمتلك مستودعات استراتيجية في الصين والسعودية لتخزين شحنتك بشكل آمن ومنظم إلى حين موعد الشحن أو التوزيع النهائي.",
+      route: "/shipping-calculator"
     },
     {
       icon: CheckCircle,
       title: "فحص الجودة والتفاوض",
-      description: "فريقنا المتخصص يقوم بفحص دقيق للمنتجات والتفاوض مع المصانع لضمان الحصول على أفضل جودة وأسعار مناسبة."
+      description: "فريقنا المتخصص يقوم بفحص دقيق للمنتجات والتفاوض مع المصانع لضمان الحصول على أفضل جودة وأسعار مناسبة.",
+      route: "/consultation-services"
     },
     {
       icon: Shield,
       title: "التخليص الجمركي في السعودية",
-      description: "فريق التخليص التابع لنا يتعامل مع الجمارك السعودية باحترافية عالية لتسريع دخول الشحنة وتقليل أي تأخير محتمل أو رسوم إضافية."
+      description: "فريق التخليص التابع لنا يتعامل مع الجمارك السعودية باحترافية عالية لتسريع دخول الشحنة وتقليل أي تأخير محتمل أو رسوم إضافية.",
+      route: "/shipping-calculator"
     },
     {
       icon: MapPin,
       title: "تتبع شحنتك لحظة بلحظة",
-      description: "نقدم لك نظام تتبع إلكتروني حديث يتيح لك معرفة موقع شحنتك في كل لحظة، من لحظة الشحن إلى التسليم، لضمان الشفافية وراحة البال."
+      description: "نقدم لك نظام تتبع إلكتروني حديث يتيح لك معرفة موقع شحنتك في كل لحظة، من لحظة الشحن إلى التسليم، لضمان الشفافية وراحة البال.",
+      route: "/shipping-calculator"
     },
     {
       icon: ShoppingCart,
       title: "حلول خدمات التجارة الإلكترونية",
-      description: "ندعم المتاجر الإلكترونية في السعودية بخدمات مخصصة تشمل الشحن الجزئي، التغليف حسب الطلب، وربط مباشر بين الموردين والمتاجر."
+      description: "ندعم المتاجر الإلكترونية في السعودية بخدمات مخصصة تشمل الشحن الجزئي، التغليف حسب الطلب، وربط مباشر بين الموردين والمتاجر.",
+      route: "/alibaba"
     },
     {
       icon: MessageCircle,
       title: "استشارات مجانية",
-      description: "نقدم لك توجيهًا مجانيًا عبر خبرائنا المتخصصين في السوق الصيني، يشمل توصيات للمنتجات والموردين، وتحذيرات من المخاطر المحتملة."
+      description: "نقدم لك توجيهًا مجانيًا عبر خبرائنا المتخصصين في السوق الصيني، يشمل توصيات للمنتجات والموردين، وتحذيرات من المخاطر المحتملة.",
+      route: "/consultation-services"
     }
   ];
 
@@ -155,6 +184,7 @@ const ServicesSection = () => {
               isHovered={hoveredCard === index}
               onHover={() => setHoveredCard(index)}
               onLeave={() => setHoveredCard(null)}
+              route={service.route}
             />
           ))}
         </div>
