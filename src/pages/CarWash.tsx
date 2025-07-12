@@ -96,7 +96,7 @@ const CarWash = () => {
         "صيانة سهلة"
       ],
       route: "/car-wash/bt500",
-      image: "/lovable-uploads/f4a3ae4c-73f0-4dbe-8100-49e25dd7383b.png",
+      image: "/lovable-uploads/292e60d0-fc4f-41d6-8f28-a0573676f505.png",
       featured: false
     }
   ];
