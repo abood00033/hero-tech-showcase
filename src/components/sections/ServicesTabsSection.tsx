@@ -165,65 +165,82 @@ const ServicesTabsSection = ({
     }
   };
 
+  const activeTabContent = tabs.find(tab => tab.value === activeTab)?.content;
+
   return (
-    <section ref={sectionRef} className="py-20 bg-background" dir="rtl">
+    <section ref={sectionRef} className="py-16 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-6 text-center mb-12">
           <Badge variant="outline" className="text-primary border-primary">
             {badge}
           </Badge>
-          <h1 className="max-w-4xl text-5xl md:text-6xl font-bold text-foreground font-cairo">
+          <h1 className="max-w-4xl text-4xl md:text-5xl font-bold text-foreground font-cairo">
             {heading}
           </h1>
-          <p className="text-muted-foreground text-xl max-w-2xl font-cairo">
+          <p className="text-muted-foreground text-lg max-w-2xl font-cairo">
             {description}
           </p>
         </div>
 
-        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-16">
-          <div className="relative">
-            <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg">
+        <div className="max-w-6xl mx-auto">
+          <Tabs value={activeTab} onValueChange={handleTabChange}>
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg mb-6">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="flex flex-col sm:flex-col items-center gap-2 sm:gap-3 rounded-xl px-3 sm:px-6 py-4 sm:py-8 text-sm sm:text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
+                  className="flex flex-col items-center gap-3 rounded-xl px-4 py-6 text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
                 >
-                  <div className="text-lg sm:text-xl">{tab.icon}</div>
-                  <span className="text-center text-sm sm:text-lg md:text-xl font-bold leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">{tab.label}</span>
+                  <div className="text-xl">{tab.icon}</div>
+                  <span className="text-center text-sm sm:text-base font-bold leading-tight">{tab.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
-          </div>
 
-          <div className="mt-2">
-            {tabs.map((tab) => (
-              <TabsContent
-                key={tab.value}
-                value={tab.value}
-                className="flex justify-center items-center"
-              >
-                <div className="flex flex-col gap-3 text-center max-w-4xl">
-                  <div className="space-y-2">
-                    <Badge variant="outline" className="w-fit mx-auto bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
-                      {tab.content.badge}
-                    </Badge>
-                    <h3 className="text-2xl font-bold lg:text-3xl text-foreground leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">
-                      {tab.content.title}
-                    </h3>
+            {/* Content appears directly below tabs */}
+            <div className="bg-gradient-to-br from-background to-muted/30 rounded-2xl border border-border/50 shadow-lg overflow-hidden">
+              {tabs.map((tab) => (
+                <TabsContent
+                  key={tab.value}
+                  value={tab.value}
+                  className="m-0 p-8 space-y-6"
+                >
+                  <div className="flex flex-col lg:flex-row gap-8 items-center">
+                    {/* Content */}
+                    <div className="flex-1 space-y-4">
+                      <Badge variant="outline" className="w-fit bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
+                        {tab.content.badge}
+                      </Badge>
+                      
+                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground leading-tight font-cairo">
+                        {tab.content.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground leading-relaxed whitespace-pre-line font-cairo">
+                        {tab.content.description}
+                      </p>
+                      
+                      <Button className="w-fit gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo" size="lg">
+                        {tab.content.buttonText}
+                      </Button>
+                    </div>
+
+                    {/* Image */}
+                    <div className="flex-shrink-0 w-full lg:w-80">
+                      <div className="aspect-video rounded-xl overflow-hidden bg-muted/50">
+                        <img 
+                          src={tab.content.imageSrc} 
+                          alt={tab.content.imageAlt}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground text-base lg:text-lg leading-relaxed whitespace-pre-line font-cairo">
-                    {tab.content.description}
-                  </p>
-                  <Button className="mt-4 w-fit mx-auto gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 text-base px-6 py-4 font-cairo" size="lg">
-                    {tab.content.buttonText}
-                  </Button>
-                </div>
-              </TabsContent>
-            ))}
-          </div>
-        </Tabs>
-
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
+        </div>
       </div>
     </section>
   );
