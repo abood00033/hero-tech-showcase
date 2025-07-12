@@ -85,9 +85,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sebaaq: {
-					blue: '#2295d1',
-					midnight: '#003366',
-					charcoal: '#121212',
+					blue: 'hsl(var(--sebaaq-blue))',
+					midnight: 'hsl(var(--sebaaq-midnight))',
+					charcoal: 'hsl(var(--sebaaq-charcoal))',
 				}
 			},
 			spacing: {
