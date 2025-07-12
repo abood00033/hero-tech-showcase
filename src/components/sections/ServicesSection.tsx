@@ -199,7 +199,7 @@ const ServicesSection = () => {
               تواصل معنا اليوم واحصل على استشارة مجانية
             </p>
             <button className="bg-white text-sebaaq-midnight px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-white/50">
-              تواصل معنا الآن
+              تواصل معنا
             </button>
           </div>
         </div>
