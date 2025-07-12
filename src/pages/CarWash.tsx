@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle } from 'lucide-react';
@@ -97,7 +96,7 @@ const CarWash = () => {
         "صيانة سهلة"
       ],
       route: "/car-wash/bt500",
-      image: "/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png",
+      image: "/lovable-uploads/f4a3ae4c-73f0-4dbe-8100-49e25dd7383b.png",
       featured: false
     }
   ];
