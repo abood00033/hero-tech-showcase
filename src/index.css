@@ -140,13 +140,26 @@ All colors MUST be HSL.
   img {
     @apply max-w-full h-auto;
     content-visibility: auto;
+    loading: lazy;
+    decoding: async;
   }
 
-  /* Focus improvements for accessibility */
+  /* Enhanced focus improvements for accessibility - WCAG AA compliance */
   *:focus-visible {
     outline: 3px solid hsl(var(--primary));
     outline-offset: 2px;
     border-radius: var(--radius);
+  }
+
+  /* High contrast text for better readability */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--foreground));
+    font-weight: 700;
+  }
+
+  /* Minimum contrast ratios for WCAG compliance */
+  .text-muted-foreground {
+    color: hsl(215 16% 40%); /* Improved contrast ratio */
   }
 }
 

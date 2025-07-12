@@ -47,13 +47,13 @@ const SebaqHeroSection = () => {
                 <span className="text-sm font-medium">شريكك الموثوق في الاستيراد</span>
               </div>
               
-              <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="font-bold text-4xl md:text-6xl lg:text-7xl leading-tight">
                 سـبـاق
                 <span className="gradient-text block mt-2">للآلات الصناعية</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                نقدم حلول شاملة للاستيراد من الصين وتوريد وتركيب أحدث المكائن والمعدات الصناعية
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
+                شريكك الموثوق في <span className="text-sebaaq-blue font-semibold">الاستيراد من الصين</span> وتوريد وتركيب أحدث المكائن والمعدات الصناعية
               </p>
             </div>
             
