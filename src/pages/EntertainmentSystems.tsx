@@ -97,12 +97,9 @@ const EntertainmentSystems = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal overflow-hidden">
-        {/* Background Image */}
+        {/* Visual Entertainment Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url('/lovable-uploads/9634cacf-6533-42eb-9148-50f8ca4001e1.png')`
-          }}
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-blue-500/10"
         />
         
         {/* Gradient Overlay */}

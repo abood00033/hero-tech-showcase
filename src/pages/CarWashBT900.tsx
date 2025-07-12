@@ -720,11 +720,89 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/581c5e13-ec7b-4c0e-b76a-83c44b804207.png"
-              alt="BT900 - 9 فرش ناعمة جداً"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* 9 Brushes System Visual */}
+            <div className="bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-2xl p-12 border border-green-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <h3 className="text-4xl font-bold text-green-600">9 فرش ناعمة جداً</h3>
+                
+                {/* Brush Layout Visualization */}
+                <div className="max-w-4xl mx-auto">
+                  <div className="grid grid-cols-9 gap-2 items-center">
+                    {/* Top Brushes */}
+                    <div className="col-span-9 text-center mb-4">
+                      <div className="grid grid-cols-3 gap-4">
+                        {[1,2,3].map((i) => (
+                          <div key={i} className="text-center space-y-2">
+                            <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                              <Activity className="h-8 w-8 text-green-500" />
+                            </div>
+                            <p className="text-xs font-semibold">فرشة علوية {i}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Side and Wheel Brushes */}
+                    <div className="col-span-9 grid grid-cols-6 gap-4 items-center">
+                      {/* Left Side */}
+                      <div className="text-center space-y-2">
+                        <div className="w-14 h-14 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                          <Activity className="h-6 w-6 text-blue-500" />
+                        </div>
+                        <p className="text-xs font-semibold">جانبية يسار</p>
+                      </div>
+                      
+                      {/* Wheel Brushes */}
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center border border-orange-500/30">
+                          <Car className="h-5 w-5 text-orange-500" />
+                        </div>
+                        <p className="text-xs font-semibold">عجلة</p>
+                      </div>
+                      
+                      {/* Car in Center */}
+                      <div className="col-span-2 text-center">
+                        <div className="w-24 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center border border-purple-500/30">
+                          <Car className="h-10 w-10 text-purple-500" />
+                        </div>
+                        <p className="text-sm font-semibold mt-2">السيارة</p>
+                      </div>
+                      
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center border border-orange-500/30">
+                          <Car className="h-5 w-5 text-orange-500" />
+                        </div>
+                        <p className="text-xs font-semibold">عجلة</p>
+                      </div>
+                      
+                      {/* Right Side */}
+                      <div className="text-center space-y-2">
+                        <div className="w-14 h-14 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                          <Activity className="h-6 w-6 text-blue-500" />
+                        </div>
+                        <p className="text-xs font-semibold">جانبية يمين</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Brush Features */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-background/50 rounded-xl p-4 border">
+                    <h4 className="font-bold text-foreground mb-2">مواد عالية الجودة</h4>
+                    <p className="text-sm text-muted-foreground">مايكروفايبر وطبقات إيفا فوم</p>
+                  </div>
+                  <div className="bg-background/50 rounded-xl p-4 border">
+                    <h4 className="font-bold text-foreground mb-2">تصميم متطور</h4>
+                    <p className="text-sm text-muted-foreground">حركات مرنة وقابلة للتعديل</p>
+                  </div>
+                  <div className="bg-background/50 rounded-xl p-4 border">
+                    <h4 className="font-bold text-foreground mb-2">صناعة يابانية</h4>
+                    <p className="text-sm text-muted-foreground">مصممة للبيئة الصحراوية</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
@@ -790,11 +868,69 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/cfc0065f-5c84-45b1-b968-9886a86f2966.png"
-              alt="BT900 - 6 مجففات بقوة 5.5KW / 7.5KW"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* 6 Dryers System Visual */}
+            <div className="bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-indigo-500/10 rounded-2xl p-12 border border-cyan-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <h3 className="text-4xl font-bold text-cyan-600">6 مجففات بقوة 5.5KW / 7.5KW</h3>
+                
+                {/* Dryers Layout */}
+                <div className="max-w-4xl mx-auto">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Top Dryers */}
+                    <div className="lg:col-span-2">
+                      <h4 className="text-xl font-bold text-cyan-600 mb-4">4 مجففات علوية - 5.5KW</h4>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[1,2,3,4].map((i) => (
+                          <div key={i} className="text-center space-y-2">
+                            <div className="w-16 h-16 bg-cyan-500/20 rounded-lg flex items-center justify-center border border-cyan-500/30">
+                              <Wind className="h-8 w-8 text-cyan-500" />
+                            </div>
+                            <p className="text-xs font-semibold">مجفف علوي {i}</p>
+                            <p className="text-xs text-muted-foreground">5.5 كيلوواط</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Side Dryers */}
+                    <div>
+                      <h4 className="text-xl font-bold text-blue-600 mb-4">2 مجفف جانبي - 7.5KW</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {[1,2].map((i) => (
+                          <div key={i} className="text-center space-y-2">
+                            <div className="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
+                              <Wind className="h-8 w-8 text-blue-500" />
+                            </div>
+                            <p className="text-xs font-semibold">مجفف جانبي {i}</p>
+                            <p className="text-xs text-muted-foreground">7.5 كيلوواط</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Performance Stats */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className="bg-background/50 rounded-xl p-4 border text-center">
+                    <div className="text-3xl font-bold text-cyan-600">6</div>
+                    <p className="text-sm font-semibold">مجففات قوية</p>
+                  </div>
+                  <div className="bg-background/50 rounded-xl p-4 border text-center">
+                    <div className="text-3xl font-bold text-blue-600">37</div>
+                    <p className="text-sm font-semibold">كيلوواط إجمالي</p>
+                  </div>
+                  <div className="bg-background/50 rounded-xl p-4 border text-center">
+                    <div className="text-3xl font-bold text-indigo-600">99%</div>
+                    <p className="text-sm font-semibold">نسبة التجفيف</p>
+                  </div>
+                  <div className="bg-background/50 rounded-xl p-4 border text-center">
+                    <div className="text-3xl font-bold text-purple-600">60+</div>
+                    <p className="text-sm font-semibold">سيارة/ساعة</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
@@ -838,11 +974,74 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/6d8feb93-ac5b-49d1-bbec-faf21d0ab5a2.png"
-              alt="BT900 - أوضاع الغسيل"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* Wash Programs Visual */}
+            <div className="bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-2xl p-12 border border-green-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <h3 className="text-4xl font-bold text-green-600">أوضاع الغسيل المتقدمة</h3>
+                
+                {/* Wash Programs Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                  <div className="text-center space-y-3">
+                    <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                      <Wind className="h-10 w-10 text-blue-500" />
+                    </div>
+                    <h4 className="font-bold text-sm">تجفيف فائق</h4>
+                    <p className="text-xs text-muted-foreground">99% نسبة تجفيف</p>
+                  </div>
+                  
+                  <div className="text-center space-y-3">
+                    <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center border border-yellow-500/30">
+                      <Sparkles className="h-10 w-10 text-yellow-500" />
+                    </div>
+                    <h4 className="font-bold text-sm">واكس متطور</h4>
+                    <p className="text-xs text-muted-foreground">لمعان وحماية</p>
+                  </div>
+                  
+                  <div className="text-center space-y-3">
+                    <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                      <Droplets className="h-10 w-10 text-green-500" />
+                    </div>
+                    <h4 className="font-bold text-sm">رغوة ذكية</h4>
+                    <p className="text-xs text-muted-foreground">تنظيف عميق</p>
+                  </div>
+                  
+                  <div className="text-center space-y-3">
+                    <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center border border-purple-500/30">
+                      <Activity className="h-10 w-10 text-purple-500" />
+                    </div>
+                    <h4 className="font-bold text-sm">غسيل مسبق</h4>
+                    <p className="text-xs text-muted-foreground">إزالة الأوساخ الصعبة</p>
+                  </div>
+                  
+                  <div className="text-center space-y-3">
+                    <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center border border-orange-500/30">
+                      <Car className="h-10 w-10 text-orange-500" />
+                    </div>
+                    <h4 className="font-bold text-sm">غسيل أسفل</h4>
+                    <p className="text-xs text-muted-foreground">تنظيف الهيكل السفلي</p>
+                  </div>
+                </div>
+                
+                {/* Advanced Features */}
+                <div className="bg-background/30 rounded-xl p-6 border">
+                  <h4 className="text-xl font-bold text-foreground mb-4">مميزات متقدمة</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="text-center">
+                      <Brain className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <p className="text-sm font-semibold">تحكم ذكي بالذكاء الاصطناعي</p>
+                    </div>
+                    <div className="text-center">
+                      <Settings className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <p className="text-sm font-semibold">قابلة للتخصيص والبرمجة</p>
+                    </div>
+                    <div className="text-center">
+                      <Radar className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <p className="text-sm font-semibold">استشعار تلقائي للمركبة</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
@@ -878,11 +1077,78 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/a1b5ab84-e49f-4cc1-8e7a-b097219fe52c.png"
-              alt="BT900 - المضخة PINFL"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* PINFL Pump System Visual */}
+            <div className="bg-gradient-to-br from-red-500/10 via-orange-500/10 to-yellow-500/10 rounded-2xl p-12 border border-red-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <div className="flex items-center justify-center space-x-4 space-x-reverse">
+                  <Factory className="h-12 w-12 text-red-500" />
+                  <h3 className="text-4xl font-bold text-red-600">مضخة PINFL الألمانية</h3>
+                  <Award className="h-12 w-12 text-yellow-500" />
+                </div>
+                
+                {/* Pump Specifications */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/30">
+                      <Gauge className="h-10 w-10 text-red-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">ضغط قوي</h4>
+                    <p className="text-3xl font-bold text-red-600 mb-2">120</p>
+                    <p className="text-sm text-muted-foreground">بار ضغط</p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/30">
+                      <Zap className="h-10 w-10 text-orange-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">قوة فائقة</h4>
+                    <p className="text-3xl font-bold text-orange-600 mb-2">22</p>
+                    <p className="text-sm text-muted-foreground">كيلوواط</p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-yellow-500/30">
+                      <Droplets className="h-10 w-10 text-yellow-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">تدفق عالي</h4>
+                    <p className="text-3xl font-bold text-yellow-600 mb-2">60</p>
+                    <p className="text-sm text-muted-foreground">لتر/دقيقة</p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                      <Shield className="h-10 w-10 text-green-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">موثوقية</h4>
+                    <p className="text-3xl font-bold text-green-600 mb-2">99.9%</p>
+                    <p className="text-sm text-muted-foreground">معدل التشغيل</p>
+                  </div>
+                </div>
+                
+                {/* German Quality Features */}
+                <div className="bg-background/30 rounded-xl p-6 border">
+                  <h4 className="text-xl font-bold text-foreground mb-4">مميزات الجودة الألمانية</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">مقاومة التآكل</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">كفاءة طاقة عالية</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">صيانة قليلة</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">عمر تشغيلي طويل</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">

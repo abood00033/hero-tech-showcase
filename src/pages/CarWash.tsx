@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle } from 'lucide-react';
+import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CarWash = () => {
@@ -77,7 +77,7 @@ const CarWash = () => {
         "دعم فني مدى الحياة"
       ],
       route: "/car-wash/bt900",
-      image: "/lovable-uploads/c5375e9e-6274-4fe3-ace0-0c5f793ff6d0.png",
+      visual: "BT900",
       featured: true
     },
     {
@@ -97,7 +97,7 @@ const CarWash = () => {
         "صيانة سهلة"
       ],
       route: "/car-wash/bt500",
-      image: "/lovable-uploads/292e60d0-fc4f-41d6-8f28-a0573676f505.png",
+      visual: "BT500",
       featured: false
     }
   ];
@@ -120,7 +120,7 @@ const CarWash = () => {
         "تجفيف هوائي قوي"
       ],
       route: "/car-wash/tl500",
-      image: "/lovable-uploads/dfaffd5e-3ebc-4472-af18-6ece10fc1502.png",
+      visual: "TL500",
       featured: false
     },
     {
@@ -140,7 +140,7 @@ const CarWash = () => {
         "تجفيف هوائي"
       ],
       route: "/car-wash/tl400",
-      image: "/lovable-uploads/d3dbcc1a-125e-4102-9c54-9702d6fd142e.png",
+      visual: "TL400",
       featured: false
     },
     {
@@ -160,7 +160,7 @@ const CarWash = () => {
         "مناسب للمساحات الصغيرة"
       ],
       route: "/car-wash/tl300",
-      image: "/lovable-uploads/abb4e71e-24b1-482b-a871-ee34c063b64f.png",
+      visual: "TL300",
       featured: false
     }
   ];
@@ -183,13 +183,30 @@ const CarWash = () => {
           </div>
         </div>
         
-        {/* Product Image */}
-        <div className="aspect-square rounded-lg overflow-hidden border-2 border-sebaaq-blue/20 mb-4">
-          <img
-            src={product.image}
-            alt={`${product.title} - نظام غسيل السيارات`}
-            className="w-full h-full object-cover"
-          />
+        {/* Visual Machine Representation */}
+        <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-6 border border-primary/20 mb-6">
+          <div className="h-full flex flex-col justify-between">
+            {/* Machine Header */}
+            <div className="text-center space-y-2">
+              <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
+                <Car className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-primary">{product.visual}</h3>
+              <p className="text-sm text-muted-foreground">نظام غسيل متطور</p>
+            </div>
+            
+            {/* Quick Features */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                <Timer className="h-5 w-5 text-primary mx-auto mb-1" />
+                <p className="text-xs font-semibold">{product.washTime}</p>
+              </div>
+              <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                <Activity className="h-5 w-5 text-primary mx-auto mb-1" />
+                <p className="text-xs font-semibold">{product.capacity}</p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-grow">
@@ -256,13 +273,8 @@ const CarWash = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url('/lovable-uploads/c2ca66ed-2350-48cc-bd82-dbe45200dae6.png')`
-          }}
-        />
+        {/* Visual Car Wash Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sebaaq-blue/10 via-blue-500/5 to-cyan-500/10"></div>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-sebaaq-midnight/80 to-sebaaq-charcoal/80"></div>

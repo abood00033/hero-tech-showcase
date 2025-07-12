@@ -31,7 +31,8 @@ import {
   Clock,
   Car,
   WashingMachine,
-  ArrowRight
+  ArrowRight,
+  Award
 } from 'lucide-react';
 
 const CarWashBT500 = () => {
@@ -618,11 +619,57 @@ const CarWashBT500 = () => {
             </div>
             
             <div>
-              <img 
-                src="/lovable-uploads/6db42f46-e57e-4002-a108-a0b5041244bd.png"
-                alt="Dryer System"
-                className="w-full rounded-3xl shadow-2xl"
-              />
+              {/* Dryer System Visual */}
+              <div className="bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-blue-500/20 shadow-2xl">
+                <div className="text-center space-y-8">
+                  <h3 className="text-4xl font-bold text-blue-600">6 مجففات قوية</h3>
+                  
+                  {/* Dryer Visualization */}
+                  <div className="grid grid-cols-3 lg:grid-cols-6 gap-4">
+                    {/* Top Dryers */}
+                    <div className="col-span-3 lg:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-2">
+                      {[1,2,3,4].map((i) => (
+                        <div key={i} className="text-center space-y-2">
+                          <div className="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
+                            <Wind className="h-8 w-8 text-blue-500" />
+                          </div>
+                          <p className="text-xs font-semibold">5.5 كيلوواط</p>
+                          <p className="text-xs text-muted-foreground">مجفف علوي</p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Side Dryers */}
+                    <div className="col-span-3 lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                      {[1,2].map((i) => (
+                        <div key={i} className="text-center space-y-2">
+                          <div className="w-16 h-16 bg-cyan-500/20 rounded-lg flex items-center justify-center border border-cyan-500/30">
+                            <Wind className="h-8 w-8 text-cyan-500" />
+                          </div>
+                          <p className="text-xs font-semibold">7.5 كيلوواط</p>
+                          <p className="text-xs text-muted-foreground">مجفف جانبي</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Performance Stats */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-background/50 rounded-xl p-4 border">
+                      <div className="text-2xl font-bold text-blue-600">99%</div>
+                      <p className="text-sm font-semibold">نسبة التجفيف</p>
+                    </div>
+                    <div className="bg-background/50 rounded-xl p-4 border">
+                      <div className="text-2xl font-bold text-cyan-600">6</div>
+                      <p className="text-sm font-semibold">مجففات متطورة</p>
+                    </div>
+                    <div className="bg-background/50 rounded-xl p-4 border">
+                      <div className="text-2xl font-bold text-teal-600">37</div>
+                      <p className="text-sm font-semibold">كيلوواط إجمالي</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -633,11 +680,74 @@ const CarWashBT500 = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="/lovable-uploads/c9baf9a5-94a4-4717-ae23-7f2541cc1d82.png"
-                alt="Wash Programs"
-                className="w-full rounded-3xl shadow-2xl"
-              />
+              {/* Wash Programs Visual */}
+              <div className="bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-3xl p-12 border border-green-500/20 shadow-2xl">
+                <div className="text-center space-y-8">
+                  <h3 className="text-4xl font-bold text-green-600">برامج الغسيل المتقدمة</h3>
+                  
+                  {/* Wash Programs Grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div className="text-center space-y-3">
+                      <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                        <Wind className="h-10 w-10 text-blue-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">تجفيف</h4>
+                      <p className="text-xs text-muted-foreground">تجفيف فائق القوة</p>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center border border-yellow-500/30">
+                        <Sparkles className="h-10 w-10 text-yellow-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">واكس</h4>
+                      <p className="text-xs text-muted-foreground">لمعان وحماية</p>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                        <Droplets className="h-10 w-10 text-green-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">رغوة</h4>
+                      <p className="text-xs text-muted-foreground">تنظيف عميق</p>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center border border-purple-500/30">
+                        <WashingMachine className="h-10 w-10 text-purple-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">غسيل مسبق</h4>
+                      <p className="text-xs text-muted-foreground">إزالة الأوساخ</p>
+                    </div>
+                    
+                    <div className="text-center space-y-3">
+                      <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center border border-orange-500/30">
+                        <Car className="h-10 w-10 text-orange-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">غسيل أسفل</h4>
+                      <p className="text-xs text-muted-foreground">تنظيف الهيكل السفلي</p>
+                    </div>
+                  </div>
+                  
+                  {/* Features */}
+                  <div className="bg-background/30 rounded-xl p-6 border">
+                    <p className="text-lg font-semibold text-foreground mb-4">قابلة للتعديل على حسب احتياجاتكم</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">5</div>
+                        <p className="text-sm">برامج متنوعة</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">100%</div>
+                        <p className="text-sm">قابلة للتخصيص</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">∞</div>
+                        <p className="text-sm">إمكانيات لا محدودة</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div>
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
@@ -673,13 +783,68 @@ const CarWashBT500 = () => {
       {/* Pump Specifications */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center">
-            <img 
-              src="/lovable-uploads/c92821dc-17f1-4a4b-98b0-79e8434b6da6.png"
-              alt="PINFL Pump Specifications"
-              className="mx-auto max-w-4xl w-full rounded-3xl shadow-2xl"
-            />
-          </div>
+            {/* PINFL Pump Visual */}
+            <div className="bg-gradient-to-br from-red-500/10 via-orange-500/10 to-yellow-500/10 rounded-3xl p-12 border border-red-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <div className="flex items-center justify-center space-x-4 space-x-reverse">
+                  <Settings className="h-12 w-12 text-red-500" />
+                  <h3 className="text-4xl font-bold text-red-600">مضخة PINFL الألمانية</h3>
+                  <Award className="h-12 w-12 text-yellow-500" />
+                </div>
+                
+                {/* Pump Specifications */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/30">
+                      <Gauge className="h-10 w-10 text-red-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">ضغط عالي</h4>
+                    <p className="text-3xl font-bold text-red-600 mb-2">100</p>
+                    <p className="text-sm text-muted-foreground">بار ضغط</p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/30">
+                      <Zap className="h-10 w-10 text-orange-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">قوة المحرك</h4>
+                    <p className="text-3xl font-bold text-orange-600 mb-2">15</p>
+                    <p className="text-sm text-muted-foreground">كيلوواط</p>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border">
+                    <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-yellow-500/30">
+                      <Droplets className="h-10 w-10 text-yellow-500" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">التدفق</h4>
+                    <p className="text-3xl font-bold text-yellow-600 mb-2">40</p>
+                    <p className="text-sm text-muted-foreground">لتر/دقيقة</p>
+                  </div>
+                </div>
+                
+                {/* Quality Indicators */}
+                <div className="bg-background/30 rounded-xl p-6 border">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">صناعة ألمانية</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">موثوقية عالية</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">كفاءة طاقة</p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">صيانة قليلة</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </section>
 

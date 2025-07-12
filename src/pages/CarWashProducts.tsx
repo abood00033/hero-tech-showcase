@@ -32,7 +32,7 @@ const CarWashProducts = () => {
       title: 'TL300',
       subtitle: 'نظام الغسيل الأساسي',
       description: 'نقطة البداية المثالية لدخول عالم غسيل السيارات الآلي. تقنية بسيطة وموثوقة بأقل تكلفة استثمارية.',
-      image: '/lovable-uploads/abb4e71e-24b1-482b-a871-ee34c063b64f.png',
+      visual: 'TL300',
       features: ['ضغط الماء العالي', 'نظام استشعار أساسي', 'تحكم آلي'],
       capacity: '12-15 سيارة/ساعة',
       power: '6 كيلو واط',
@@ -53,7 +53,7 @@ const CarWashProducts = () => {
       title: 'TL400',
       subtitle: 'نظام الغسيل المتقدم',
       description: 'الحل الأمثل للمشاريع الناشئة والصغيرة. تقنية موثوقة بسعر مناسب وأداء ممتاز يضمن نجاح مشروعك.',
-      image: '/lovable-uploads/d3dbcc1a-125e-4102-9c54-9702d6fd142e.png',
+      visual: 'TL400',
       features: ['ضغط الماء المتغير', 'استشعار ذكي', 'ذراع روبوتي متحرك'],
       capacity: '15-20 سيارة/ساعة',
       power: '8 كيلو واط',
@@ -74,7 +74,7 @@ const CarWashProducts = () => {
       title: 'TL500',
       subtitle: 'نظام الغسيل الاحترافي',
       description: 'حل مثالي للمشاريع المتوسطة مع تقنية متقدمة وأداء موثوق. تصميم مدروس يجمع بين الكفاءة والاقتصادية.',
-      image: '/lovable-uploads/dfaffd5e-3ebc-4472-af18-6ece10fc1502.png',
+      visual: 'TL500',
       features: ['ضغط الماء الذكي', 'استشعار متقدم', 'ذراع روبوتي كامل'],
       capacity: '20-25 سيارة/ساعة',
       power: '10 كيلو واط',
@@ -221,12 +221,30 @@ const CarWashProducts = () => {
               >
                 <Card className="h-full bg-background border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl">
                   <CardContent className="p-6">
-                    <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/5 to-accent/5">
-                      <img 
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-48 object-contain transform group-hover:scale-105 transition-transform duration-300"
-                      />
+                    <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 p-8">
+                      {/* Visual Machine Representation */}
+                      <div className="h-48 flex flex-col justify-between">
+                        {/* Machine Header */}
+                        <div className="text-center space-y-2">
+                          <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
+                            <Droplets className="h-8 w-8 text-primary" />
+                          </div>
+                          <h4 className="text-xl font-bold text-primary">{product.visual}</h4>
+                          <p className="text-sm text-muted-foreground">نظام غسيل متطور</p>
+                        </div>
+                        
+                        {/* Quick Stats */}
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="bg-background/50 rounded-lg p-2 text-center border border-muted">
+                            <Timer className="h-4 w-4 text-primary mx-auto mb-1" />
+                            <p className="text-xs font-semibold">{product.capacity}</p>
+                          </div>
+                          <div className="bg-background/50 rounded-lg p-2 text-center border border-muted">
+                            <Gauge className="h-4 w-4 text-primary mx-auto mb-1" />
+                            <p className="text-xs font-semibold">{product.pressure}</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
                     <Badge className="mb-3 bg-primary/10 text-primary">
@@ -439,12 +457,25 @@ const CarWashProducts = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 className="relative"
               >
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
-                  />
+                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 p-8 flex items-center justify-center overflow-hidden">
+                  {/* Visual Machine Representation */}
+                  <div className="text-center space-y-4">
+                    <div className="w-32 h-32 mx-auto bg-primary/20 rounded-full flex items-center justify-center border-4 border-primary/30">
+                      <Droplets className="h-16 w-16 text-primary" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-primary">{product.visual}</h4>
+                    <p className="text-lg text-muted-foreground">نظام غسيل متطور</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                        <Timer className="h-6 w-6 text-primary mx-auto mb-1" />
+                        <p className="text-sm font-semibold">{product.capacity}</p>
+                      </div>
+                      <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                        <Gauge className="h-6 w-6 text-primary mx-auto mb-1" />
+                        <p className="text-sm font-semibold">{product.pressure}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>

@@ -109,12 +109,9 @@ const ProductionLines = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal overflow-hidden">
-        {/* Background Image */}
+        {/* Visual Production Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url('/lovable-uploads/484d71a8-3361-48fe-8117-1d7b83b5832d.png')`
-          }}
+          className="absolute inset-0 bg-gradient-to-br from-sebaaq-blue/10 via-blue-500/5 to-cyan-500/10"
         />
         
         {/* Gradient Overlay */}
