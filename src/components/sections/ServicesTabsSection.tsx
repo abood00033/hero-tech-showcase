@@ -115,31 +115,51 @@ const ServicesTabsSection = ({
 }: ServicesTabsSectionProps) => {
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
-  const [autoCycleComplete, setAutoCycleComplete] = useState(false);
+  const [isAutoCycling, setIsAutoCycling] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clean up intervals and timeouts
+  const clearAutoCycle = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsAutoCycling(false);
+  };
+
+  // Start auto-cycling
+  const startAutoCycle = () => {
+    if (hasUserInteracted || isAutoCycling) return;
+    
+    setIsAutoCycling(true);
+    let currentIndex = 0;
+    
+    intervalRef.current = setInterval(() => {
+      currentIndex = (currentIndex + 1) % tabs.length;
+      setActiveTab(tabs[currentIndex].value);
+    }, 2000); // Change tab every 2 seconds
+    
+    // Stop auto-cycling after exactly 5 seconds
+    timeoutRef.current = setTimeout(() => {
+      clearAutoCycle();
+    }, 5000);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasUserInteracted && !autoCycleComplete) {
-            // Start auto-cycling through tabs
-            let currentIndex = 0;
-            intervalRef.current = setInterval(() => {
-              currentIndex = (currentIndex + 1) % tabs.length;
-              setActiveTab(tabs[currentIndex].value);
-            }, 2000); // Change tab every 2 seconds
-            
-            // Stop auto-cycling after 5 seconds
-            timeoutRef.current = setTimeout(() => {
-              if (intervalRef.current) {
-                clearInterval(intervalRef.current);
-                intervalRef.current = null;
-              }
-              setAutoCycleComplete(true);
-            }, 5000);
+          if (entry.isIntersecting) {
+            // Use a small delay to ensure the component is fully rendered
+            setTimeout(() => {
+              startAutoCycle();
+            }, 100);
           }
         });
       },
@@ -152,36 +172,34 @@ const ServicesTabsSection = ({
 
     return () => {
       observer.disconnect();
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+      clearAutoCycle();
     };
-  }, [tabs, hasUserInteracted, autoCycleComplete]);
+  }, [tabs, hasUserInteracted, isAutoCycling]);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setHasUserInteracted(true);
-    setAutoCycleComplete(true);
-    // Clear the auto-cycling interval and timeout when user interacts
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
+    clearAutoCycle();
+  };
+
+  // Handle any user interaction to stop auto-cycling
+  const handleUserInteraction = () => {
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
+      clearAutoCycle();
     }
   };
 
   const activeTabContent = tabs.find(tab => tab.value === activeTab)?.content;
 
   return (
-    <section ref={sectionRef} className="py-16 bg-background" dir="rtl">
+    <section 
+      ref={sectionRef} 
+      className="py-16 bg-background" 
+      dir="rtl"
+      onTouchStart={handleUserInteraction}
+      onMouseEnter={handleUserInteraction}
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-6 text-center mb-12">
           <Badge variant="outline" className="text-primary border-primary">
@@ -204,6 +222,7 @@ const ServicesTabsSection = ({
                   key={tab.value}
                   value={tab.value}
                   className="flex flex-col items-center gap-3 rounded-xl px-4 py-6 text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
+                  onClick={handleUserInteraction}
                 >
                   <div className="text-xl">{tab.icon}</div>
                   <span className="text-center text-sm sm:text-base font-bold leading-tight">{tab.label}</span>
