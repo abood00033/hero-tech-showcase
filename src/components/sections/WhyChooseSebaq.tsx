@@ -32,17 +32,17 @@ const WhyChooseSebaq = () => {
             {whyChooseUs.map((item, index) => (
               <Card 
                 key={index} 
-                className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white"
+                className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br from-sebaaq-midnight to-sebaaq-charcoal"
                 role="article"
                 aria-labelledby={`why-choose-${index}`}
               >
-                <div className="w-16 h-16 bg-sebaaq-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-sebaaq-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-8 h-8 text-sebaaq-blue" aria-hidden="true" />
                 </div>
-                <h3 id={`why-choose-${index}`} className="font-bold text-lg mb-2 text-sebaaq-midnight">
+                <h3 id={`why-choose-${index}`} className="font-bold text-lg mb-2 text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <p className="text-white font-bold text-sm">{item.description}</p>
               </Card>
             ))}
           </div>
