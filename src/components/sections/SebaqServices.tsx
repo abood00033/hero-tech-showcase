@@ -51,7 +51,7 @@ const SebaqServices = () => {
             <Card 
               key={index} 
               className={`group p-6 transition-all duration-300 transform hover:shadow-xl bg-white ${
-                hoveredService === index ? 'scale-105 bg-gradient-to-br from-white to-blue-50' : 'scale-100'
+                hoveredService === index ? 'shadow-2xl md:scale-105 bg-gradient-to-br from-white to-blue-50' : ''
               }`}
               onMouseEnter={() => setHoveredService(index)}
               onMouseLeave={() => setHoveredService(null)}

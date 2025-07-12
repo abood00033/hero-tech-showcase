@@ -72,7 +72,7 @@ const FeaturesSectionWithHoverEffects = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 bg-white border-2 border-transparent hover:border-primary/20 rounded-xl overflow-hidden">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 bg-white border-2 border-transparent hover:border-primary/20 rounded-xl overflow-hidden md:hover:scale-105 md:hover:-translate-y-2">
               <CardContent className="p-8 text-center relative">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>

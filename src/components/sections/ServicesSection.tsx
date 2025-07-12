@@ -24,7 +24,7 @@ const ServiceCard = ({ icon: Icon, title, description, isHovered, onHover, onLea
   return (
     <article 
       className={`group relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-2 focus-within:ring-4 focus-within:ring-sebaaq-blue/50 ${
-        isHovered ? 'scale-105 shadow-2xl -translate-y-2' : 'scale-100'
+        isHovered ? 'shadow-2xl md:scale-105 md:-translate-y-2' : ''
       }`}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}

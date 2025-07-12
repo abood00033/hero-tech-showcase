@@ -52,12 +52,12 @@ const MachineCategories = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 px-4">
           {machineCategories.map((category, index) => (
             <Card 
               key={index} 
-              className={`group overflow-hidden transition-all duration-500 transform bg-white ${
-                hoveredProduct === index ? 'scale-105 shadow-2xl -translate-y-2' : 'scale-100 shadow-lg'
+              className={`group overflow-hidden transition-all duration-500 bg-white ${
+                hoveredProduct === index ? 'shadow-2xl md:scale-105 md:-translate-y-2' : 'shadow-lg'
               }`}
               onMouseEnter={() => setHoveredProduct(index)}
               onMouseLeave={() => setHoveredProduct(null)}
