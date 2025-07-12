@@ -96,13 +96,45 @@ const CarWashTL400 = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&h=600&fit=crop" 
-                  alt="غسالة السيارات TL400"
-                  className="w-full h-full object-cover rounded-2xl"
-                />
+              {/* Visual Machine Representation */}
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-8 border border-primary/20">
+                <div className="h-full flex flex-col justify-between">
+                  {/* Machine Header */}
+                  <div className="text-center space-y-2">
+                    <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
+                      <Droplets className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary">TL400</h3>
+                    <p className="text-sm text-muted-foreground">نظام غسيل آلي</p>
+                  </div>
+                  
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-2 gap-4 my-6">
+                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                      <Timer className="h-6 w-6 text-primary mx-auto mb-1" />
+                      <p className="text-xs font-semibold">6-8 دقائق</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                      <Zap className="h-6 w-6 text-primary mx-auto mb-1" />
+                      <p className="text-xs font-semibold">8 كيلو واط</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                      <Droplets className="h-6 w-6 text-primary mx-auto mb-1" />
+                      <p className="text-xs font-semibold">100-130 لتر</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
+                      <Shield className="h-6 w-6 text-primary mx-auto mb-1" />
+                      <p className="text-xs font-semibold">ضمان سنة</p>
+                    </div>
+                  </div>
+                  
+                  {/* Dimensions */}
+                  <div className="bg-muted/30 rounded-lg p-3 text-center">
+                    <p className="text-sm font-semibold text-foreground">8.5م × 2.8م × 2.4م</p>
+                  </div>
+                </div>
               </div>
+              
               <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold">15-20</div>

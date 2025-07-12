@@ -253,7 +253,7 @@ const BT900FuturisticPage: React.FC = () => {
             >
               <Badge className="px-6 py-3 bg-primary/20 border border-primary/40 text-primary backdrop-blur-md">
                 <Brain className="w-4 h-4 ml-2" />
-                <span className="font-bold">SMARTCO MACHINES</span>
+                <span className="font-bold">سي باك</span>
                 <Sparkles className="w-4 h-4 mr-2" />
               </Badge>
             </motion.div>
@@ -298,22 +298,68 @@ const BT900FuturisticPage: React.FC = () => {
               <CarSimulation />
             </motion.div>
 
-            {/* Main BT900 Image */}
+            {/* Interactive BT900 System */}
             <motion.div
               className="max-w-4xl mx-auto mt-16"
               initial={{ opacity: 0, y: 50 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <div className="relative overflow-hidden rounded-2xl border border-primary/20">
-                <img
-                  src="/lovable-uploads/e33530ca-879e-49ec-a973-cfc57943b667.png"
-                  alt="نظام BT900 - أحدث أنظمة الغسيل في النفق"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute bottom-4 right-4">
-                  <Badge className="bg-red-500/90 text-white border-red-600">
-                    <span className="text-2xl font-bold">10</span>
+              <div className="relative bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 shadow-2xl">
+                {/* Main System Display */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                  {/* Central System */}
+                  <div className="lg:col-span-2 text-center space-y-6">
+                    <div className="w-40 h-40 mx-auto bg-primary/20 rounded-full flex items-center justify-center border-4 border-primary/30">
+                      <div className="text-center">
+                        <Factory className="h-20 w-20 text-primary mx-auto mb-2" />
+                        <p className="text-lg font-bold text-primary">BT900</p>
+                      </div>
+                    </div>
+                    
+                    {/* Key Features */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
+                        <Droplets className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                        <p className="text-sm font-semibold">بدون لمس</p>
+                      </div>
+                      <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
+                        <Activity className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                        <p className="text-sm font-semibold">بالفرش</p>
+                      </div>
+                      <div className="bg-orange-500/10 rounded-lg p-4 border border-orange-500/20">
+                        <Clock className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+                        <p className="text-sm font-semibold">1 دقيقة</p>
+                      </div>
+                      <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
+                        <Car className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                        <p className="text-sm font-semibold">60+ سيارة/ساعة</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Advanced Features */}
+                  <div className="space-y-4">
+                    <div className="bg-primary/10 rounded-lg p-4 border border-primary/20">
+                      <Brain className="h-6 w-6 text-primary mb-2" />
+                      <p className="text-sm font-semibold">ذكاء اصطناعي</p>
+                    </div>
+                    <div className="bg-secondary/10 rounded-lg p-4 border border-secondary/20">
+                      <Cloud className="h-6 w-6 text-secondary mb-2" />
+                      <p className="text-sm font-semibold">تخزين سحابي</p>
+                    </div>
+                    <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
+                      <Radar className="h-6 w-6 text-accent mb-2" />
+                      <p className="text-sm font-semibold">مستشعرات ذكية</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Warranty Badge */}
+                <div className="absolute -bottom-4 -right-4">
+                  <Badge className="bg-red-500/90 text-white border-red-600 px-6 py-3">
+                    <Shield className="h-5 w-5 ml-2" />
+                    <span className="text-xl font-bold">10</span>
                     <span className="mr-2">سنوات ضمان</span>
                   </Badge>
                 </div>
@@ -389,11 +435,71 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/101170ad-c89b-4068-9fcc-505d852ea11e.png"
-              alt="نظام BT900 - 2 في واحد"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* 2-in-1 System Visual */}
+            <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-12 border border-primary/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <h3 className="text-4xl font-bold text-primary">نظام 2 في 1</h3>
+                
+                {/* System Comparison */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                  {/* Touchless System */}
+                  <div className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/20">
+                    <div className="text-center space-y-4">
+                      <div className="w-20 h-20 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                        <Droplets className="h-10 w-10 text-blue-500" />
+                      </div>
+                      <h4 className="text-xl font-bold text-blue-600">غسيل بدون لمس</h4>
+                      <div className="space-y-2">
+                        <p className="text-sm">• ضغط عالي</p>
+                        <p className="text-sm">• رغوة نشطة</p>
+                        <p className="text-sm">• حماية الطلاء</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Plus Symbol */}
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
+                      <span className="text-3xl font-bold text-primary">+</span>
+                    </div>
+                  </div>
+                  
+                  {/* Brush System */}
+                  <div className="bg-green-500/10 rounded-xl p-6 border border-green-500/20">
+                    <div className="text-center space-y-4">
+                      <div className="w-20 h-20 mx-auto bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                        <Activity className="h-10 w-10 text-green-500" />
+                      </div>
+                      <h4 className="text-xl font-bold text-green-600">غسيل بالفرش</h4>
+                      <div className="space-y-2">
+                        <p className="text-sm">• فرش ناعمة</p>
+                        <p className="text-sm">• تنظيف عميق</p>
+                        <p className="text-sm">• إزالة الأوساخ</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Result */}
+                <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
+                  <h4 className="text-2xl font-bold text-primary mb-4">النتيجة</h4>
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-3xl font-bold text-primary">99%</div>
+                      <p className="text-sm text-muted-foreground">تنظيف مثالي</p>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary">60+</div>
+                      <p className="text-sm text-muted-foreground">سيارة/ساعة</p>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary">1</div>
+                      <p className="text-sm text-muted-foreground">دقيقة</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
           
           <motion.div
@@ -418,11 +524,71 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/2d9ad311-a75a-4f3c-80e2-627dbcdba0bb.png"
-              alt="BT900 - دقيقة واحدة و 60+ سيارة في الساعة"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* Performance Metrics Visual */}
+            <div className="bg-gradient-to-br from-orange-500/10 via-red-500/10 to-yellow-500/10 rounded-2xl p-12 border border-orange-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <h3 className="text-4xl font-bold text-orange-600">أداء خارق</h3>
+                
+                {/* Main Performance Stats */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Speed */}
+                  <div className="bg-background/50 rounded-xl p-8 border border-orange-500/20">
+                    <div className="text-center space-y-4">
+                      <div className="w-32 h-32 mx-auto bg-orange-500/20 rounded-full flex items-center justify-center border-4 border-orange-500/30">
+                        <div className="text-center">
+                          <div className="text-4xl font-bold text-orange-600">1</div>
+                          <p className="text-sm text-orange-600">دقيقة</p>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-foreground">وقت الغسيل</h4>
+                      <p className="text-muted-foreground">أسرع نظام غسيل في العالم</p>
+                    </div>
+                  </div>
+                  
+                  {/* Capacity */}
+                  <div className="bg-background/50 rounded-xl p-8 border border-red-500/20">
+                    <div className="text-center space-y-4">
+                      <div className="w-32 h-32 mx-auto bg-red-500/20 rounded-full flex items-center justify-center border-4 border-red-500/30">
+                        <div className="text-center">
+                          <div className="text-4xl font-bold text-red-600">60+</div>
+                          <p className="text-sm text-red-600">سيارة</p>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-foreground">الطاقة الإنتاجية</h4>
+                      <p className="text-muted-foreground">في الساعة الواحدة</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Comparison Chart */}
+                <div className="bg-background/30 rounded-xl p-6 border border-yellow-500/20">
+                  <h4 className="text-xl font-bold text-foreground mb-4">مقارنة مع الأنظمة التقليدية</h4>
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">الأنظمة التقليدية</p>
+                      <div className="h-20 bg-gray-300 rounded flex items-end">
+                        <div className="w-full h-8 bg-gray-500 rounded-b"></div>
+                      </div>
+                      <p className="text-sm mt-2">15 سيارة/ساعة</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">أنظمة متطورة</p>
+                      <div className="h-20 bg-gray-300 rounded flex items-end">
+                        <div className="w-full h-12 bg-blue-500 rounded-b"></div>
+                      </div>
+                      <p className="text-sm mt-2">30 سيارة/ساعة</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">BT900</p>
+                      <div className="h-20 bg-gray-300 rounded flex items-end">
+                        <div className="w-full h-20 bg-gradient-to-t from-orange-500 to-red-500 rounded"></div>
+                      </div>
+                      <p className="text-sm mt-2 font-bold text-red-600">60+ سيارة/ساعة</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -436,11 +602,77 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/lovable-uploads/2fc2a141-25e3-4241-bc17-0ef9df326747.png"
-              alt="BT900 - الميزات الذكية والذكاء الاصطناعي"
-              className="w-full h-auto rounded-2xl border border-primary/20"
-            />
+            {/* AI & Smart Features Visual */}
+            <div className="bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl p-12 border border-purple-500/20 shadow-2xl">
+              <div className="text-center space-y-8">
+                <div className="flex items-center justify-center space-x-4 space-x-reverse mb-8">
+                  <Brain className="h-12 w-12 text-purple-500" />
+                  <h3 className="text-4xl font-bold text-purple-600">الذكاء الاصطناعي</h3>
+                  <Sparkles className="h-12 w-12 text-cyan-500" />
+                </div>
+                
+                {/* Smart Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="bg-background/50 rounded-xl p-6 border border-purple-500/20">
+                    <div className="text-center space-y-3">
+                      <div className="w-16 h-16 mx-auto bg-purple-500/20 rounded-full flex items-center justify-center border border-purple-500/30">
+                        <Radar className="h-8 w-8 text-purple-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">نظام ذكي ضد الاصطدام</h4>
+                      <p className="text-xs text-muted-foreground">حماية تلقائية متطورة</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border border-blue-500/20">
+                    <div className="text-center space-y-3">
+                      <div className="w-16 h-16 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                        <AlertTriangle className="h-8 w-8 text-blue-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">تشخيص ذاتي للأخطاء</h4>
+                      <p className="text-xs text-muted-foreground">اكتشاف فوري للمشاكل</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border border-cyan-500/20">
+                    <div className="text-center space-y-3">
+                      <div className="w-16 h-16 mx-auto bg-cyan-500/20 rounded-full flex items-center justify-center border border-cyan-500/30">
+                        <Cloud className="h-8 w-8 text-cyan-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">تخزين سحابي</h4>
+                      <p className="text-xs text-muted-foreground">تقارير ومراقبة مستمرة</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-background/50 rounded-xl p-6 border border-green-500/20">
+                    <div className="text-center space-y-3">
+                      <div className="w-16 h-16 mx-auto bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                        <CreditCard className="h-8 w-8 text-green-500" />
+                      </div>
+                      <h4 className="font-bold text-sm">دفع ذكي</h4>
+                      <p className="text-xs text-muted-foreground">جميع طرق الدفع</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* AI Brain Visualization */}
+                <div className="bg-background/30 rounded-xl p-8 border border-purple-500/20">
+                  <div className="flex items-center justify-center space-x-8 space-x-reverse">
+                    <div className="text-center">
+                      <Eye className="h-12 w-12 text-blue-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">مراقبة بصرية</p>
+                    </div>
+                    <div className="text-center">
+                      <Network className="h-12 w-12 text-purple-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">شبكة ذكية</p>
+                    </div>
+                    <div className="text-center">
+                      <Cpu className="h-12 w-12 text-cyan-500 mx-auto mb-2" />
+                      <p className="text-sm font-semibold">معالجة فورية</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">

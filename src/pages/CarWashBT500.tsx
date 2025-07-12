@@ -236,18 +236,63 @@ const CarWashBT500 = () => {
               </Button>
             </motion.div>
 
-            {/* Hero Image */}
+            {/* Visual System Representation */}
             <motion.div 
               initial={{ y: 50, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="relative mt-16"
+              className="relative mt-16 max-w-4xl mx-auto"
             >
-              <img 
-                src="/lovable-uploads/e89cd551-3511-4ec1-aadb-18212024e5db.png" 
-                alt="BT500 Car Wash System"
-                className="mx-auto max-w-4xl w-full rounded-3xl shadow-2xl"
-              />
+              <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-8 border border-primary/20 shadow-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                  {/* System Core */}
+                  <div className="lg:col-span-2 space-y-6">
+                    <div className="text-center">
+                      <div className="w-32 h-32 mx-auto bg-primary/20 rounded-full flex items-center justify-center border-4 border-primary/30 mb-4">
+                        <Car className="h-16 w-16 text-primary" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-primary mb-2">BT500</h3>
+                      <p className="text-lg text-muted-foreground">نظام 2 في 1</p>
+                    </div>
+                    
+                    {/* System Features */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-background/50 rounded-lg p-4 text-center border border-muted">
+                        <Droplets className="h-8 w-8 text-primary mx-auto mb-2" />
+                        <p className="font-semibold text-sm">غسيل بدون لمس</p>
+                      </div>
+                      <div className="bg-background/50 rounded-lg p-4 text-center border border-muted">
+                        <Activity className="h-8 w-8 text-primary mx-auto mb-2" />
+                        <p className="font-semibold text-sm">غسيل بالفرش</p>
+                      </div>
+                      <div className="bg-background/50 rounded-lg p-4 text-center border border-muted">
+                        <Timer className="h-8 w-8 text-primary mx-auto mb-2" />
+                        <p className="font-semibold text-sm">3 دقائق</p>
+                      </div>
+                      <div className="bg-background/50 rounded-lg p-4 text-center border border-muted">
+                        <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
+                        <p className="font-semibold text-sm">10 سنوات ضمان</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Smart Controls */}
+                  <div className="space-y-4">
+                    <div className="bg-primary/10 rounded-lg p-4 border border-primary/20">
+                      <Wifi className="h-6 w-6 text-primary mb-2" />
+                      <p className="text-sm font-semibold">تحكم ذكي</p>
+                    </div>
+                    <div className="bg-secondary/10 rounded-lg p-4 border border-secondary/20">
+                      <Database className="h-6 w-6 text-secondary mb-2" />
+                      <p className="text-sm font-semibold">تخزين سحابي</p>
+                    </div>
+                    <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
+                      <Settings className="h-6 w-6 text-accent mb-2" />
+                      <p className="text-sm font-semibold">تشخيص ذاتي</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -321,13 +366,64 @@ const CarWashBT500 = () => {
                   <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <img 
-                    src={index === 0 ? "/lovable-uploads/e89cd551-3511-4ec1-aadb-18212024e5db.png" : 
-                         index === 1 ? "/lovable-uploads/2c185df4-8651-44c9-a01d-f8f9d159db05.png" :
-                         "/lovable-uploads/2c185df4-8651-44c9-a01d-f8f9d159db05.png"}
-                    alt={feature.title}
-                    className="w-full rounded-3xl shadow-2xl"
-                  />
+                  {/* Interactive Visual Design */}
+                  <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-8 border border-primary/20 shadow-2xl">
+                    {index === 0 && (
+                      <div className="text-center space-y-6">
+                        <div className="flex justify-center space-x-4 space-x-reverse">
+                          <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                            <Droplets className="h-10 w-10 text-blue-500" />
+                          </div>
+                          <div className="text-2xl font-bold text-foreground self-center">+</div>
+                          <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                            <Activity className="h-10 w-10 text-green-500" />
+                          </div>
+                        </div>
+                        <p className="text-lg font-semibold text-primary">نظام 2 في 1 المتطور</p>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-background/50 rounded-lg p-3 border">
+                            <p className="text-sm font-semibold">غسيل بدون لمس</p>
+                          </div>
+                          <div className="bg-background/50 rounded-lg p-3 border">
+                            <p className="text-sm font-semibold">غسيل بالفرش</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {index === 1 && (
+                      <div className="text-center space-y-6">
+                        <div className="w-32 h-32 mx-auto bg-amber-500/20 rounded-full flex items-center justify-center border-4 border-amber-500/30">
+                          <Timer className="h-16 w-16 text-amber-500" />
+                        </div>
+                        <div className="space-y-2">
+                          <div className="text-6xl font-bold text-amber-500">3</div>
+                          <p className="text-lg font-semibold text-foreground">دقائق فقط</p>
+                        </div>
+                        <div className="bg-background/50 rounded-lg p-4 border">
+                          <p className="text-sm font-semibold">+20 سيارة في الساعة</p>
+                        </div>
+                      </div>
+                    )}
+                    {index === 2 && (
+                      <div className="text-center space-y-6">
+                        <div className="w-32 h-32 mx-auto bg-green-500/20 rounded-full flex items-center justify-center border-4 border-green-500/30">
+                          <Shield className="h-16 w-16 text-green-500" />
+                        </div>
+                        <div className="space-y-2">
+                          <div className="text-6xl font-bold text-green-500">10</div>
+                          <p className="text-lg font-semibold text-foreground">سنوات ضمان</p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="bg-background/50 rounded-lg p-2 border text-xs">
+                            <p>ضمان الهيكل</p>
+                          </div>
+                          <div className="bg-background/50 rounded-lg p-2 border text-xs">
+                            <p>ضمان التحكم</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -384,11 +480,59 @@ const CarWashBT500 = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="/lovable-uploads/4c42ff2d-e801-4786-9064-53a1448293d0.png"
-                alt="Brush Features"
-                className="w-full rounded-3xl shadow-2xl"
-              />
+              {/* Brush System Visual */}
+              <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-8 border border-primary/20 shadow-2xl">
+                <div className="text-center space-y-6">
+                  <h3 className="text-2xl font-bold text-primary mb-6">نظام الفرش المتطور</h3>
+                  
+                  {/* 5 Brushes Visualization */}
+                  <div className="grid grid-cols-5 gap-4 mb-6">
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                        <Activity className="h-8 w-8 text-blue-500" />
+                      </div>
+                      <p className="text-xs font-semibold">فرشة علوية</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                        <Activity className="h-8 w-8 text-green-500" />
+                      </div>
+                      <p className="text-xs font-semibold">فرشة جانبية</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center border border-purple-500/30">
+                        <Car className="h-8 w-8 text-purple-500" />
+                      </div>
+                      <p className="text-xs font-semibold">السيارة</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                        <Activity className="h-8 w-8 text-green-500" />
+                      </div>
+                      <p className="text-xs font-semibold">فرشة جانبية</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center border border-orange-500/30">
+                        <Activity className="h-8 w-8 text-orange-500" />
+                      </div>
+                      <p className="text-xs font-semibold">فرشة إطارات</p>
+                    </div>
+                  </div>
+                  
+                  {/* Features */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-background/50 rounded-lg p-4 border">
+                      <p className="text-sm font-semibold text-center">مايكروفايبر</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4 border">
+                      <p className="text-sm font-semibold text-center">طبقات إيفا فوم</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4 border">
+                      <p className="text-sm font-semibold text-center">صناعة يابانية</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="space-y-8">
               {brushFeatures.map((feature, index) => (
