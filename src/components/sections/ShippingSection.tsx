@@ -173,7 +173,10 @@ const ShippingSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-8 sm:mt-12">
-          <Button className="bg-gradient-to-r from-sebaaq-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 sm:px-12 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+          <Button 
+            className="bg-gradient-to-r from-sebaaq-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 sm:px-12 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+          >
             تواصل معنا
           </Button>
         </div>
