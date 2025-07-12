@@ -19,6 +19,7 @@ const SebaqCTA = () => {
             <Button 
               size="lg" 
               className="bg-white text-sebaaq-midnight hover:bg-gray-100 px-8 py-4"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
             >
               <Phone className="h-5 w-5 ml-2" />
               تواصل معنا
@@ -27,6 +28,7 @@ const SebaqCTA = () => {
               size="lg" 
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
             >
               <Mail className="h-5 w-5 ml-2" />
               استشارة مجانية

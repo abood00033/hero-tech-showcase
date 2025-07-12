@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle } from 'lucide-react';
@@ -276,10 +277,17 @@ const CarWash = () => {
             ارتقوا بتجربة غسيل السيارات مع أحدث أنظمة المغاسل الأوتوماتيكية التي نقدمها. سواء كنتم تبحثون عن السرعة، الكفاءة، أو الحماية الفائقة لطلاء المركبات، فإن حلولنا تلبي جميع احتياجاتكم وتفوق توقعاتكم. آلاتنا مصممة لتقديم أداء استثنائي وموثوقية عالية، مما يضمن لكم تدفقًا مستمرًا للعملاء وعائدًا مجزيًا على استثماركم.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold">
+            <Button 
+              className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               تواصل معنا
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4 rounded-lg font-semibold">
+            <Button 
+              variant="outline" 
+              className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4 rounded-lg font-semibold"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               جولة افتراضية
             </Button>
           </div>
@@ -392,10 +400,17 @@ const CarWash = () => {
             تواصل معنا للحصول على دراسة جدوى مجانية وعرض سعر شامل لمشروع مغسلة السيارات
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-sebaaq-blue hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold text-lg">
+            <Button 
+              className="bg-sebaaq-blue hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold text-lg"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               تواصل معنا
             </Button>
-            <Button variant="outline" className="border-2 border-sebaaq-blue text-sebaaq-blue hover:bg-sebaaq-blue hover:text-white px-12 py-4 rounded-lg font-semibold text-lg">
+            <Button 
+              variant="outline" 
+              className="border-2 border-sebaaq-blue text-sebaaq-blue hover:bg-sebaaq-blue hover:text-white px-12 py-4 rounded-lg font-semibold text-lg"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
               دراسة جدوى مجانية
             </Button>
           </div>

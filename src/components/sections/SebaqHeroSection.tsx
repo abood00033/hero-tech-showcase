@@ -27,6 +27,7 @@ const SebaqHeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 تواصل معنا
                 <ArrowRight className="h-5 w-5 mr-2" />
@@ -35,6 +36,7 @@ const SebaqHeroSection = () => {
                 size="lg" 
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 <Play className="h-5 w-5 ml-2" />
                 شاهد العرض
