@@ -30,7 +30,19 @@ import {
   Eye,
   Activity,
   ShieldCheck,
-  TrendingUp
+  TrendingUp,
+  Wifi,
+  Palette,
+  Factory,
+  Cloud,
+  Timer,
+  Truck,
+  Brush,
+  Network,
+  AlertTriangle,
+  Database,
+  Cpu,
+  Power
 } from 'lucide-react';
 
 // Interactive Car Simulation Component
@@ -195,7 +207,7 @@ const FuturisticStat: React.FC<FuturisticStatProps> = ({ value, label, icon, col
 
 // Main Component
 const BT900FuturisticPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('brain');
+  const [activeTab, setActiveTab] = useState('overview');
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true });
 
@@ -241,7 +253,7 @@ const BT900FuturisticPage: React.FC = () => {
             >
               <Badge className="px-6 py-3 bg-primary/20 border border-primary/40 text-primary backdrop-blur-md">
                 <Brain className="w-4 h-4 ml-2" />
-                <span className="font-bold">نظام الذكاء الاصطناعي BT900</span>
+                <span className="font-bold">SMARTCO MACHINES</span>
                 <Sparkles className="w-4 h-4 mr-2" />
               </Badge>
             </motion.div>
@@ -253,18 +265,28 @@ const BT900FuturisticPage: React.FC = () => {
               animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              مغسلة المستقبل
+              BT900
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
-              className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+              className="text-3xl font-bold text-foreground mb-4"
               initial={{ opacity: 0 }}
               animate={isHeroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              عقل اصطناعي يفهم ويعتني بكل مركبة - تجربة غسيل الجيل القادم
+              أحدث أنظمة الغسيل في النفق
             </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xl font-bold mb-8"
+              initial={{ opacity: 0 }}
+              animate={isHeroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <span className="text-red-500 text-2xl">2 في 1</span>
+              <span className="text-foreground">غسيل بدون لمس + غسيل بالفرش</span>
+            </motion.div>
 
             {/* Car Simulation */}
             <motion.div
@@ -276,52 +298,25 @@ const BT900FuturisticPage: React.FC = () => {
               <CarSimulation />
             </motion.div>
 
-            {/* BT900 System Gallery */}
+            {/* Main BT900 Image */}
             <motion.div
-              className="max-w-6xl mx-auto mt-16"
+              className="max-w-4xl mx-auto mt-16"
               initial={{ opacity: 0, y: 50 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <motion.div
-                  className="relative group overflow-hidden rounded-2xl border border-primary/20"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src="/lovable-uploads/c5375e9e-6274-4fe3-ace0-0c5f793ff6d0.png"
-                    alt="نظام BT900 - منظر جانبي"
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-
-                <motion.div
-                  className="relative group overflow-hidden rounded-2xl border border-primary/20"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src="/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png"
-                    alt="نظام BT900 - منظر علوي"
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-
-                <motion.div
-                  className="relative group overflow-hidden rounded-2xl border border-primary/20"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src="/lovable-uploads/3ccf25e5-f98e-46f9-be3c-88ad951e5499.png"
-                    alt="نظام BT900 - منظر ثلاثي الأبعاد"
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
+              <div className="relative overflow-hidden rounded-2xl border border-primary/20">
+                <img
+                  src="/lovable-uploads/e33530ca-879e-49ec-a973-cfc57943b667.png"
+                  alt="نظام BT900 - أحدث أنظمة الغسيل في النفق"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute bottom-4 right-4">
+                  <Badge className="bg-red-500/90 text-white border-red-600">
+                    <span className="text-2xl font-bold">10</span>
+                    <span className="mr-2">سنوات ضمان</span>
+                  </Badge>
+                </div>
               </div>
             </motion.div>
 
@@ -359,19 +354,19 @@ const BT900FuturisticPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FuturisticStat
-              value="60"
+              value="+60"
               label="سيارة في الساعة"
               icon={<Car className="w-8 h-8 text-primary" />}
             />
             <FuturisticStat
               value="1"
-              label="دقيقة للغسيل"
+              label="دقيقة غسيل"
               icon={<Clock className="w-8 h-8 text-green-400" />}
               color="green"
             />
             <FuturisticStat
               value="99%"
-              label="نسبة التجفيف"
+              label="نسبة تجفيف"
               icon={<Wind className="w-8 h-8 text-blue-400" />}
               color="blue"
             />
@@ -385,7 +380,319 @@ const BT900FuturisticPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Tabs Section */}
+      {/* 2-in-1 System Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/101170ad-c89b-4068-9fcc-505d852ea11e.png"
+              alt="نظام BT900 - 2 في واحد"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+          
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              تقدم شركة سمارتكو أحدث أنظمة الغسيل BT900، يتميز هذا النظام بتقنيات متطورة تضمن أداء فائق الكفاءة، مع قدرة عالية على غسيل أعداد كبيرة من السيارات بسرعة وفعالية. يساهم ذلك في تعزيز الكفاءة التشغيلية وتقليل أوقات الانتظار بشكل ملحوظ، مما يتيح تحقيق عوائد مالية مرتفعة.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Smart Features Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/2d9ad311-a75a-4f3c-80e2-627dbcdba0bb.png"
+              alt="BT900 - دقيقة واحدة و 60+ سيارة في الساعة"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* AI Features Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/2fc2a141-25e3-4241-bc17-0ef9df326747.png"
+              alt="BT900 - الميزات الذكية والذكاء الاصطناعي"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
+              <div className="text-center space-y-4">
+                <Wifi className="w-12 h-12 text-blue-400 mx-auto" />
+                <h3 className="text-xl font-bold text-blue-300">نظام ذكي ضد الاصطدام</h3>
+                <p className="text-muted-foreground">تقنية المركبات الموجهة تلقائياً لحماية كل من السيارة والمعدات</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
+              <div className="text-center space-y-4">
+                <AlertTriangle className="w-12 h-12 text-green-400 mx-auto" />
+                <h3 className="text-xl font-bold text-green-300">تشخيص ذاتي للأخطاء</h3>
+                <p className="text-muted-foreground">نظام ذكي يحدد الأخطاء تلقائياً ويقدم تقارير مفصلة مع استجابة سريعة ودعم فني مستمر</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-purple-900/10 to-violet-900/10 border border-purple-500/20">
+              <div className="text-center space-y-4">
+                <Cloud className="w-12 h-12 text-purple-400 mx-auto" />
+                <h3 className="text-xl font-bold text-purple-300">نظام تخزين سحابي</h3>
+                <p className="text-muted-foreground">إرسال تقارير عبر الجوال بعدد السيارات التي تم غسلها المخزون المتوفر مستوى الاستهلاك، رقابة متكاملة عبر الجوال</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-orange-900/10 to-red-900/10 border border-orange-500/20">
+              <div className="text-center space-y-4">
+                <Timer className="w-12 h-12 text-orange-400 mx-auto" />
+                <h3 className="text-xl font-bold text-orange-300">الخدمة الذاتية</h3>
+                <p className="text-muted-foreground">قبول جميع طرق الدفع الرئيسية، بما في ذلك أبل باي، ميزا، وبدي، تتيح تقنية الدفع الذاتي العمل على مدار 24 ساعة</p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Brush System Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/581c5e13-ec7b-4c0e-b76a-83c44b804207.png"
+              alt="BT900 - 9 فرش ناعمة جداً"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">فرش ناعمة جداً من الميكروفايبر</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  9 فرش عالية الجودة
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  تقنية يابانية متطورة
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  ضبط الضغط حسب الاحتياج
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
+              <h3 className="text-xl font-bold mb-4 text-green-300">مدة استخدام طويلة</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  حتى 100,000 سيارة
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  تقنية التنظيف الذاتي للفرش
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  مقاومة للتمزق، ضد الرواسب أو الأتربة وجميع الوسائج
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-purple-900/10 to-violet-900/10 border border-purple-500/20">
+              <h3 className="text-xl font-bold mb-4 text-purple-300">مواد عالية الجودة</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  ضمان ضد الخدوش، أمان عالي
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  مصنوعة من مواد لا تمتص الماء
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Dryer System Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/cfc0065f-5c84-45b1-b968-9886a86f2966.png"
+              alt="BT900 - 6 مجففات بقوة 5.5KW / 7.5KW"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">أقوى نظام تجفيف</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  6 مجففات تعمل معاً لإزالة المياه بانسيابية عالية جداً وسرعة
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  نسبة تجفيف تصل إلى 99%
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
+              <h3 className="text-xl font-bold mb-4 text-green-300">خيارات متعددة لنظام التجفيف</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  4 مجففات بقوة 5.5 كيلوواط علوية منفصلة لتجفيف الجزء العلوي من السيارة
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
+                  2 مجففات جانبية بقوة 7.5 كيلوواط لإزالة مياه منتفخ على جوانب السيارة
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Wash Programs Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/6d8feb93-ac5b-49d1-bbec-faf21d0ab5a2.png"
+              alt="BT900 - أوضاع الغسيل"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">نظام الغسيل المسبق الآمن</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-green-400" />
+                  <span className="text-muted-foreground">مضخة بقوة 100 بار تزيل بشكل فعال جميع الجزيئات والرواسب من سطح السيارة قبل بدء عمل الفرش، لدرجات عالية من الأمان</span>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
+              <h3 className="text-xl font-bold mb-4 text-green-300">غسيل بدون لمس متكامل</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Droplets className="w-5 h-5 text-blue-400" />
+                  <span className="text-muted-foreground">مع دخول السيارة، أضيف المياه لإزالة الأوساخ السطحية، يتبعها رش مواد التنظيف، ثم إعاد رش الماء مرة أخرى عند الخروج لضمان نظافة فائقة بدون لمس</span>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pump System Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/lovable-uploads/a1b5ab84-e49f-4cc1-8e7a-b097219fe52c.png"
+              alt="BT900 - المضخة PINFL"
+              className="w-full h-auto rounded-2xl border border-primary/20"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <Card className="p-6 bg-gradient-to-br from-red-900/10 to-pink-900/10 border border-red-500/20">
+              <h3 className="text-xl font-bold mb-4 text-red-300">PINFL علامة تجارية ألمانية</h3>
+              <p className="text-muted-foreground">عدد المضخات: 2 - غسيل X2 بدون لمس عند دخول السيارة وخروجها لضمان جودة غسيل فائقة</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">ضغط الماء قابل للتصميم</h3>
+              <p className="text-muted-foreground">تسمح المضخة للمستخدمين بتعديل ضغط الماء لتلبية متطلبات التنظيف المحددة</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
+              <h3 className="text-xl font-bold mb-4 text-green-300">بناء متين</h3>
+              <p className="text-muted-foreground">مصنوع من مواد عالية الجودة لتحمل البيئات القاسية وتوفير أداء طويل الأمد</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-purple-900/10 to-violet-900/10 border border-purple-500/20">
+              <h3 className="text-xl font-bold mb-4 text-purple-300">كفاءة عالية</h3>
+              <p className="text-muted-foreground">مصممة لتحقيق الاستهلاك الأمثل للطاقة وضمان استخدام المياه بكفاءة وتقليل تكاليف التشغيل</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-orange-900/10 to-yellow-900/10 border border-orange-500/20">
+              <h3 className="text-xl font-bold mb-4 text-orange-300">ميزات السلامة العالية</h3>
+              <p className="text-muted-foreground">تتضمن صمامات الإغلاق التلقائي وتنقيف الضغط لضمان التشغيل الآمن</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-teal-900/10 to-cyan-900/10 border border-teal-500/20">
+              <h3 className="text-xl font-bold mb-4 text-teal-300">التكيف</h3>
+              <p className="text-muted-foreground">قادر على التعامل مع البيئة القاسية وتحمل درجات حرارة مياه مرتفعة</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-indigo-900/10 to-purple-900/10 border border-indigo-500/20">
+              <h3 className="text-xl font-bold mb-4 text-indigo-300">معدل تدفق مرتفع</h3>
+              <p className="text-muted-foreground">قادر على توفير معدل تدفق مرتفع لضمان التنظيف الشامل والسريع في خاصية غسيل بدون لمس</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <motion.h2
@@ -394,206 +701,98 @@ const BT900FuturisticPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            تكنولوجيا المستقبل
+            المواصفات التقنية
           </motion.h2>
 
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-12 bg-background/50 backdrop-blur-md">
-              <TabsTrigger value="brain" className="font-cairo">العقل الذكي</TabsTrigger>
-              <TabsTrigger value="wash" className="font-cairo">نظام الغسيل</TabsTrigger>
-              <TabsTrigger value="sensors" className="font-cairo">المستشعرات</TabsTrigger>
-              <TabsTrigger value="performance" className="font-cairo">الأداء</TabsTrigger>
-            </TabsList>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">النظام الأساسي</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">النوع:</span> نفق غسيل تلقائي متكامل</li>
+                <li><span className="font-semibold">الطاقة الإنتاجية:</span> 60+ سيارة/ساعة</li>
+                <li><span className="font-semibold">وقت الغسيل:</span> دقيقة واحدة</li>
+                <li><span className="font-semibold">الضمان:</span> 10 سنوات على الهيكل وأنظمة التحكم</li>
+              </ul>
+            </Card>
 
-            <TabsContent value="brain" className="space-y-8">
-              <Card className="p-8 bg-gradient-to-br from-purple-900/10 to-blue-900/10 border border-purple-500/20">
-                <div className="text-center space-y-6">
-                  <motion.div
-                    className="inline-flex p-6 rounded-full bg-purple-500/20 border border-purple-500/30"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                  >
-                    <Brain className="w-12 h-12 text-purple-400" />
-                  </motion.div>
-                  <h3 className="text-3xl font-bold text-purple-300">الذكاء الاصطناعي المتطور</h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    نظام ذكي يتعلم من كل عملية غسيل، يحلل نوع المركبة ومستوى الاتساخ، ويقرر أفضل برنامج غسيل تلقائياً
-                  </p>
-                </div>
-              </Card>
-            </TabsContent>
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">نظام الغسيل</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">عدد الفرش:</span> 9 فرش ميكروفايبر يابانية</li>
+                <li><span className="font-semibold">ضغط الماء:</span> 100 بار</li>
+                <li><span className="font-semibold">المضخات:</span> PINFL ألمانية × 2</li>
+                <li><span className="font-semibold">النوع:</span> 2 في 1 (بدون لمس + بالفرش)</li>
+              </ul>
+            </Card>
 
-            <TabsContent value="wash" className="space-y-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="p-6 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 border border-blue-500/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center text-blue-300">
-                    <Droplets className="w-6 h-6 ml-2" />
-                    غسيل بدون لمس متطور
-                  </h3>
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      ضغط 100 بار فائق القوة
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      رش X2 عند الدخول والخروج
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      مضخات PINFL الألمانية
-                    </li>
-                  </ul>
-                </Card>
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">نظام التجفيف</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">عدد المجففات:</span> 6 مجففات</li>
+                <li><span className="font-semibold">القوة:</span> 4×5.5KW + 2×7.5KW</li>
+                <li><span className="font-semibold">نسبة التجفيف:</span> 99%</li>
+                <li><span className="font-semibold">التصميم:</span> علوي وجانبي</li>
+              </ul>
+            </Card>
 
-                <Card className="p-6 bg-gradient-to-br from-green-900/10 to-emerald-900/10 border border-green-500/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center text-green-300">
-                    <Settings className="w-6 h-6 ml-2" />
-                    نظام الفرش الياباني
-                  </h3>
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      9 فرش مايكروفايبر ناعمة
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      مقاومة للبيئة الصحراوية
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 ml-2 text-green-400" />
-                      عمر 100,000 سيارة
-                    </li>
-                  </ul>
-                </Card>
-              </div>
-            </TabsContent>
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">الذكاء الاصطناعي</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">نظام ضد الاصطدام:</span> تقنية موجهة تلقائياً</li>
+                <li><span className="font-semibold">التشخيص الذاتي:</span> اكتشاف وتنبيه مبكر</li>
+                <li><span className="font-semibold">التخزين السحابي:</span> تقارير ومراقبة عن بُعد</li>
+                <li><span className="font-semibold">الخدمة الذاتية:</span> 24/7 مع دعم مدى الحياة</li>
+              </ul>
+            </Card>
 
-            <TabsContent value="sensors" className="space-y-8">
-              <Card className="p-8 bg-gradient-to-br from-orange-900/10 to-red-900/10 border border-orange-500/20">
-                <div className="text-center space-y-6">
-                  <motion.div
-                    className="inline-flex p-6 rounded-full bg-orange-500/20 border border-orange-500/30"
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Radar className="w-12 h-12 text-orange-400" />
-                  </motion.div>
-                  <h3 className="text-3xl font-bold text-orange-300">مستشعرات ذكية 360°</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                    <div className="space-y-2">
-                      <Eye className="w-8 h-8 text-orange-400 mx-auto" />
-                      <h4 className="font-bold">كشف الأبعاد</h4>
-                      <p className="text-sm text-muted-foreground">تحديد طول وعرض وارتفاع المركبة</p>
-                    </div>
-                    <div className="space-y-2">
-                      <Activity className="w-8 h-8 text-orange-400 mx-auto" />
-                      <h4 className="font-bold">تحليل الحالة</h4>
-                      <p className="text-sm text-muted-foreground">فحص مستوى الاتساخ والمناطق المطلوبة</p>
-                    </div>
-                    <div className="space-y-2">
-                      <ShieldCheck className="w-8 h-8 text-orange-400 mx-auto" />
-                      <h4 className="font-bold">نظام الأمان</h4>
-                      <p className="text-sm text-muted-foreground">حماية ذكية ضد الاصطدامات</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </TabsContent>
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">المكونات المميزة</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">المتحكمات:</span> Siemens الألمانية</li>
+                <li><span className="font-semibold">المضخات:</span> PINFL الألمانية</li>
+                <li><span className="font-semibold">المستشعرات:</span> Baumer السويسرية</li>
+                <li><span className="font-semibold">التحكم:</span> Schneider Electric الفرنسية</li>
+              </ul>
+            </Card>
 
-            <TabsContent value="performance" className="space-y-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="p-6 bg-gradient-to-br from-emerald-900/10 to-teal-900/10 border border-emerald-500/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center text-emerald-300">
-                    <TrendingUp className="w-6 h-6 ml-2" />
-                    الكفاءة التشغيلية
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span>سرعة الغسيل</span>
-                      <Badge className="bg-emerald-500/20 text-emerald-300">60 سيارة/ساعة</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>وقت الدورة</span>
-                      <Badge className="bg-emerald-500/20 text-emerald-300">1 دقيقة</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>نسبة التجفيف</span>
-                      <Badge className="bg-emerald-500/20 text-emerald-300">99%</Badge>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 bg-gradient-to-br from-violet-900/10 to-purple-900/10 border border-violet-500/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center text-violet-300">
-                    <Settings className="w-6 h-6 ml-2" />
-                    الميزات المتقدمة
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>نظام دفع ذاتي 24/7</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>تشخيص ذاتي للأخطاء</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>ربط تطبيق الولاء</span>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </TabsContent>
-          </Tabs>
+            <Card className="p-6 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-md border border-primary/20">
+              <h3 className="text-xl font-bold mb-4 text-primary">برامج الغسيل</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><span className="font-semibold">أوضاع متعددة:</span> قابلة للتعديل حسب الاحتياج</li>
+                <li><span className="font-semibold">التخصيص:</span> حسب نوع المركبة</li>
+                <li><span className="font-semibold">الذكاء:</span> اختيار تلقائي للبرنامج المناسب</li>
+                <li><span className="font-semibold">المرونة:</span> إعدادات مخصصة لكل عميل</li>
+              </ul>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <Card className="p-12 bg-gradient-to-br from-primary/5 to-blue-500/5 border border-primary/20 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <h2 className="text-4xl font-bold">جاهز لاستكشاف المستقبل؟</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                احجز عرضاً تفاعلياً واكتشف كيف يمكن لتقنية BT900 أن تثور أعمالك
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90">
-                  <Phone className="w-5 h-5 ml-2" />
-                  احجز عرضاً تفاعلياً
-                </Button>
-                <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
-                  <Mail className="w-5 h-5 ml-2" />
-                  تواصل عبر البريد
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div className="flex flex-col items-center gap-2">
-                  <Phone className="w-8 h-8 text-primary" />
-                  <span className="font-bold">هاتف</span>
-                  <span className="text-muted-foreground">920031826</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Mail className="w-8 h-8 text-primary" />
-                  <span className="font-bold">بريد إلكتروني</span>
-                  <span className="text-muted-foreground">sales@SmartComachine.com</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Globe className="w-8 h-8 text-primary" />
-                  <span className="font-bold">موقع إلكتروني</span>
-                  <span className="text-muted-foreground">www.SmartComachine.com</span>
-                </div>
-              </div>
-            </motion.div>
-          </Card>
+          <motion.div
+            className="text-center space-y-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold">ابدأ مشروعك مع BT900</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              انضم إلى مستقبل تقنية غسيل السيارات مع أحدث الأنظمة الذكية
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90">
+                <Phone className="w-5 h-5 ml-2" />
+                احجز استشارة مجانية
+              </Button>
+              <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
+                <Mail className="w-5 h-5 ml-2" />
+                اطلب عرض سعر
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
