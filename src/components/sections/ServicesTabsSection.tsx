@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -113,6 +114,7 @@ const ServicesTabsSection = ({
     },
   ],
 }: ServicesTabsSectionProps) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const [isAutoCycling, setIsAutoCycling] = useState(false);
@@ -192,6 +194,22 @@ const ServicesTabsSection = ({
 
   const activeTabContent = tabs.find(tab => tab.value === activeTab)?.content;
 
+  const handleButtonClick = (tabValue: string) => {
+    switch(tabValue) {
+      case "shipping":
+        navigate("/الشحن-والاستيراد-من-الصين");
+        break;
+      case "consultation":
+        navigate("/خدمات-الاستشارة");
+        break;
+      case "machinery":
+        navigate("/سي-باك-ماشين");
+        break;
+      default:
+        window.open('https://wa.me/+966594196930', '_blank');
+    }
+  };
+
   return (
     <section 
       ref={sectionRef} 
@@ -255,7 +273,7 @@ const ServicesTabsSection = ({
                       
                       <Button 
                         className="w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo"
-                        onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+                        onClick={() => handleButtonClick(tab.value)}
                       >
                         {tab.content.buttonText}
                       </Button>
