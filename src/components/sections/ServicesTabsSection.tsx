@@ -196,26 +196,26 @@ const ServicesTabsSection = ({
             </TabsList>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-2">
             {tabs.map((tab) => (
               <TabsContent
                 key={tab.value}
                 value={tab.value}
                 className="flex justify-center items-center"
               >
-                <div className="flex flex-col gap-4 text-center max-w-4xl">
-                  <div className="space-y-3">
+                <div className="flex flex-col gap-3 text-center max-w-4xl">
+                  <div className="space-y-2">
                     <Badge variant="outline" className="w-fit mx-auto bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
                       {tab.content.badge}
                     </Badge>
-                    <h3 className="text-3xl font-bold lg:text-4xl text-foreground leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">
+                    <h3 className="text-2xl font-bold lg:text-3xl text-foreground leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text font-cairo">
                       {tab.content.title}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground lg:text-lg leading-relaxed whitespace-pre-line font-cairo">
+                  <p className="text-muted-foreground text-base lg:text-lg leading-relaxed whitespace-pre-line font-cairo">
                     {tab.content.description}
                   </p>
-                  <Button className="mt-6 w-fit mx-auto gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6 font-cairo" size="lg">
+                  <Button className="mt-4 w-fit mx-auto gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 text-base px-6 py-4 font-cairo" size="lg">
                     {tab.content.buttonText}
                   </Button>
                 </div>
