@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Droplets, Wind, Sparkles, Clock, Users, Shield, Star, Gauge, Target, ArrowLeft, Timer, Zap, CheckCircle } from 'lucide-react';
@@ -58,7 +59,7 @@ const CarWash = () => {
     }
   ];
 
-  const availableProducts = [
+  const brushProducts = [
     {
       id: "bt900",
       title: "BT900",
@@ -76,6 +77,7 @@ const CarWash = () => {
         "دعم فني مدى الحياة"
       ],
       route: "/car-wash/bt900",
+      image: "/lovable-uploads/c5375e9e-6274-4fe3-ace0-0c5f793ff6d0.png",
       featured: true
     },
     {
@@ -95,8 +97,12 @@ const CarWash = () => {
         "صيانة سهلة"
       ],
       route: "/car-wash/bt500",
+      image: "/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png",
       featured: false
-    },
+    }
+  ];
+
+  const touchlessProducts = [
     {
       id: "tl500",
       title: "TL500",
@@ -113,7 +119,8 @@ const CarWash = () => {
         "برامج غسيل متنوعة",
         "تجفيف هوائي قوي"
       ],
-      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
+      route: "/car-wash/tl500",
+      image: "/lovable-uploads/dfaffd5e-3ebc-4472-af18-6ece10fc1502.png",
       featured: false
     },
     {
@@ -132,7 +139,8 @@ const CarWash = () => {
         "برامج غسيل أساسية",
         "تجفيف هوائي"
       ],
-      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
+      route: "/car-wash/tl400",
+      image: "/lovable-uploads/d3dbcc1a-125e-4102-9c54-9702d6fd142e.png",
       featured: false
     },
     {
@@ -151,10 +159,98 @@ const CarWash = () => {
         "صيانة سهلة",
         "مناسب للمساحات الصغيرة"
       ],
-      route: "/مكائن-غسيل-سيارات/مكائن-غسيل-سيارات-بدون-لمس/",
+      route: "/car-wash/tl300",
+      image: "/lovable-uploads/abb4e71e-24b1-482b-a871-ee34c063b64f.png",
       featured: false
     }
   ];
+
+  const ProductCard = ({ product, index }) => (
+    <Card key={index} className="p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-white to-blue-50 border-2 border-sebaaq-blue/20">
+      <div className="flex flex-col h-full">
+        {/* Product Header */}
+        <div className="flex items-center mb-4">
+          {product.featured && (
+            <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs font-bold ml-2">
+              مميز
+            </div>
+          )}
+          <div>
+            <h3 className="font-playfair text-2xl font-bold text-sebaaq-midnight leading-tight">
+              {product.title}
+            </h3>
+            <p className="text-sebaaq-blue font-medium text-sm">{product.subtitle}</p>
+          </div>
+        </div>
+        
+        {/* Product Image */}
+        <div className="aspect-square rounded-lg overflow-hidden border-2 border-sebaaq-blue/20 mb-4">
+          <img
+            src={product.image}
+            alt={`${product.title} - نظام غسيل السيارات`}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-grow">
+          {product.description}
+        </p>
+        
+        {/* Specs Grid */}
+        <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
+          <div className="bg-gradient-to-r from-sebaaq-blue/10 to-blue-400/10 p-2 rounded text-center">
+            <div className="flex items-center justify-center mb-1">
+              <Gauge className="w-3 h-3 text-sebaaq-blue ml-1" />
+              <span className="font-semibold text-sebaaq-midnight text-xs">السرعة</span>
+            </div>
+            <p className="text-sebaaq-blue font-bold text-xs">{product.capacity}</p>
+          </div>
+          <div className="bg-gradient-to-r from-green-500/10 to-emerald-400/10 p-2 rounded text-center">
+            <div className="flex items-center justify-center mb-1">
+              <Timer className="w-3 h-3 text-green-600 ml-1" />
+              <span className="font-semibold text-sebaaq-midnight text-xs">الوقت</span>
+            </div>
+            <p className="text-green-600 font-bold text-xs">{product.washTime}</p>
+          </div>
+          <div className="bg-gradient-to-r from-purple-500/10 to-violet-400/10 p-2 rounded text-center">
+            <div className="flex items-center justify-center mb-1">
+              <Shield className="w-3 h-3 text-purple-600 ml-1" />
+              <span className="font-semibold text-sebaaq-midnight text-xs">الضمان</span>
+            </div>
+            <p className="text-purple-600 font-bold text-xs">{product.warranty}</p>
+          </div>
+        </div>
+        
+        {/* Features */}
+        <div className="mb-4">
+          <h4 className="font-bold text-sebaaq-midnight mb-2 text-sm">المميزات الرئيسية:</h4>
+          <div className="grid grid-cols-1 gap-1">
+            {product.features.slice(0, 3).map((feature, idx) => (
+              <div key={idx} className="flex items-center text-gray-600 text-xs">
+                <CheckCircle className="w-3 h-3 text-green-500 ml-2 flex-shrink-0" />
+                <span className="font-medium">{feature}</span>
+              </div>
+            ))}
+            {product.features.length > 3 && (
+              <div className="text-xs text-gray-500">
+                +{product.features.length - 3} مميزات أخرى
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {/* CTA Button */}
+        <div className="mt-auto">
+          <Link to={product.route}>
+            <Button className="w-full bg-gradient-to-r from-sebaaq-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-sm group transition-all duration-300">
+              تفاصيل أكثر
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </Card>
+  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -191,122 +287,48 @@ const CarWash = () => {
         </div>
       </section>
 
-      {/* Available Products Section */}
+      {/* Brush Products Section */}
       <section className="py-20 bg-white" dir="rtl">
         <div className="container mx-auto px-6">
-          <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight text-center mb-16">
-            المنتجات المتاحة
-            <span className="gradient-text block">أحدث أنظمة الغسيل</span>
-          </h2>
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {availableProducts.map((product, index) => (
-              <Card key={index} className="p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-white to-blue-50 border-2 border-sebaaq-blue/20">
-                <div className="flex flex-col h-full">
-                  {/* Product Header */}
-                  <div className="flex items-center mb-4">
-                    {product.featured && (
-                      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs font-bold ml-2">
-                        مميز
-                      </div>
-                    )}
-                    <div>
-                      <h3 className="font-playfair text-2xl font-bold text-sebaaq-midnight leading-tight">
-                        {product.title}
-                      </h3>
-                      <p className="text-sebaaq-blue font-medium text-sm">{product.subtitle}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Product Image */}
-                  <div className="aspect-square rounded-lg overflow-hidden border-2 border-sebaaq-blue/20 mb-4">
-                    {product.id === 'bt900' && (
-                      <img
-                        src="/lovable-uploads/c5375e9e-6274-4fe3-ace0-0c5f793ff6d0.png"
-                        alt={`${product.title} - نظام غسيل السيارات`}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                    {product.id === 'bt500' && (
-                      <img
-                        src="/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png"
-                        alt={`${product.title} - نظام غسيل السيارات`}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                    {(product.id === 'tl500' || product.id === 'tl400' || product.id === 'tl300') && (
-                      <img
-                        src="/lovable-uploads/3ccf25e5-f98e-46f9-be3c-88ad951e5499.png"
-                        alt={`${product.title} - نظام غسيل السيارات`}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                  </div>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-grow">
-                    {product.description}
-                  </p>
-                  
-                  {/* Specs Grid */}
-                  <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
-                    <div className="bg-gradient-to-r from-sebaaq-blue/10 to-blue-400/10 p-2 rounded text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <Gauge className="w-3 h-3 text-sebaaq-blue ml-1" />
-                        <span className="font-semibold text-sebaaq-midnight text-xs">السرعة</span>
-                      </div>
-                      <p className="text-sebaaq-blue font-bold text-xs">{product.capacity}</p>
-                    </div>
-                    <div className="bg-gradient-to-r from-green-500/10 to-emerald-400/10 p-2 rounded text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <Timer className="w-3 h-3 text-green-600 ml-1" />
-                        <span className="font-semibold text-sebaaq-midnight text-xs">الوقت</span>
-                      </div>
-                      <p className="text-green-600 font-bold text-xs">{product.washTime}</p>
-                    </div>
-                    <div className="bg-gradient-to-r from-purple-500/10 to-violet-400/10 p-2 rounded text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <Shield className="w-3 h-3 text-purple-600 ml-1" />
-                        <span className="font-semibold text-sebaaq-midnight text-xs">الضمان</span>
-                      </div>
-                      <p className="text-purple-600 font-bold text-xs">{product.warranty}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="mb-4">
-                    <h4 className="font-bold text-sebaaq-midnight mb-2 text-sm">المميزات الرئيسية:</h4>
-                    <div className="grid grid-cols-1 gap-1">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-gray-600 text-xs">
-                          <CheckCircle className="w-3 h-3 text-green-500 ml-2 flex-shrink-0" />
-                          <span className="font-medium">{feature}</span>
-                        </div>
-                      ))}
-                      {product.features.length > 3 && (
-                        <div className="text-xs text-gray-500">
-                          +{product.features.length - 3} مميزات أخرى
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <div className="mt-auto">
-                    <Link to={product.route}>
-                      <Button className="w-full bg-gradient-to-r from-sebaaq-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-sm group transition-all duration-300">
-                        تفاصيل أكثر
-                        <ArrowLeft className="w-4 h-4 mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </Card>
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight mb-4">
+              أنظمة الغسيل بالفرش
+              <span className="gradient-text block">تنظيف عميق وشامل</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              أنظمة متطورة تجمع بين تقنية الفرش الناعمة والتقنيات الحديثة لضمان تنظيف عميق وآمن
+            </p>
+          </div>
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {brushProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Touchless Products Section */}
+      <section className="py-20 bg-gray-50" dir="rtl">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight mb-4">
+              أنظمة الغسيل بدون لمس
+              <span className="gradient-text block">حماية فائقة للطلاء</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              تقنية متقدمة تعتمد على ضغط الماء العالي والمواد الكيميائية المتخصصة لتنظيف مثالي دون أي تلامس
+            </p>
+          </div>
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {touchlessProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-sebaaq-midnight text-center mb-16">
             مزايا الاستثمار
