@@ -61,6 +61,7 @@ const Navigation = () => {
               size="sm" 
               className="hidden sm:flex bg-sebaaq-blue hover:bg-blue-600 text-white text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 focus:outline-none focus:ring-4 focus:ring-sebaaq-blue/50 font-cairo"
               aria-label="تواصل معنا - اتصال مباشر"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
             >
               <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" aria-hidden="true" />
               تواصل معنا
@@ -109,6 +110,7 @@ const Navigation = () => {
                 size="sm" 
                 className="w-full sm:hidden bg-sebaaq-blue hover:bg-blue-600 text-white text-base py-3 focus:outline-none focus:ring-4 focus:ring-sebaaq-blue/50 font-cairo"
                 aria-label="تواصل معنا - اتصال مباشر"
+                onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
                 <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
                 تواصل معنا

@@ -61,8 +61,11 @@ const ContactSection = () => {
             <p className="text-white/90 mb-6">
               انضم إلى مئات الشركات التي تثق بسيباك لاحتياجاتها اللوجستية بين الصين والمملكة العربية السعودية.
             </p>
-            <button className="bg-white text-sebaaq-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              اطلب استشارة
+            <button 
+              className="bg-white text-sebaaq-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
+            >
+              تواصل معنا
             </button>
           </div>
         </div>

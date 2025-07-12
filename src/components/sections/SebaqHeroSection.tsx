@@ -47,6 +47,7 @@ const SebaqHeroSection = () => {
               size="lg" 
               className="bg-sebaaq-blue hover:bg-blue-600 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 min-w-11 min-h-11"
               aria-label="تواصل معنا للحصول على خدماتنا"
+              onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
             >
               <Phone className="w-5 h-5 mr-2" />
               تواصل معنا الآن

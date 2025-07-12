@@ -18,18 +18,10 @@ const SebaqCTA = () => {
             size="lg" 
             className="bg-white text-sebaaq-blue hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-xl min-w-11 min-h-11"
             aria-label="اتصل بنا الآن للحصول على خدماتنا"
+            onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
           >
             <Phone className="w-5 h-5 mr-2" />
             اتصل بنا الآن
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-blue px-8 py-4 text-lg font-semibold min-w-11 min-h-11"
-            aria-label="طلب عرض سعر مخصص لمشروعك"
-          >
-            <ArrowRight className="w-5 h-5 mr-2" />
-            طلب عرض سعر
           </Button>
         </div>
       </div>
