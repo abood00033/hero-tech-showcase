@@ -79,32 +79,6 @@ const App = () => (
                 <Route path="/استثمار" element={<Invest />} />
                 <Route path="/عرض-الاستثمار" element={<PitchDeck />} />
                 
-                {/* Keep old English routes for backward compatibility */}
-                <Route path="/home" element={<Index />} />
-                <Route path="/shipping-calculator" element={<ShippingCalculator />} />
-                <Route path="/consultation-services" element={<ConsultationServices />} />
-                <Route path="/sebaaq-machine" element={<SebaqMachine />} />
-                <Route path="/sebaaq-machine/vending-machines" element={<VendingMachines />} />
-                <Route path="/sebaaq-machine/production-lines" element={<ProductionLines />} />
-                <Route path="/sebaaq-machine/car-wash" element={<CarWash />} />
-                <Route path="/car-wash/products" element={<CarWashProducts />} />
-                <Route path="/car-wash/bt900" element={<CarWashBT900 />} />
-                <Route path="/car-wash/bt500" element={<CarWashBT500 />} />
-                <Route path="/car-wash/tl500" element={<CarWashProducts />} />
-                <Route path="/car-wash/tl400" element={<CarWashProducts />} />
-                <Route path="/car-wash/tl300" element={<CarWashProducts />} />
-                <Route path="/sebaaq-machine/entertainment-systems" element={<EntertainmentSystems />} />
-                <Route path="/parts-maintenance" element={<PartsAndMaintenance />} />
-                <Route path="/parts-maintenance/vending-machine-parts" element={<VendingMachineParts />} />
-                <Route path="/parts-maintenance/production-line-parts" element={<ProductionLineParts />} />
-                <Route path="/parts-maintenance/car-wash-parts" element={<CarWashParts />} />
-                <Route path="/parts-maintenance/entertainment-system-parts" element={<EntertainmentSystemParts />} />
-                <Route path="/shipping-import-china" element={<Alibaba />} />
-                <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/invest" element={<Invest />} />
-                <Route path="/pitch-deck" element={<PitchDeck />} />
-                
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
