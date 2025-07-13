@@ -77,7 +77,7 @@ const SebaqHeroSection = () => {
           {/* Services Grid */}
           <div className="space-y-6">
             <div className="text-center lg:text-right mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2 text-center">كيف نعمل في سي باك</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2 text-center">كيف نعمل في سي باك</h2>
             </div>
             
             <div className="grid gap-6">
@@ -87,8 +87,8 @@ const SebaqHeroSection = () => {
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-white font-bold text-lg mb-2 text-center">{service.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed text-center">{service.description}</p>
+                      <h3 className="text-white font-bold text-xl mb-3 text-center">{service.title}</h3>
+                      <p className="text-white/80 text-base leading-relaxed text-center">{service.description}</p>
                     </div>
                   </div>
                 </div>)}
