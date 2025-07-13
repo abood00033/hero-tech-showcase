@@ -59,7 +59,7 @@ const SebaqHeroSection = () => {
                 تواصل معنا الآن
                 <ArrowRight className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-sebaaq-midnight px-8 py-4 font-semibold" onClick={() => window.open('https://wa.me/+966594196930', '_blank')}>
+              <Button size="lg" variant="outline" onClick={() => window.open('https://wa.me/+966594196930', '_blank')} className="border-2 border-white text-white hover:text-sebaaq-midnight px-8 py-4 font-semibold bg-indigo-600 hover:bg-indigo-500">
                 <Play className="h-5 w-5 ml-2" />
                 شاهد خدماتنا
               </Button>
@@ -77,8 +77,8 @@ const SebaqHeroSection = () => {
           {/* Services Grid */}
           <div className="space-y-6">
             <div className="text-center lg:text-right mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">خدماتنا الأساسية</h2>
-              <p className="text-gray-400">حلول متكاملة لجميع احتياجاتك الصناعية</p>
+              <h2 className="text-2xl font-bold text-white mb-2 text-center">خدماتنا الأساسية</h2>
+              <p className="text-gray-400 text-center">حلول متكاملة لجميع احتياجاتك الصناعية</p>
             </div>
             
             <div className="grid gap-6">
@@ -88,8 +88,8 @@ const SebaqHeroSection = () => {
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-white font-bold text-lg mb-2">{service.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+                      <h3 className="text-white font-bold text-lg mb-2 text-center">{service.title}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed text-center">{service.description}</p>
                     </div>
                   </div>
                 </div>)}
@@ -104,7 +104,7 @@ const SebaqHeroSection = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-white text-sm">ضمان شامل</span>
+                  <span className="text-white text-sm">ضمان</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-400" />
