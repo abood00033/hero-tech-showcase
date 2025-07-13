@@ -184,15 +184,25 @@ const CarWash = () => {
         </div>
         
         {/* Visual Machine Representation */}
-        <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-6 border border-primary/20 mb-6">
+        <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-4 border border-primary/20 mb-6 overflow-hidden">
           <div className="h-full flex flex-col justify-between">
-            {/* Machine Header */}
-            <div className="text-center space-y-2">
-              <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
-                <Car className="h-10 w-10 text-primary" />
+            {/* Product Image */}
+            <div className="flex-1 flex items-center justify-center mb-3">
+              <div className="relative w-full h-32 rounded-lg overflow-hidden">
+                <img 
+                  src={`/lovable-uploads/${product.id === 'bt900' ? 'd7f46067-5eb1-4e56-8b93-d7c37d04c951' : 
+                       product.id === 'bt500' ? '36e35649-f04b-406a-94e8-2c8d6d70df5d' : 
+                       product.id === 'tl500' ? '4ee13015-b3ac-447d-a502-1cf522c7758e' :
+                       product.id === 'tl400' ? '4fc5de97-552b-4944-9b40-833efae54802' :
+                       '57df7416-e6c6-422e-a76e-219744fc7bf2'}.png`}
+                  alt={`${product.visual} نظام غسيل السيارات`}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg" />
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+                  <h3 className="text-lg font-bold text-white text-center">{product.visual}</h3>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-primary">{product.visual}</h3>
-              <p className="text-sm text-muted-foreground">نظام غسيل متطور</p>
             </div>
             
             {/* Quick Features */}

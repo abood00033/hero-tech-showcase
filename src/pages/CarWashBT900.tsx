@@ -325,12 +325,41 @@ const BT900FuturisticPage: React.FC = () => {
               <span className="text-foreground">غسيل بدون لمس + غسيل بالفرش</span>
             </motion.div>
 
+            {/* Hero Product Carousel */}
+            <motion.div
+              className="max-w-4xl mx-auto mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <div className="relative">
+                <Carousel className="w-full max-w-3xl mx-auto">
+                  <CarouselContent>
+                    {heroImages.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+                          <OptimizedImage
+                            src={image}
+                            alt={`BT900 غسيل السيارات - صورة ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-4" />
+                  <CarouselNext className="right-4" />
+                </Carousel>
+              </div>
+            </motion.div>
+
             {/* Car Simulation */}
             <motion.div
               className="max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 50 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
               <CarSimulation />
             </motion.div>
