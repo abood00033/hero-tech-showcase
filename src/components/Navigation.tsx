@@ -21,7 +21,7 @@ const Navigation = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white shadow-md border-b sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
+    <nav className="bg-black shadow-md border-b sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
@@ -33,7 +33,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/37056213-2124-45ce-9651-78c7bee23056.png" 
               alt="شعار شركة سي باك" 
-              className="h-20 sm:h-24 w-auto"
+              className="h-28 sm:h-32 w-auto"
             />
           </Link>
 
@@ -47,7 +47,7 @@ const Navigation = () => {
                 className={`px-4 py-3 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
                   location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
                     ? 'bg-sebaaq-blue text-white shadow-md'
-                    : 'text-sebaaq-midnight hover:bg-gray-100 hover:shadow-sm'
+                    : 'text-white hover:bg-gray-800 hover:shadow-sm'
                 }`}
                 aria-current={location.pathname === item.path ? 'page' : undefined}
               >
@@ -70,12 +70,12 @@ const Navigation = () => {
             
             <button
               onClick={toggleMenu}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2"
               aria-label={isOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
-              {isOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+              {isOpen ? <X className="w-5 h-5 text-white" aria-hidden="true" /> : <Menu className="w-5 h-5 text-white" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@ const Navigation = () => {
                 className={`block px-4 py-4 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
                   location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
                     ? 'bg-sebaaq-blue text-white shadow-md'
-                    : 'text-sebaaq-midnight hover:bg-gray-100 hover:shadow-sm'
+                    : 'text-white hover:bg-gray-800 hover:shadow-sm'
                 }`}
                 aria-current={location.pathname === item.path ? 'page' : undefined}
               >
