@@ -45,7 +45,8 @@ const SebaqHeroSection = () => {
               
               <h1 className="text-4xl md:text-6xl leading-tight text-center lg:text-4xl font-extrabold px-0 mx-px my-[40px] py-[20px]">
                 سي باك لوجستيك
-                <span className="gradient-text block mt-2 font-bold text-3xl text-center mx-px my-[10px]">استيراد، توريد، تركيب وصيانة أحدث المكائن</span>
+                <span className="gradient-text block mt-2 font-bold text-3xl text-center mx-px my-[10px]">                 استيراد، توريد، تركيب
+ وصيانة أحدث المكائن</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
