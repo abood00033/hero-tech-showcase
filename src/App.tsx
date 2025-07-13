@@ -79,6 +79,13 @@ const App = () => (
                 <Route path="/استثمار" element={<Invest />} />
                 <Route path="/عرض-الاستثمار" element={<PitchDeck />} />
                 
+                {/* English product page routes */}
+                <Route path="/car-wash/bt900" element={<CarWashBT900 />} />
+                <Route path="/car-wash/bt500" element={<CarWashBT500 />} />
+                <Route path="/car-wash/tl500" element={<CarWashTL500 />} />
+                <Route path="/car-wash/tl400" element={<CarWashTL400 />} />
+                <Route path="/car-wash/tl300" element={<CarWashTL300 />} />
+                
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
