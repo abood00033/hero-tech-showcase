@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import OptimizedImage from '@/components/ui/optimized-image';
 import { 
   Droplets, 
   Zap, 
@@ -38,6 +40,41 @@ import {
 const CarWashBT500 = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Product Images for BT500
+  const heroImages = [
+    "/lovable-uploads/36e35649-f04b-406a-94e8-2c8d6d70df5d.png",
+    "/lovable-uploads/2c185df4-8651-44c9-a01d-f8f9d159db05.png",
+    "/lovable-uploads/581c5e13-ec7b-4c0e-b76a-83c44b804207.png",
+    "/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png"
+  ];
+
+  const productImages = [
+    {
+      src: "/lovable-uploads/36e35649-f04b-406a-94e8-2c8d6d70df5d.png",
+      alt: "BT500 نظام غسيل السيارات - المنظر الأمامي"
+    },
+    {
+      src: "/lovable-uploads/2c185df4-8651-44c9-a01d-f8f9d159db05.png", 
+      alt: "BT500 نظام غسيل السيارات - المنظر الجانبي"
+    },
+    {
+      src: "/lovable-uploads/581c5e13-ec7b-4c0e-b76a-83c44b804207.png",
+      alt: "BT500 نظام غسيل السيارات - نظام الفرش"
+    },
+    {
+      src: "/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png",
+      alt: "BT500 نظام غسيل السيارات - لوحة التحكم"
+    },
+    {
+      src: "/lovable-uploads/101170ad-c89b-4068-9fcc-505d852ea11e.png",
+      alt: "BT500 نظام غسيل السيارات - المجففات"
+    },
+    {
+      src: "/lovable-uploads/22bb837b-a345-4eee-9b23-ceb8ab448568.png",
+      alt: "BT500 نظام غسيل السيارات - البنية الداخلية"
+    }
+  ];
 
   // Main Features based on catalog
   const mainFeatures = [
@@ -233,11 +270,43 @@ const CarWashBT500 = () => {
               </Button>
             </motion.div>
 
-            {/* Visual System Representation */}
+            {/* Hero Images Carousel */}
             <motion.div 
               initial={{ y: 50, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
+              className="relative mt-16 max-w-6xl mx-auto"
+            >
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {heroImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden">
+                        <OptimizedImage
+                          src={image}
+                          alt={`BT500 صورة نظام غسيل السيارات ${index + 1}`}
+                          className="w-full h-full object-cover"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        <div className="absolute bottom-6 left-6 text-white">
+                          <h3 className="text-2xl font-bold">BT500</h3>
+                          <p className="text-lg opacity-90">نظام غسيل السيارات المتطور</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
+            </motion.div>
+
+            {/* Visual System Representation */}
+            <motion.div 
+              initial={{ y: 50, opacity: 0, scale: 0.9 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
               className="relative mt-16 max-w-4xl mx-auto"
             >
               <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-8 border border-primary/20 shadow-2xl">
@@ -841,6 +910,54 @@ const CarWashBT500 = () => {
                 </div>
               </div>
             </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
+              صور المنتج
+            </Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              صور شاملة لنظام BT500
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              استكشف تفاصيل نظام غسيل السيارات BT500 من جميع الزوايا
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="relative h-64 md:h-80 rounded-xl overflow-hidden bg-muted">
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                    <p className="text-sm font-semibold">{image.alt}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

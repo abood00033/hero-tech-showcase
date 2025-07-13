@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import OptimizedImage from '@/components/ui/optimized-image';
 import { 
   Car, 
   Clock, 
@@ -208,6 +210,41 @@ const FuturisticStat: React.FC<FuturisticStatProps> = ({ value, label, icon, col
 // Main Component
 const BT900FuturisticPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  
+  // Product Images for BT900
+  const heroImages = [
+    "/lovable-uploads/d7f46067-5eb1-4e56-8b93-d7c37d04c951.png",
+    "/lovable-uploads/ca0e3cbf-cfd3-4fe0-88e7-173dc3ac0bc2.png",
+    "/lovable-uploads/ad748a22-b280-4e40-8a29-eb0225627a3d.png",
+    "/lovable-uploads/4d48ca1a-8931-4f9e-9817-ec991f917135.png"
+  ];
+
+  const productImages = [
+    {
+      src: "/lovable-uploads/d7f46067-5eb1-4e56-8b93-d7c37d04c951.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - المنظر الأمامي"
+    },
+    {
+      src: "/lovable-uploads/ca0e3cbf-cfd3-4fe0-88e7-173dc3ac0bc2.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - المنظر الجانبي"
+    },
+    {
+      src: "/lovable-uploads/ad748a22-b280-4e40-8a29-eb0225627a3d.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - نظام الذكاء الاصطناعي"
+    },
+    {
+      src: "/lovable-uploads/4d48ca1a-8931-4f9e-9817-ec991f917135.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - التقنيات المتقدمة"
+    },
+    {
+      src: "/lovable-uploads/cc671829-aaa7-4559-affa-11d056fbcf5d.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - واجهة التحكم"
+    },
+    {
+      src: "/lovable-uploads/c816dc83-442d-40b5-89e3-58f1872702cd.png",
+      alt: "BT900 نظام غسيل السيارات المستقبلي - نظام الاستشعار"
+    }
+  ];
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true });
 
@@ -1262,6 +1299,54 @@ const BT900FuturisticPage: React.FC = () => {
                 <li><span className="font-semibold">المرونة:</span> إعدادات مخصصة لكل عميل</li>
               </ul>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
+              صور المنتج
+            </Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              صور شاملة لنظام BT900 المستقبلي
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              استكشف تفاصيل نظام غسيل السيارات BT900 المتطور من جميع الزوايا
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="relative h-64 md:h-80 rounded-xl overflow-hidden bg-muted">
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                    <p className="text-sm font-semibold">{image.alt}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
