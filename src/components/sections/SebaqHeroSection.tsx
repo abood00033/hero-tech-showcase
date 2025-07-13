@@ -50,7 +50,7 @@ const SebaqHeroSection = () => {
               </h1>
               
               <p className="text-xl text-white/90 leading-relaxed max-w-2xl text-center md:text-2xl">
-                شريكك الموثوق في <span className="text-sebaaq-blue font-semibold">الاستيراد من الصين</span> وتوريد وتركيب أحدث المكائن والمعدات الصناعية
+                شريكك الموثوق في توريد وتركيب أحدث المكائن والمعدات الصناعية
               </p>
             </div>
             
