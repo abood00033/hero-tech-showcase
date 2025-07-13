@@ -48,7 +48,7 @@ const SebaqHeroSection = () => {
               </div>
               
               <h1 className="font-bold text-4xl md:text-6xl lg:text-7xl leading-tight">
-                سـبـاق
+                سي باك لوجستيك
                 <span className="gradient-text block mt-2">للآلات الصناعية</span>
               </h1>
               
