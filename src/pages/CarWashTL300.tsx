@@ -3,6 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import OptimizedImage from '@/components/ui/optimized-image';
 import { 
   Droplets, 
   Zap, 
@@ -17,6 +20,25 @@ import {
 } from 'lucide-react';
 
 const CarWashTL300 = () => {
+  const productImages = [
+    {
+      src: "/lovable-uploads/22bb837b-a345-4eee-9b23-ceb8ab448568.png",
+      alt: "غسالة السيارات TL300 - المنظر الجانبي"
+    },
+    {
+      src: "/lovable-uploads/2a1593de-0f57-407c-90c8-6e1d6a86f04d.png",
+      alt: "غسالة السيارات TL300 - المنظر الأمامي"
+    },
+    {
+      src: "/lovable-uploads/28144a1c-943b-408f-ad5d-00076e8779ae.png",
+      alt: "غسالة السيارات TL300 - لوحة التحكم"
+    },
+    {
+      src: "/lovable-uploads/130fbaf4-5a41-47ad-9bb9-9693989a851b.png",
+      alt: "غسالة السيارات TL300 - التفاصيل الداخلية"
+    }
+  ];
+
   const specifications = [
     { label: "الطول", value: "7.5 متر" },
     { label: "العرض", value: "2.6 متر" },
@@ -95,13 +117,27 @@ const CarWashTL300 = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=600&fit=crop" 
-                  alt="غسالة السيارات TL300"
-                  className="w-full h-full object-cover rounded-2xl opacity-90"
-                />
-              </div>
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  {productImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <AspectRatio ratio={4/3}>
+                          <OptimizedImage
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover rounded-2xl"
+                            priority={index === 0}
+                          />
+                        </AspectRatio>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+              
               <div className="absolute -bottom-4 -right-4 bg-muted text-muted-foreground p-4 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold">12-15</div>
@@ -109,6 +145,32 @@ const CarWashTL300 = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">صور المنتج</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              تصفح مجموعة شاملة من صور غسالة السيارات TL300 من جميع الزوايا
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {productImages.map((image, index) => (
+              <Card key={index} className="overflow-hidden group cursor-pointer">
+                <AspectRatio ratio={4/3}>
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </AspectRatio>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

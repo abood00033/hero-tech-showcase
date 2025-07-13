@@ -1,9 +1,11 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import OptimizedImage from '@/components/ui/optimized-image';
 import { 
   Droplets, 
   Zap, 
@@ -18,6 +20,25 @@ import {
 } from 'lucide-react';
 
 const CarWashTL400 = () => {
+  const productImages = [
+    {
+      src: "/lovable-uploads/2c185df4-8651-44c9-a01d-f8f9d159db05.png",
+      alt: "غسالة السيارات TL400 - المنظر الجانبي"
+    },
+    {
+      src: "/lovable-uploads/292e60d0-fc4f-41d6-8f28-a0573676f505.png",
+      alt: "غسالة السيارات TL400 - المنظر الأمامي"
+    },
+    {
+      src: "/lovable-uploads/2fc2a141-25e3-4241-bc17-0ef9df326747.png",
+      alt: "غسالة السيارات TL400 - لوحة التحكم"
+    },
+    {
+      src: "/lovable-uploads/2d9ad311-a75a-4f3c-80e2-627dbcdba0bb.png",
+      alt: "غسالة السيارات TL400 - التفاصيل الداخلية"
+    }
+  ];
+
   const specifications = [
     { label: "الطول", value: "8.5 متر" },
     { label: "العرض", value: "2.8 متر" },
@@ -96,44 +117,26 @@ const CarWashTL400 = () => {
             </div>
 
             <div className="relative">
-              {/* Visual Machine Representation */}
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-8 border border-primary/20">
-                <div className="h-full flex flex-col justify-between">
-                  {/* Machine Header */}
-                  <div className="text-center space-y-2">
-                    <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/30">
-                      <Droplets className="h-10 w-10 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">TL400</h3>
-                    <p className="text-sm text-muted-foreground">نظام غسيل آلي</p>
-                  </div>
-                  
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-2 gap-4 my-6">
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Timer className="h-6 w-6 text-primary mx-auto mb-1" />
-                      <p className="text-xs font-semibold">6-8 دقائق</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Zap className="h-6 w-6 text-primary mx-auto mb-1" />
-                      <p className="text-xs font-semibold">8 كيلو واط</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Droplets className="h-6 w-6 text-primary mx-auto mb-1" />
-                      <p className="text-xs font-semibold">100-130 لتر</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Shield className="h-6 w-6 text-primary mx-auto mb-1" />
-                      <p className="text-xs font-semibold">ضمان سنة</p>
-                    </div>
-                  </div>
-                  
-                  {/* Dimensions */}
-                  <div className="bg-muted/30 rounded-lg p-3 text-center">
-                    <p className="text-sm font-semibold text-foreground">8.5م × 2.8م × 2.4م</p>
-                  </div>
-                </div>
-              </div>
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  {productImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <AspectRatio ratio={4/3}>
+                          <OptimizedImage
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover rounded-2xl"
+                            priority={index === 0}
+                          />
+                        </AspectRatio>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
               
               <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-lg">
                 <div className="text-center">
@@ -142,6 +145,32 @@ const CarWashTL400 = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">صور المنتج</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              تصفح مجموعة شاملة من صور غسالة السيارات TL400 من جميع الزوايا
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {productImages.map((image, index) => (
+              <Card key={index} className="overflow-hidden group cursor-pointer">
+                <AspectRatio ratio={4/3}>
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </AspectRatio>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

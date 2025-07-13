@@ -1,9 +1,11 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import OptimizedImage from '@/components/ui/optimized-image';
 import { 
   Droplets, 
   Zap, 
@@ -18,6 +20,25 @@ import {
 } from 'lucide-react';
 
 const CarWashTL500 = () => {
+  const productImages = [
+    {
+      src: "/lovable-uploads/32137c2d-3ef3-44c2-b0a7-849d53fca26d.png",
+      alt: "غسالة السيارات TL500 - المنظر الجانبي"
+    },
+    {
+      src: "/lovable-uploads/3ccf25e5-f98e-46f9-be3c-88ad951e5499.png",
+      alt: "غسالة السيارات TL500 - المنظر الأمامي"
+    },
+    {
+      src: "/lovable-uploads/36e35649-f04b-406a-94e8-2c8d6d70df5d.png",
+      alt: "غسالة السيارات TL500 - لوحة التحكم"
+    },
+    {
+      src: "/lovable-uploads/356f179f-e8fa-4feb-b522-afde2648de6a.png",
+      alt: "غسالة السيارات TL500 - التفاصيل الداخلية"
+    }
+  ];
+
   const specifications = [
     { label: "الطول", value: "9.5 متر" },
     { label: "العرض", value: "3.0 متر" },
@@ -96,44 +117,26 @@ const CarWashTL500 = () => {
             </div>
 
             <div className="relative">
-              {/* Visual Machine Representation */}
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-accent/10 via-primary/10 to-secondary/10 p-8 border border-accent/20">
-                <div className="h-full flex flex-col justify-between">
-                  {/* Machine Header */}
-                  <div className="text-center space-y-2">
-                    <div className="w-20 h-20 mx-auto bg-accent/20 rounded-full flex items-center justify-center border border-accent/30">
-                      <Droplets className="h-10 w-10 text-accent-foreground" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-accent-foreground">TL500</h3>
-                    <p className="text-sm text-muted-foreground">نظام غسيل متطور</p>
-                  </div>
-                  
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-2 gap-4 my-6">
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Timer className="h-6 w-6 text-accent-foreground mx-auto mb-1" />
-                      <p className="text-xs font-semibold">5-7 دقائق</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Zap className="h-6 w-6 text-accent-foreground mx-auto mb-1" />
-                      <p className="text-xs font-semibold">10 كيلو واط</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Droplets className="h-6 w-6 text-accent-foreground mx-auto mb-1" />
-                      <p className="text-xs font-semibold">120-150 لتر</p>
-                    </div>
-                    <div className="bg-background/50 rounded-lg p-3 text-center border border-muted">
-                      <Shield className="h-6 w-6 text-accent-foreground mx-auto mb-1" />
-                      <p className="text-xs font-semibold">ضمان سنة ونصف</p>
-                    </div>
-                  </div>
-                  
-                  {/* Dimensions */}
-                  <div className="bg-muted/30 rounded-lg p-3 text-center">
-                    <p className="text-sm font-semibold text-foreground">9.5م × 3.0م × 2.5م</p>
-                  </div>
-                </div>
-              </div>
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  {productImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <AspectRatio ratio={4/3}>
+                          <OptimizedImage
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover rounded-2xl"
+                            priority={index === 0}
+                          />
+                        </AspectRatio>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
               
               <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground p-4 rounded-xl shadow-lg">
                 <div className="text-center">
@@ -142,6 +145,32 @@ const CarWashTL500 = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Gallery Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">صور المنتج</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              تصفح مجموعة شاملة من صور غسالة السيارات TL500 من جميع الزوايا
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {productImages.map((image, index) => (
+              <Card key={index} className="overflow-hidden group cursor-pointer">
+                <AspectRatio ratio={4/3}>
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </AspectRatio>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
