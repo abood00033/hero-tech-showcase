@@ -96,7 +96,7 @@ const ServicesTabsSection = ({
   };
 
   return (
-    <section className="py-16 bg-background" dir="rtl">
+    <section id="services" className="py-16 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col items-center gap-6 text-center mb-12">
