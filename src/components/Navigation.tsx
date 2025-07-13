@@ -21,7 +21,7 @@ const Navigation = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-black shadow-md border-b sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
+    <nav className="bg-gradient-to-br from-sebaaq-midnight via-sebaaq-charcoal to-sebaaq-midnight shadow-md border-b sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
