@@ -1,51 +1,12 @@
-
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 import { Truck, Cog, MessageCircle } from "lucide-react";
 
-// Feature component with hover effects
-interface FeatureProps {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  index: number;
-}
-
-const Feature = ({ title, description, icon, index }: FeatureProps) => {
-  return (
-    <div
-      className={cn(
-        "flex flex-col py-12 px-8 relative group/feature hover:bg-gradient-to-br hover:from-primary/5 hover:to-secondary/5 transition-all duration-500",
-        index % 2 === 1 && "lg:border-r border-border/50",
-        index < 2 && "border-b border-border/50"
-      )}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover/feature:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      
-      <div className="mb-6 relative z-10 flex justify-center">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary group-hover/feature:scale-110 group-hover/feature:rotate-6 transition-all duration-300">
-          {icon}
-        </div>
-      </div>
-      
-      <div className="text-center relative z-10 space-y-4">
-        <h3 className="text-xl font-bold text-foreground group-hover/feature:text-primary transition-colors duration-300">
-          {title}
-        </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed group-hover/feature:text-foreground/80 transition-colors duration-300">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// Main component
-interface TabContent {
+// Service Content Interface
+interface ServiceContent {
   badge: string;
   title: string;
   description: string;
@@ -54,18 +15,20 @@ interface TabContent {
   imageAlt: string;
 }
 
-interface Tab {
+// Service Interface
+interface Service {
   value: string;
   icon: React.ReactNode;
   label: string;
-  content: TabContent;
+  content: ServiceContent;
 }
 
+// Main Component Props
 interface ServicesTabsSectionProps {
   badge?: string;
   heading?: string;
   description?: string;
-  tabs?: Tab[];
+  tabs?: Service[];
 }
 
 const ServicesTabsSection = ({
@@ -75,7 +38,7 @@ const ServicesTabsSection = ({
   tabs = [
     {
       value: "shipping",
-      icon: <Truck className="w-12 h-12 text-primary" />,
+      icon: <Truck className="w-8 h-8 text-primary" />,
       label: "خدمات الشحن والاستيراد",
       content: {
         badge: "حلول لوجستية متكاملة",
@@ -88,7 +51,7 @@ const ServicesTabsSection = ({
     },
     {
       value: "consultation",
-      icon: <MessageCircle className="w-12 h-12 text-primary" />,
+      icon: <MessageCircle className="w-8 h-8 text-primary" />,
       label: "خدمات استشارية",
       content: {
         badge: "خبرة متخصصة",
@@ -101,7 +64,7 @@ const ServicesTabsSection = ({
     },
     {
       value: "machinery",
-      icon: <Cog className="w-12 h-12 text-primary" />,
+      icon: <Cog className="w-8 h-8 text-primary" />,
       label: "توريد وتركيب الآلات",
       content: {
         badge: "خبرة تقنية متقدمة",
@@ -115,87 +78,9 @@ const ServicesTabsSection = ({
   ],
 }: ServicesTabsSectionProps) => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(tabs[0].value);
-  const [hasUserInteracted, setHasUserInteracted] = useState(false);
-  const [isAutoCycling, setIsAutoCycling] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Clean up intervals and timeouts
-  const clearAutoCycle = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsAutoCycling(false);
-  };
-
-  // Start auto-cycling
-  const startAutoCycle = () => {
-    if (hasUserInteracted || isAutoCycling) return;
-    
-    setIsAutoCycling(true);
-    let currentIndex = 0;
-    
-    intervalRef.current = setInterval(() => {
-      currentIndex = (currentIndex + 1) % tabs.length;
-      setActiveTab(tabs[currentIndex].value);
-    }, 2000); // Change tab every 2 seconds
-    
-    // Stop auto-cycling after exactly 5 seconds
-    timeoutRef.current = setTimeout(() => {
-      clearAutoCycle();
-    }, 5000);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Use a small delay to ensure the component is fully rendered
-            setTimeout(() => {
-              startAutoCycle();
-            }, 100);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-      clearAutoCycle();
-    };
-  }, [tabs, hasUserInteracted, isAutoCycling]);
-
-  const handleTabChange = (value: string) => {
-    setActiveTab(value);
-    setHasUserInteracted(true);
-    clearAutoCycle();
-  };
-
-  // Handle any user interaction to stop auto-cycling
-  const handleUserInteraction = () => {
-    if (!hasUserInteracted) {
-      setHasUserInteracted(true);
-      clearAutoCycle();
-    }
-  };
-
-  const activeTabContent = tabs.find(tab => tab.value === activeTab)?.content;
-
-  const handleButtonClick = (tabValue: string) => {
-    switch(tabValue) {
+  const handleButtonClick = (serviceValue: string) => {
+    switch(serviceValue) {
       case "shipping":
         navigate("/الشحن-والاستيراد-من-الصين");
         break;
@@ -211,14 +96,9 @@ const ServicesTabsSection = ({
   };
 
   return (
-    <section 
-      ref={sectionRef} 
-      className="py-16 bg-background" 
-      dir="rtl"
-      onTouchStart={handleUserInteraction}
-      onMouseEnter={handleUserInteraction}
-    >
+    <section className="py-16 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <div className="flex flex-col items-center gap-6 text-center mb-12">
           <Badge variant="outline" className="text-primary border-primary">
             {badge}
@@ -231,69 +111,61 @@ const ServicesTabsSection = ({
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <Tabs value={activeTab} onValueChange={handleTabChange}>
-            {/* Tab List */}
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto bg-background/60 backdrop-blur-md border border-border/50 rounded-2xl p-2 shadow-lg">
-              {tabs.map((tab) => (
-                <TabsTrigger
-                  key={tab.value}
-                  value={tab.value}
-                  className="flex flex-col items-center gap-3 rounded-xl px-4 py-6 text-base font-semibold transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover:bg-accent/50 font-cairo"
-                  onClick={handleUserInteraction}
-                >
-                  <div className="text-xl">{tab.icon}</div>
-                  <span className="text-center text-sm sm:text-base font-bold leading-tight">{tab.label}</span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            {/* Tab Content - directly below tabs with minimal spacing */}
-            <div className="mt-4">
-              {tabs.map((tab) => (
-                <TabsContent
-                  key={tab.value}
-                  value={tab.value}
-                  className="m-0 bg-gradient-to-br from-background to-muted/30 rounded-2xl border border-border/50 shadow-lg p-6"
-                >
-                  <div className="flex flex-col lg:flex-row gap-6 items-start">
-                    {/* Content */}
-                    <div className="flex-1 space-y-4">
-                      <Badge variant="outline" className="w-fit bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
-                        {tab.content.badge}
-                      </Badge>
-                      
-                      <h3 className="text-xl lg:text-2xl font-bold text-foreground leading-tight font-cairo">
-                        {tab.content.title}
-                      </h3>
-                      
-                      <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line font-cairo">
-                        {tab.content.description}
-                      </p>
-                      
-                      <Button 
-                        className="w-full sm:w-fit gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo touch-manipulation"
-                        onClick={() => handleButtonClick(tab.value)}
-                      >
-                        {tab.content.buttonText}
-                      </Button>
-                    </div>
-
-                    {/* Image */}
-                    <div className="flex-shrink-0 w-full lg:w-72">
-                      <div className="aspect-video rounded-xl overflow-hidden bg-muted/50">
-                        <img 
-                          src={tab.content.imageSrc} 
-                          alt={tab.content.imageAlt}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
+        {/* Services Grid */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {tabs.map((service, index) => (
+              <Card 
+                key={service.value} 
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 border border-border/50 bg-gradient-to-br from-background to-muted/30"
+              >
+                <CardContent className="p-0">
+                  {/* Service Header with Icon */}
+                  <div className="p-6 pb-4 border-b border-border/30">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        {service.icon}
                       </div>
+                      <h3 className="text-lg font-bold text-foreground font-cairo">
+                        {service.label}
+                      </h3>
                     </div>
+                    <Badge variant="outline" className="w-fit bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30 text-primary font-semibold">
+                      {service.content.badge}
+                    </Badge>
                   </div>
-                </TabsContent>
-              ))}
-            </div>
-          </Tabs>
+
+                  {/* Service Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={service.content.imageSrc} 
+                      alt={service.content.imageAlt}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+
+                  {/* Service Content */}
+                  <div className="p-6 space-y-4">
+                    <h4 className="text-xl font-bold text-foreground leading-tight font-cairo">
+                      {service.content.title}
+                    </h4>
+                    
+                    <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line font-cairo line-clamp-6">
+                      {service.content.description}
+                    </p>
+                    
+                    <Button 
+                      className="w-full gap-2 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-cairo"
+                      onClick={() => handleButtonClick(service.value)}
+                    >
+                      {service.content.buttonText}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
