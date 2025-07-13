@@ -134,17 +134,6 @@ const AboutUs = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground">خدمات استشارية</h3>
-                <p className="text-muted-foreground">
-                  استشارات متخصصة في السوق الصيني وحلول الاستيراد المثلى
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

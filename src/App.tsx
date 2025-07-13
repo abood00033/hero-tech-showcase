@@ -15,7 +15,7 @@ const CarWashTL500 = lazy(() => import("./pages/CarWashTL500"));
 const CarWashTL400 = lazy(() => import("./pages/CarWashTL400"));
 const CarWashTL300 = lazy(() => import("./pages/CarWashTL300"));
 const CarWashProducts = lazy(() => import("./pages/CarWashProducts"));
-const ConsultationServices = lazy(() => import("./pages/ConsultationServices"));
+
 const SebaqMachine = lazy(() => import("./pages/SebaqMachine"));
 const VendingMachines = lazy(() => import("./pages/VendingMachines"));
 const ProductionLines = lazy(() => import("./pages/ProductionLines"));
@@ -56,7 +56,7 @@ const App = () => (
                 <Route path="/الرئيسية" element={<Index />} />
                 <Route path="/" element={<Index />} />
                 <Route path="/حاسبة-تكلفة-الشحن" element={<ShippingCalculator />} />
-                <Route path="/خدمات-الاستشارة" element={<ConsultationServices />} />
+                
                 <Route path="/سي-باك-ماشين" element={<SebaqMachine />} />
                 <Route path="/مكائن-البيع-الذاتي" element={<VendingMachines />} />
                 <Route path="/خطوط-الإنتاج" element={<ProductionLines />} />
