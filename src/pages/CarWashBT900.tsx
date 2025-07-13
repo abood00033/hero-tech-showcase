@@ -312,7 +312,7 @@ const BT900FuturisticPage: React.FC = () => {
               animate={isHeroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              أحدث أنظمة الغسيل في النفق
+              غسيل السيارات BT900
             </motion.p>
 
             <motion.div
