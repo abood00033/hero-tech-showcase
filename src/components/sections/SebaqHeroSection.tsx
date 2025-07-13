@@ -2,17 +2,17 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Truck, Settings, Factory, Globe, CheckCircle, Award } from 'lucide-react';
 const SebaqHeroSection = () => {
   const services = [{
-    icon: Globe,
-    title: "استيراد من الصين",
-    description: "شحن موثوق وآمن من الصين إلى السعودية"
-  }, {
     icon: Factory,
-    title: "توريد المكائن",
-    description: "أحدث المكائن والمعدات الصناعية"
+    title: "البحث عن افضل مصنع",
+    description: "خبرتنا تضمن لك المورد الأمثل، ونُطوّر جودة القطع الأساسية في آلتك؛ لضمان جودة فائقة وأداء يدوم"
   }, {
     icon: Settings,
-    title: "تركيب وصيانة",
-    description: "خدمات تركيب وصيانة شاملة"
+    title: "تركيب احترافي",
+    description: "فريقنا المتخصص يتولى تركيب آلاتك بدقة واحترافية، لضمان جاهزيتها للعمل بكفاءة تامة فورًا."
+  }, {
+    icon: CheckCircle,
+    title: "توفير الصيانه والدعم الفني",
+    description: "صيانة وقائية ودعمًا فنيًا مستمرًا، لضمان استمرارية عمل آلاتك وتقليل أي توقف محتمل."
   }];
   const stats = [{
     number: "500+",
@@ -77,8 +77,7 @@ const SebaqHeroSection = () => {
           {/* Services Grid */}
           <div className="space-y-6">
             <div className="text-center lg:text-right mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2 text-center">خدماتنا الأساسية</h2>
-              <p className="text-gray-400 text-center">حلول متكاملة لجميع احتياجاتك الصناعية</p>
+              <h2 className="text-2xl font-bold text-white mb-2 text-center">كيف نعمل في سي باك</h2>
             </div>
             
             <div className="grid gap-6">
