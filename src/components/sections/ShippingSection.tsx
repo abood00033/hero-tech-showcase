@@ -71,40 +71,10 @@ const ShippingSection = () => {
           <h3 className="font-playfair text-lg sm:text-xl md:text-2xl font-semibold text-sebaaq-blue mb-3 sm:mb-4">
             حلول لوجستية متكاملة
           </h3>
-          <h4 className="font-playfair text-base sm:text-lg font-medium text-sebaaq-midnight mb-4">
-            شحن بحري وجوي
-          </h4>
-          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-6">
-            <h5 className="font-playfair text-lg sm:text-xl font-bold text-sebaaq-midnight mb-4">
-              خدمات الشحن والاستيراد
-            </h5>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
-              نوفر حلولاً لوجستية متكاملة للشركات والأفراد، وكيل شحن معتمد من الصين، مع ضمان أعلى معايير الأمان والاحترافية. نتفهم التحديات التي تواجه الشركات والأفراد في عمليات الاستيراد من الصين، نقدم خدمات احترافية ودعم عملاء قوي.
-            </p>
-            <div className="text-right space-y-3 mb-6">
-              <p className="text-gray-700">• خدمة الشحن من الباب للباب: تتكفل الشركة بكل تفاصيل شحن بضائعك من مكان موردك مباشرة إلى عنوانك.</p>
-              <p className="text-gray-700">• تفاوض مع المصانع: بفضل الخبرة في المصانع والسوق الصيني، تستطيع الشركة تقديم أسعار ذات قيمة إضافية من خلال التفاوض مع المصنع وتوفير في مدة التصنيع والأسعار.</p>
-              <p className="text-gray-700">• نستلم شحنتك من مصانع الصين ونسلّمها مباشرة إلى عنوانك في السعودية.</p>
-              <p className="text-gray-700">• حلول لوجستية ذكية: تقدم شحنًا جزئيًا سريعًا ومباشرًا من الصين إلى السعودية، مما يتيح لك استيراد بضائعك بمرونة وكفاءة عبر مشاركة مساحة الحاوية مع شحنات أخرى لتقليل التكاليف.</p>
-            </div>
-            <button className="text-sebaaq-blue font-semibold hover:underline">تفاصيل اكثر</button>
-          </div>
           
-          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
-            <h5 className="font-playfair text-lg sm:text-xl font-bold text-sebaaq-midnight mb-4">
-              توريد وتركيب الآلات
-            </h5>
-            <h6 className="font-playfair text-base font-semibold text-sebaaq-blue mb-3">
-              خبرة تقنية متقدمة
-            </h6>
-            <h6 className="font-playfair text-base font-medium text-sebaaq-midnight mb-4">
-              آلات صناعية
-            </h6>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
-              في سي باك ماشين، تمتد الخبرة التقنية إلى ما وراء مجرد التوريد. لدينا فهم عالٍ في كثير من المجالات والأنظمة التقنية المعقدة، مع إدراك دقيق لتعقيدات عملها الميكانيكي ومبادئ تصميمها الحركي، وذلك يشمل تحليل القوى والإجهادات، ودراسة المواد المكونة منها، وكفاءة نقل الحركة والطاقة.
-            </p>
-            <button className="text-sebaaq-blue font-semibold hover:underline">تفاصيل اكثر</button>
-          </div>
+          
+          
+          
         </div>
 
         {/* Services Grid */}
