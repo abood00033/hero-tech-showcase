@@ -21,9 +21,9 @@ const Navigation = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-gradient-to-br from-sebaaq-midnight via-sebaaq-charcoal to-sebaaq-midnight shadow-md border-b sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
+    <nav className="bg-white/95 backdrop-blur-lg shadow-lg border-b border-border/20 sticky top-0 z-50 font-cairo" role="navigation" aria-label="التنقل الرئيسي">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link 
             to="/الرئيسية" 
@@ -33,7 +33,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/7c2e9f17-2da1-4b6e-a919-752816333389.png" 
               alt="شعار شركة سي باك" 
-              className="h-16 sm:h-20 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
           </Link>
 
@@ -44,10 +44,10 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 role="menuitem"
-                className={`px-4 py-3 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
+                className={`px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                   location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
-                    ? 'bg-sebaaq-blue text-white shadow-md'
-                    : 'text-white hover:bg-gray-800 hover:shadow-sm'
+                    ? 'bg-primary text-white shadow-md transform scale-105'
+                    : 'text-foreground hover:bg-primary/10 hover:text-primary hover:shadow-sm'
                 }`}
                 aria-current={location.pathname === item.path ? 'page' : undefined}
               >
@@ -60,22 +60,22 @@ const Navigation = () => {
           <div className="flex items-center gap-2">
             <Button 
               size="sm" 
-              className="hidden sm:flex bg-sebaaq-blue hover:bg-blue-600 text-white text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 focus:outline-none focus:ring-4 focus:ring-sebaaq-blue/50 font-cairo"
+              className="hidden sm:flex bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white text-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50 font-cairo shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               aria-label="تواصل معنا - اتصال مباشر"
               onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
             >
-              <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" aria-hidden="true" />
+              <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               تواصل معنا
             </Button>
             
             <button
               onClick={toggleMenu}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2"
+              className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label={isOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
-              {isOpen ? <X className="w-5 h-5 text-white" aria-hidden="true" /> : <Menu className="w-5 h-5 text-white" aria-hidden="true" />}
+              {isOpen ? <X className="w-5 h-5 text-foreground" aria-hidden="true" /> : <Menu className="w-5 h-5 text-foreground" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -89,17 +89,17 @@ const Navigation = () => {
           role="menu"
           aria-hidden={!isOpen}
         >
-          <div className="py-4 space-y-2 border-t">
+          <div className="py-4 space-y-2 border-t border-border/20 bg-white/95 backdrop-blur-lg">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 role="menuitem"
-                className={`block px-4 py-4 rounded-lg transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-sebaaq-blue focus:ring-offset-2 ${
+                className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                   location.pathname === item.path || (item.path === '/الرئيسية' && location.pathname === '/')
-                    ? 'bg-sebaaq-blue text-white shadow-md'
-                    : 'text-white hover:bg-gray-800 hover:shadow-sm'
+                    ? 'bg-primary text-white shadow-md'
+                    : 'text-foreground hover:bg-primary/10 hover:text-primary hover:shadow-sm'
                 }`}
                 aria-current={location.pathname === item.path ? 'page' : undefined}
               >
@@ -109,7 +109,7 @@ const Navigation = () => {
             <div className="pt-2">
               <Button 
                 size="sm" 
-                className="w-full sm:hidden bg-sebaaq-blue hover:bg-blue-600 text-white text-base py-3 focus:outline-none focus:ring-4 focus:ring-sebaaq-blue/50 font-cairo"
+                className="w-full sm:hidden bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white text-base py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 font-cairo shadow-lg hover:shadow-xl transition-all duration-300"
                 aria-label="تواصل معنا - اتصال مباشر"
                 onClick={() => window.open('https://wa.me/+966594196930', '_blank')}
               >
