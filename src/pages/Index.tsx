@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import SebaqHeroSection from "@/components/sections/SebaqHeroSection";
 import RecentMachinesSection from "@/components/sections/RecentMachinesSection";
 import ServicesTabsSection from "@/components/sections/ServicesTabsSection";
@@ -11,7 +10,6 @@ import ContactSection from "@/components/sections/ContactSection";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
       <SebaqHeroSection />
       <RecentMachinesSection />
       <ServicesTabsSection />
