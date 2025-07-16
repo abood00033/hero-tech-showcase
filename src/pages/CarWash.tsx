@@ -188,7 +188,7 @@ const CarWash = () => {
           <div className="h-full flex flex-col justify-between">
             {/* Product Image */}
             <div className="flex-1 flex items-center justify-center mb-2">
-              <div className="relative w-full h-32 rounded-lg overflow-hidden">
+              <div className="relative w-full h-48 rounded-lg overflow-hidden">
                 <img 
                   src={`/lovable-uploads/${product.id === 'bt900' ? 'd7f46067-5eb1-4e56-8b93-d7c37d04c951' : 
                        product.id === 'bt500' ? '36e35649-f04b-406a-94e8-2c8d6d70df5d' : 
